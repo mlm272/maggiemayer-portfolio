@@ -24,18 +24,18 @@ export const projects: Project[] = [
     slug: 'troutwood-website',
     title: 'Troutwood Website',
     category: 'web',
-    description: 'Run and maintain the Troutwood website, coded fully by myself using CSS, HTML, and JavaScript. Built the current iteration in collaboration with our UX/UI contract designer, and designed previous versions, creating responsive layouts and visual storytelling that enhances user engagement.',
-    longDescription: 'I currently build and maintain the Troutwood website using pure CSS, HTML, and JavaScript. For the current iteration, I collaborated closely with our UX/UI contract designer to implement the designs, translating them into fully functional, responsive code. I also designed previous versions of the site, creating the visual identity, user flows, and interface designs. This project showcases my ability to both design and develop, as well as collaborate effectively with designers to bring visions to life. I focus on creating intuitive navigation, engaging visual storytelling, and seamless user experiences that make financial education accessible and engaging for younger audiences.',
+    description: 'Run and maintain the Troutwood website, coded fully by myself using CSS, HTML, and JavaScript. For the most recent iteration, I built the site from designs created by our UX/UI contract designer. I previously helped design earlier iterations of the website, creating visual identity, user flows, and interface designs.',
+    longDescription: 'I currently build and maintain the Troutwood website using pure CSS, HTML, and JavaScript. For the most recent iteration, I focused solely on development—translating designs created by our UX/UI contract designer into fully functional, responsive code. In previous iterations, I contributed to the design process, helping create the visual identity, user flows, and interface designs. This project showcases my ability to both design and develop, as well as collaborate effectively with designers to bring visions to life. I focus on creating intuitive navigation, engaging visual storytelling, and seamless user experiences that make financial education accessible and engaging for younger audiences.',
     image: '/images/Screenshot 2025-11-13 at 10.18.52 PM.png',
     tags: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'UX/UI Design'],
     year: '2021 - Present',
-    role: 'Front-End Developer (Current) & Designer (Previous Iterations) - Collaborated with UX/UI Designer',
+    role: 'Front-End Developer (Current Iteration - Build Only) & Designer (Previous Iterations)',
     tools: ['HTML5', 'CSS3', 'JavaScript', 'Figma', 'Git'],
     highlights: [
-      'Built current website iteration using vanilla JavaScript',
-      'Collaborated with UX/UI contract designer to implement designs',
-      'Designed previous website versions and visual identity',
-      'Created fully responsive design that works across all devices',
+      'Built most recent website iteration from designs (development only)',
+      'Translated UX/UI contract designer\'s designs into functional code using vanilla JavaScript',
+      'Designed previous website iterations, including visual identity and user flows',
+      'Created fully responsive layouts that work across all devices',
       'Maintained and updated site continuously for 3+ years'
     ],
     images: [
@@ -211,18 +211,20 @@ export const projects: Project[] = [
     slug: 'analytics-integration-design-impact',
     title: 'Analytics Integration & Design Impact',
     category: 'web',
-    description: 'Collaborated with marketing and product teams to integrate analytics and measure design impact, translating product requirements into interactive web features that increase accessibility and learner retention.',
-    longDescription: 'I collaborated closely with marketing and product teams to integrate analytics and measure the impact of design decisions. By translating product requirements into interactive web features, I helped increase accessibility and improve learner retention. This data-driven approach ensures that design decisions are backed by user insights and measurable outcomes.',
+    description: 'Collaborated with marketing and product teams to integrate analytics and measure design impact. Completed SEO certification courses and implemented SEO optimizations that significantly improved website traffic. Translated product requirements into interactive web features that increase accessibility and user engagement.',
+    longDescription: 'I collaborated closely with marketing and product teams to integrate analytics and measure the impact of design decisions. After completing SEO certification courses (Google SEO Capstone Project and Optimizing a Website for Google Search from UC Davis), I applied SEO best practices to the Troutwood website, resulting in a significant increase in website traffic. By translating product requirements into interactive web features, I helped increase accessibility and improve user engagement metrics such as session duration, pages per session, and return visitor rates. This data-driven approach ensures that design decisions are backed by user insights and measurable outcomes.',
     image: '/api/placeholder/600/400',
-    tags: ['Analytics', 'Product Strategy', 'Accessibility', 'Data-Driven Design'],
+    tags: ['Analytics', 'SEO', 'Product Strategy', 'Accessibility', 'Data-Driven Design'],
     year: '2022 - Present',
     role: 'Product Designer & Analyst',
-    tools: ['Google Analytics', 'Data Analysis Tools', 'A/B Testing', 'Accessibility Tools'],
+    tools: ['Google Analytics', 'SEO Optimization', 'Data Analysis Tools', 'A/B Testing', 'Accessibility Tools'],
     highlights: [
+      'Completed SEO certification courses (UC Davis) and applied learnings to website',
+      'Significantly improved website traffic through SEO optimizations',
       'Integrated analytics into design process',
-      'Measured and improved design impact',
+      'Measured and improved design impact using user engagement metrics',
       'Increased accessibility across platform',
-      'Improved learner retention through data insights'
+      'Improved user engagement (session duration, pages per session, return visitor rates)'
     ]
   },
 ]

@@ -333,10 +333,10 @@ export default function WorkDetailPage() {
                       transition={{ delay: 0.4 + index * 0.1 }}
                       className="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:border-primary-200 transition-all group"
                     >
-                      <div className="aspect-[3/4] bg-white flex items-center justify-center relative overflow-hidden">
+                      <div className="aspect-[3/4] bg-white flex items-center justify-center relative overflow-hidden border border-gray-200">
                         {pdf.thumbnail ? (
                           <img
-                            src={pdf.thumbnail}
+                            src={encodeImagePath(pdf.thumbnail)}
                             alt={pdf.label}
                             className="w-full h-full object-cover"
                             onError={(e) => {
@@ -348,13 +348,18 @@ export default function WorkDetailPage() {
                             }}
                           />
                         ) : (
-                          <div className="text-center p-8">
-                            <div className="text-6xl mb-4">📄</div>
-                            <p className="text-gray-500 text-sm">PDF Preview</p>
-                          </div>
+                          <iframe
+                            src={encodeImagePath(pdf.url) + '#toolbar=0&navpanes=0&scrollbar=0'}
+                            className="w-full h-full border-0"
+                            title={pdf.label}
+                            onError={() => {
+                              // If iframe fails, show fallback
+                              console.error('PDF failed to load:', pdf.url)
+                            }}
+                          />
                         )}
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                          <span className="opacity-0 group-hover:opacity-100 transition-opacity text-white font-semibold">
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                          <span className="opacity-0 group-hover:opacity-100 transition-opacity text-white font-semibold bg-black/50 px-4 py-2 rounded">
                             View PDF
                           </span>
                         </div>
@@ -362,7 +367,7 @@ export default function WorkDetailPage() {
                       <div className="p-4">
                         <h3 className="font-semibold text-gray-900 mb-2">{pdf.label}</h3>
                         <a
-                          href={pdf.url}
+                          href={encodeImagePath(pdf.url)}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 text-sm font-medium"
