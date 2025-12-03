@@ -15,7 +15,18 @@ export interface Project {
   links?: { label: string; url: string }[]
   images?: string[]
   pdfs?: { label: string; url: string; thumbnail?: string }[]
+  lottieAnimations?: string[] // LottieFiles animation IDs
   brandContext?: string
+  // Case study format fields
+  problem?: string
+  whatIDid?: string[]
+  result?: string
+  context?: string
+  outcome?: string
+  featured?: boolean // Mark featured projects
+  whatIOwned?: string[] // What I owned section
+  problemsAndSolutions?: Array<{ problem: string; solution: string; outcome: string }> // Multiple problems/solutions
+  takeaways?: string[]
 }
 
 export const projects: Project[] = [
@@ -24,127 +35,221 @@ export const projects: Project[] = [
     slug: 'troutwood-website',
     title: 'Troutwood Website',
     category: 'web',
-    description: 'Run and maintain the Troutwood website, coded fully by myself using CSS, HTML, and JavaScript. For the most recent iteration, I built the site from designs created by our UX/UI contract designer. I previously helped design earlier iterations of the website, creating visual identity, user flows, and interface designs.',
-    longDescription: 'I currently build and maintain the Troutwood website using pure CSS, HTML, and JavaScript. For the most recent iteration, I focused solely on development—translating designs created by our UX/UI contract designer into fully functional, responsive code. In previous iterations, I contributed to the design process, helping create the visual identity, user flows, and interface designs. This project showcases my ability to both design and develop, as well as collaborate effectively with designers to bring visions to life. I focus on creating intuitive navigation, engaging visual storytelling, and seamless user experiences that make financial education accessible and engaging for younger audiences.',
-    image: '/images/Screenshot 2025-11-13 at 10.18.52 PM.png',
-    tags: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'UX/UI Design'],
-    year: '2021 - Present',
-    role: 'Front-End Developer (Current Iteration - Build Only) & Designer (Previous Iterations)',
-    tools: ['HTML5', 'CSS3', 'JavaScript', 'Figma', 'Git'],
+    description: 'Sole front-end owner of Troutwood website. Built and maintain entire site using HTML/CSS/JS, handle SEO + analytics, and ship ongoing improvements that drove +265% YoY organic traffic growth.',
+    longDescription: 'I fully owned Troutwood\'s marketing website, managing everything from day-to-day updates to major feature builds and performance improvements. My work blended front-end development with technical SEO and analytics-driven UX iteration to increase discoverability of core tools and grow organic traffic.',
+    context: 'I fully owned Troutwood\'s marketing website, managing everything from day-to-day updates to major feature builds and performance improvements. My work blended front-end development with technical SEO and analytics-driven UX iteration to increase discoverability of core tools and grow organic traffic.',
+    problem: 'The site faced three key challenges: 1) Low discoverability of key tools due to navigation friction, 2) Need for scalable organic growth through better search visibility, and 3) Performance and UX consistency across devices as the site grew in complexity.',
+    whatIOwned: [
+      'End-to-end website management: built new pages, maintained existing pages, fixed bugs, updated content, and ensured consistent styling and branding across the site',
+      'Front-end feature development using HTML/CSS/JavaScript, focusing on responsive design, accessibility, and cross-browser reliability',
+      'Technical + on-page SEO strategy: metadata, internal linking, structured data, site architecture improvements, keyword optimization, and content support',
+      'Analytics + iteration loop: monitored GA4/Search Console trends, identified drop-offs or underperforming pages, shipped UX fixes, and tracked lift'
+    ],
+    whatIDid: [
+      'Redesigned entry points and added clearer CTAs (example: adding prominent Map button when users weren\'t reaching the Map tool)',
+      'Implemented technical SEO improvements, rebuilt page metadata systems, improved site structure, added schema/structured data, and aligned content to keyword/search intent',
+      'Optimized front-end patterns, ensured responsive layouts, fixed accessibility gaps, and continuously improved UI consistency across pages'
+    ],
+    problemsAndSolutions: [
+      {
+        problem: 'Low discoverability of key tools: Analytics showed that some high-value tools were under-visited due to navigation friction.',
+        solution: 'I redesigned entry points and added clearer CTAs (example: adding a prominent Map button when users weren\'t reaching the Map tool).',
+        outcome: 'Improved click-through and engagement on strategic pages; continued monitoring ensured steady gains over time.'
+      },
+      {
+        problem: 'Need for scalable organic growth: The site needed a stronger foundation for search visibility and sustainable traffic growth.',
+        solution: 'I implemented technical SEO improvements, rebuilt page metadata systems, improved site structure, added schema/structured data, and aligned content to keyword/search intent.',
+        outcome: 'Significant search growth and expanded reach internationally.'
+      },
+      {
+        problem: 'Performance and UX consistency across devices: Site had to remain fast, clean, and reliable while growing in size and complexity.',
+        solution: 'I optimized front-end patterns, ensured responsive layouts, fixed accessibility gaps, and continuously improved UI consistency across pages.',
+        outcome: 'Better usability and a smoother experience across mobile and desktop.'
+      }
+    ],
+    result: 'Organic traffic growth was driven by holistic improvements to Troutwood.com — technical SEO foundations, clearer site architecture, stronger internal linking, accessibility upgrades, and continuous UX refinement. As the website became faster, more reliable, and more authoritative, search visibility increased across the entire domain, leading to compounding growth in organic sessions and new users.\n\nResults:\n• +265% YoY organic traffic growth (92K organic sessions)\n• +79K new users (+188% YoY)\n• 200–400% YoY international growth across multiple regions\n\nMetrics reflect performance on the site version I owned and optimized. After a company-wide redesign, site architecture and analytics baselines shifted, so post-redesign performance is measured from a new starting point.',
+    takeaways: [
+      'Owning the website solo required me to think like both a developer and a growth strategist',
+      'Biggest contributions: building reliable front-end systems, using analytics to guide UX improvements, and executing SEO work that produced measurable, sustained traffic gains'
+    ],
+    outcome: '+265% YoY organic traffic growth (92K organic sessions) • +79K new users (+188% YoY) • 200–400% YoY growth internationally across multiple regions',
+    image: '/images/website design photos/ss1.png',
+    tags: ['HTML', 'CSS', 'JavaScript', 'GA4', 'Search Console', 'Structured Data', 'SEO', 'Analytics'],
+    year: '2021–2025',
+    role: 'Sole Front-End Developer & Website Owner • End-to-end website development, UX/UI updates, SEO strategy, analytics, ongoing maintenance & releases',
+    tools: ['HTML', 'CSS', 'JavaScript', 'GA4', 'Google Search Console', 'Structured Data/Schema', 'Git'],
     highlights: [
-      'Built most recent website iteration from designs (development only)',
-      'Translated UX/UI contract designer\'s designs into functional code using vanilla JavaScript',
-      'Designed previous website iterations, including visual identity and user flows',
-      'Created fully responsive layouts that work across all devices',
-      'Maintained and updated site continuously for 3+ years'
+      'Owning the website solo required me to think like both a developer and a growth strategist',
+      'Biggest contributions: building reliable front-end systems, using analytics to guide UX improvements, and executing SEO work that produced measurable, sustained traffic gains',
+      'Metrics reflect performance on the site version I owned and optimized'
     ],
     images: [
-      '/images/ss1.png',
-      '/images/ss2.png',
-      '/images/ss3.png',
-      '/images/Video Library.png',
-      '/images/Investors.png',
-      '/images/Group 1000004928.png'
+      '/images/website design photos/ss1.png',
+      '/images/website design photos/ss2.png',
+      '/images/website design photos/ss3.png',
+      '/images/website design photos/Video Library.png',
+      '/images/website design photos/Investors.png',
+      '/images/website design photos/Group 1000004928.png',
+      '/images/website design photos/Organizations.png',
+      '/images/website design photos/App page - V2.jpg',
+      '/images/website design photos/idea2.0again.png',
+      '/images/website design photos/IRALogix.png',
+      '/images/website design photos/IRALogix-1.png',
+      '/images/website design photos/IRALogix-2.png',
+      '/images/website design photos/LandingIdea4.png'
     ],
-    brandContext: 'Recent work reflects Troutwood\'s brand redesign. Earlier iterations featured our previous brand identity.'
+    links: [
+      {
+        label: 'View Live Website',
+        url: 'https://troutwood.com'
+      }
+    ],
+    featured: true
   },
   {
     id: 2,
-    slug: 'scalable-design-system',
-    title: 'Scalable Design System',
+    slug: 'ai-chatbot-ui',
+    title: 'AI Chatbot UI (Web + App)',
     category: 'web',
-    description: 'Defined and implemented a scalable front-end design system for brand consistency across web and mobile platforms, improving session time and user conversion rates.',
-    longDescription: 'I developed a comprehensive design system that ensures visual and functional consistency across all Troutwood platforms. This system includes reusable components, typography scales, color palettes, and interaction patterns. The implementation resulted in improved development efficiency, better user experience consistency, and increased conversion rates.',
+    description: 'Built complete front-end for AI-powered chatbot across web and mobile platforms. Designed conversation UX, handled request/response flow, and collaborated with backend/AI teams.',
+    longDescription: 'I built the entire front-end for an AI-powered chatbot that works seamlessly across web and mobile platforms. This project showcases my ability to design intuitive conversation interfaces and handle complex state management for real-time AI interactions.',
+    context: 'Troutwood needed an AI chatbot to help users get instant answers to financial questions. The interface needed to feel natural, handle errors gracefully, and work consistently across platforms.',
+    problem: 'No existing chatbot interface. Needed to design conversation UX from scratch, handle typing states, loading/error states, and ensure consistent experience across web and mobile.',
+    whatIDid: [
+      'Designed and built complete front-end UI for web and mobile platforms',
+      'Implemented conversation flow with typing indicators and message formatting',
+      'Built request/response handling with proper error states and loading indicators',
+      'Created multi-platform consistent UI components',
+      'Designed message formatting system for code blocks, lists, and rich text',
+      'Handled edge cases: network errors, timeout states, empty responses',
+      'Collaborated with backend/AI teams on API integration and response structure'
+    ],
+    result: 'Successfully launched chatbot that provides instant, helpful responses. Users can get answers to financial questions quickly, improving engagement and reducing support burden.',
+    outcome: 'Launched AI chatbot with seamless UX across platforms. Improved user engagement and reduced support queries.',
     image: '/api/placeholder/600/400',
-    tags: ['Design Systems', 'Figma', 'Component Library', 'Brand Consistency'],
-    year: '2022 - 2024',
-    role: 'Design System Lead',
-    tools: ['Figma', 'HTML/CSS', 'JavaScript', 'Design Tokens'],
-    highlights: [
-      'Created comprehensive component library',
-      'Established design tokens and guidelines',
-      'Improved development workflow efficiency',
-      'Increased brand consistency across platforms'
-    ]
+    tags: ['React', 'React Native', 'UI/UX Design', 'API Integration', 'State Management'],
+    year: '2024',
+    role: 'Front-End Developer • UI/UX Designer',
+    tools: ['React', 'React Native', 'JavaScript', 'Figma', 'API Integration'],
+    featured: true
   },
   {
     id: 3,
-    slug: 'ai-assisted-design-workflows',
-    title: 'AI-Assisted Design Workflows',
-    category: 'web',
-    description: 'Integrated AI tools (ChatGPT, Cursor) into content generation, wireframing, and design ideation workflows to accelerate prototyping and enhance creative exploration.',
-    longDescription: 'I integrated AI tools like ChatGPT and Cursor into my design and development workflow to accelerate ideation, content generation, and prototyping. This innovative approach has allowed me to explore more design variations, generate content faster, and prototype ideas more efficiently while maintaining high quality standards.',
+    slug: 'react-native-app-features',
+    title: 'React Native App Features',
+    category: 'mobile',
+    description: 'Built key features and components for Troutwood mobile app using React Native. Owned state management, API integration, and polished UX for multiple user-facing features.',
+    longDescription: 'I developed several key features for the Troutwood mobile app using React Native. This work demonstrates my ability to build native-feeling mobile experiences, handle complex state management, and create polished, responsive UI components.',
+    context: 'The Troutwood mobile app needed new features to improve user engagement and provide better financial education tools on mobile devices.',
+    problem: 'App needed new features built quickly with consistent UX. Required proper state management, API integration, and responsive design that works across iOS and Android.',
+    whatIDid: [
+      'Built multiple screens and components using React Native',
+      'Implemented state management for complex user flows',
+      'Integrated REST APIs with proper error handling and loading states',
+      'Created responsive layouts that work across iOS and Android',
+      'Polished UX with smooth animations and transitions',
+      'Handled edge cases: offline states, slow networks, data validation',
+      'Collaborated with design and backend teams on feature specifications'
+    ],
+    result: 'Successfully shipped multiple app features that improved user engagement and provided better mobile experience. Features work seamlessly across platforms with polished UX.',
+    outcome: 'Shipped multiple app features with consistent UX. Improved mobile user engagement.',
     image: '/api/placeholder/600/400',
-    tags: ['AI Tools', 'Prototyping', 'Workflow Optimization', 'ChatGPT'],
-    year: '2024',
-    role: 'Designer & Developer',
-    tools: ['ChatGPT', 'Cursor', 'Figma', 'Prototyping Tools'],
-    highlights: [
-      'Streamlined design ideation process',
-      'Accelerated content generation',
-      'Enhanced prototyping capabilities',
-      'Maintained quality while increasing speed'
-    ]
+    tags: ['React Native', 'Mobile Development', 'State Management', 'API Integration'],
+    year: '2023 - Present',
+    role: 'Mobile Developer • Feature Owner',
+    tools: ['React Native', 'JavaScript', 'State Management', 'REST APIs'],
+    featured: true
   },
   {
     id: 4,
-    slug: 'animations-adobe-lottie',
-    title: 'Animations with Adobe & Lottie',
+    slug: 'animations-graphic-design',
+    title: 'Animations & Graphic Design',
     category: 'animation',
-    description: 'Created animations and microinteractions using Adobe Animate, Adobe After Effects, Lottie, and GSAP. Developed engaging motion graphics that humanized complex topics and enhanced user experiences across web and social platforms.',
-    longDescription: 'I create engaging animations and microinteractions using a combination of Adobe Animate, Adobe After Effects, Lottie, and GSAP. These animations help humanize complex financial topics, making them more accessible and engaging for educational audiences. The animations are optimized for web performance and work seamlessly across different platforms.',
+    description: 'Created engaging animations and microinteractions using Adobe Animate, Adobe After Effects, Adobe Character Animator, Lottie, and GSAP. Developed motion graphics and animated company mascot that humanize complex topics and enhance user experiences.',
+    longDescription: 'I create engaging animations and microinteractions using a combination of Adobe Animate, Adobe After Effects, Adobe Character Animator, Lottie, and GSAP. I animated the company mascot using Character Animator, bringing personality and life to brand communications. These animations help humanize complex financial topics, making them more accessible and engaging for educational audiences. The animations are optimized for web performance and work seamlessly across different platforms.',
+    context: 'Troutwood needed engaging animations and motion graphics to make complex financial concepts more accessible and visually appealing. Animations needed to work across web and mobile platforms while maintaining performance.',
+    problem: 'Static content and interfaces needed more engaging, dynamic elements. Complex financial concepts required visual storytelling through animation to improve user understanding and engagement.',
+    whatIDid: [
+      'Animated company mascot using Adobe Character Animator, bringing personality and life to brand communications',
+      'Created Lottie animations for web integration using Adobe After Effects',
+      'Developed motion graphics and microinteractions using GSAP and JavaScript',
+      'Built animations in Adobe Animate for interactive web experiences',
+      'Optimized animations for web performance and file size',
+      'Designed animation sequences that enhance UX without overwhelming users',
+      'Integrated animations seamlessly into existing web and mobile interfaces',
+      'Maintained brand consistency across all animated content'
+    ],
+    result: 'Created multiple engaging animations that improve user engagement and make complex topics more accessible. Animations enhance the user experience across web and mobile platforms while maintaining fast load times.',
+    outcome: 'Developed engaging animations that improve user engagement and make complex financial concepts more accessible and visually appealing.',
     image: '/api/placeholder/600/400',
-    tags: ['Adobe After Effects', 'Adobe Animate', 'Lottie', 'GSAP', 'Motion Graphics'],
+    tags: ['Adobe After Effects', 'Adobe Animate', 'Adobe Character Animator', 'Lottie', 'GSAP', 'Motion Graphics', 'Animation', 'Character Animation'],
     year: '2021 - Present',
-    role: 'Motion Designer',
-    tools: ['Adobe After Effects', 'Adobe Animate', 'Lottie', 'GSAP', 'JavaScript'],
-    highlights: [
-      'Created educational animations that simplify complex topics',
-      'Optimized animations for web performance',
-      'Developed reusable animation libraries',
-      'Enhanced user engagement through motion'
-    ]
+    role: 'Motion Designer • Animator',
+    tools: ['Adobe After Effects', 'Adobe Animate', 'Adobe Character Animator', 'Lottie', 'GSAP', 'JavaScript'],
+    lottieAnimations: [
+      '6213873c-fb3b-4d24-b088-07820781f6c0',
+      '439cd762-9102-4912-8229-575fe6b7bf06',
+      'fc1dd80b-ba08-46b2-acec-c3ff3b4b60f7',
+      '225c8e6e-50a2-478a-b3c1-be58e43f6764',
+      '4e702e65-a12e-4397-a49d-2a5ccdcd518a'
+    ],
+    videos: [
+      '/images/animations/findtry2.mp4',
+      '/images/animations/finn-wink.mov',
+      '/images/animations/tw-app-page-graphic.mp4'
+    ],
+    featured: true
   },
   {
-    id: 7,
-    slug: 'social-media-newsletter-design',
-    title: 'Social Media & Newsletter Design',
+    id: 5,
+    slug: 'creative-marketing-design',
+    title: 'Creative / Marketing Design Work',
     category: 'graphic',
-    description: 'Design and create visual content for social media campaigns and email newsletters. Develop cohesive brand visuals that engage audiences and maintain consistency across digital marketing channels.',
-    longDescription: 'I design and create all visual content for Troutwood\'s social media campaigns and email newsletters. This includes creating cohesive brand visuals, designing engaging graphics, and maintaining consistency across all digital marketing channels. My designs help communicate complex financial concepts in an accessible and visually appealing way.',
-    image: '/images/Jump$tart Post.png',
-    tags: ['Social Media Design', 'Newsletter Design', 'Brand Design', 'Content Creation'],
-    year: '2021 - Present',
-    role: 'Graphic Designer & Content Creator',
-    tools: ['Canva', 'Adobe Creative Suite', 'Figma', 'Email Design Tools'],
-    highlights: [
-      'Created engaging social media content',
-      'Designed responsive email newsletters',
-      'Maintained brand consistency across channels',
-      'Increased engagement through visual storytelling'
-    ],
-    images: [
-      '/images/Jump$tart Post.png'
-    ],
-    brandContext: 'Recent social media content uses Troutwood\'s new brand identity following our brand redesign. Earlier designs featured our previous branding.'
-  },
-  {
-    id: 9,
-    slug: 'branded-materials-flyers',
-    title: 'Branded Materials & Flyers',
-    category: 'graphic',
-    description: 'Design and create branded flyers, PDFs, and print materials for marketing campaigns, events, and educational purposes. Develop cohesive visual materials that maintain brand consistency.',
-    longDescription: 'I design and create branded flyers, PDFs, and print materials for Troutwood\'s marketing campaigns, events, and educational initiatives. These materials include event flyers, informational PDFs, promotional materials, and other print collateral. Each piece is designed to maintain brand consistency while effectively communicating key messages to target audiences.',
-    image: '/api/placeholder/600/400',
-    tags: ['Print Design', 'Flyer Design', 'PDF Design', 'Brand Design', 'Layout Design'],
-    year: '2021 - Present',
-    role: 'Graphic Designer',
-    tools: ['Adobe Creative Suite', 'Canva', 'Figma', 'PDF Design Tools'],
-    highlights: [
-      'Created branded flyers for events and campaigns',
-      'Designed informational and promotional PDFs',
+    description: 'Designed visual content for product launches and social growth. Created social graphics, flyers, campaign visuals, and UI-support graphics aligned with brand system.',
+    longDescription: 'I design and create all visual content for Troutwood\'s marketing campaigns, social media, and brand materials. This includes social graphics, email newsletters, event flyers, campaign visuals, and UI-support graphics. All work is aligned with our brand system and designed to communicate complex financial concepts in an accessible, visually appealing way.',
+    context: 'Troutwood needed consistent, engaging visual content for marketing campaigns, social media growth, and product launches. Content needed to align with brand identity and effectively communicate financial education concepts.',
+    problem: 'Needed cohesive visual content across multiple channels. Social media, email newsletters, and marketing materials required consistent branding and engaging design that could communicate complex topics simply.',
+    whatIDid: [
+      'Designed social media graphics for campaigns and product launches',
+      'Created responsive email newsletter templates and designs',
+      'Developed event flyers and promotional materials',
+      'Designed campaign visuals for marketing initiatives',
+      'Created UI-support graphics and illustrations',
       'Maintained brand consistency across all materials',
-      'Developed print-ready designs for various formats'
+      'Produced video content and motion graphics for campaigns'
+    ],
+    result: 'Created cohesive visual identity across all marketing channels. Social engagement improved, and brand recognition increased through consistent, high-quality design work.',
+    outcome: 'Improved social engagement and brand recognition through consistent, high-quality design across all marketing channels.',
+    image: '/images/social posts/Jump$tart Post.png',
+    tags: ['Graphic Design', 'Social Media Design', 'Brand Design', 'Marketing Materials'],
+    year: '2021 - Present',
+    role: 'Graphic Designer • Content Creator',
+    tools: ['Canva', 'Adobe Creative Suite', 'Figma', 'Adobe After Effects'],
+    images: [
+      '/images/social posts/Jump$tart Post.png',
+      '/images/social posts/1100+ New Companies added.png',
+      '/images/social posts/feature-spotlight-college2.png',
+      '/images/social posts/finmoji-post.png',
+      '/images/social posts/other-try2.png',
+      '/images/social posts/tw-panthersfw.png',
+      '/images/social posts/tw-pro-image.png',
+      '/images/newsletters/Fall Update.png',
+      '/images/newsletters/option-webbased2.png',
+      '/images/newsletters/Plaid - Pro Users.png',
+      '/images/newsletters/Transactions Updates.png'
+    ],
+    videos: [
+      'https://www.youtube.com/watch?v=qgRGZvt5mU4',
+      'https://www.youtube.com/watch?v=jnk-MFdH4R4',
+      'https://www.youtube.com/watch?v=GICyaLbbXK8',
+      'https://www.youtube.com/watch?v=F2FP6aDbjp8',
+      'https://www.youtube.com/watch?v=gCRt_6pCS6I',
+      'https://www.youtube.com/watch?v=_jo79P-SnDk',
+      'https://www.youtube.com/watch?v=ld4Ek_HJ9jY',
+      '/images/social-videos/forclips.mp4',
+      '/images/social-videos/linkedin-whatistwapp.mp4',
+      '/images/videos/atlas first draft.mp4',
+      '/videos/junehome.mov'
     ],
     pdfs: [
       {
@@ -156,76 +261,7 @@ export const projects: Project[] = [
         url: '/pdfs/Wellness Page 3.pdf'
       }
     ],
-    brandContext: 'Recent branded materials use Troutwood\'s new brand identity. Some older materials featured our previous branding system.'
-  },
-  {
-    id: 8,
-    slug: 'video-production-editing',
-    title: 'Video Production & Editing',
-    category: 'animation',
-    description: 'Create and edit video content for marketing and educational purposes. Combine video production skills with motion graphics to produce engaging multimedia content.',
-    longDescription: 'I produce and edit video content for marketing campaigns and educational materials. Combining video production skills with motion graphics, I create engaging multimedia content that effectively communicates messages and educates audiences. This includes planning, shooting, editing, and post-production work. All videos are filmed and edited by me, showcasing my ability to handle the complete video production pipeline.',
-    image: '/api/placeholder/600/400',
-    tags: ['Video Production', 'Video Editing', 'Motion Graphics', 'Multimedia'],
-    year: '2021 - Present',
-    role: 'Video Producer & Editor',
-    tools: ['Adobe Premiere Pro', 'Adobe After Effects', 'Video Editing Software'],
-    highlights: [
-      'Produced educational video content',
-      'Created marketing video campaigns',
-      'Combined video with motion graphics',
-      'Enhanced storytelling through multimedia',
-      'Filmed and edited all video content independently'
-    ],
-    videos: [
-     'https://www.youtube.com/watch?v=qgRGZvt5mU4',
-      'https://www.youtube.com/watch?v=jnk-MFdH4R4',
-      'https://www.youtube.com/watch?v=GICyaLbbXK8',
-      'https://www.youtube.com/watch?v=F2FP6aDbjp8',
-      'https://www.youtube.com/watch?v=gCRt_6pCS6I',
-      'https://www.youtube.com/watch?v=_jo79P-SnDk',
-      'https://www.youtube.com/watch?v=ld4Ek_HJ9jY'
-    ]
-  },
-  {
-    id: 5,
-    slug: 'brand-visuals-prototypes',
-    title: 'Brand Visuals & Prototypes',
-    category: 'graphic',
-    description: 'Developed early brand visuals, storyboards, and prototype interfaces for investor presentations during Troutwood\'s startup phase at Carnegie Mellon University.',
-    longDescription: 'During Troutwood\'s early startup phase at Carnegie Mellon University\'s Swartz Center for Entrepreneurship, I developed the initial brand visuals, created storyboards, and designed prototype interfaces for investor presentations. This foundational work helped establish Troutwood\'s visual identity and communicate the product vision effectively.',
-    image: '/api/placeholder/600/400',
-    tags: ['Branding', 'Prototyping', 'Storyboarding', 'Visual Design'],
-    year: '2019 - 2021',
-    role: 'Brand Designer & Prototyper',
-    tools: ['Figma', 'Adobe Creative Suite', 'Prototyping Tools'],
-    highlights: [
-      'Established initial brand identity',
-      'Created investor presentation materials',
-      'Designed early product prototypes',
-      'Developed visual storytelling framework'
-    ]
-  },
-  {
-    id: 6,
-    slug: 'analytics-integration-design-impact',
-    title: 'Analytics Integration & Design Impact',
-    category: 'web',
-    description: 'Collaborated with marketing and product teams to integrate analytics and measure design impact. Completed SEO certification courses and implemented SEO optimizations that significantly improved website traffic. Translated product requirements into interactive web features that increase accessibility and user engagement.',
-    longDescription: 'I collaborated closely with marketing and product teams to integrate analytics and measure the impact of design decisions. After completing SEO certification courses (Google SEO Capstone Project and Optimizing a Website for Google Search from UC Davis), I applied SEO best practices to the Troutwood website, resulting in a significant increase in website traffic. By translating product requirements into interactive web features, I helped increase accessibility and improve user engagement metrics such as session duration, pages per session, and return visitor rates. This data-driven approach ensures that design decisions are backed by user insights and measurable outcomes.',
-    image: '/api/placeholder/600/400',
-    tags: ['Analytics', 'SEO', 'Product Strategy', 'Accessibility', 'Data-Driven Design'],
-    year: '2022 - Present',
-    role: 'Product Designer & Analyst',
-    tools: ['Google Analytics', 'SEO Optimization', 'Data Analysis Tools', 'A/B Testing', 'Accessibility Tools'],
-    highlights: [
-      'Completed SEO certification courses (UC Davis) and applied learnings to website',
-      'Significantly improved website traffic through SEO optimizations',
-      'Integrated analytics into design process',
-      'Measured and improved design impact using user engagement metrics',
-      'Increased accessibility across platform',
-      'Improved user engagement (session duration, pages per session, return visitor rates)'
-    ]
+    featured: true
   },
 ]
 

@@ -97,6 +97,7 @@ export default function WorkDetailPage() {
 
   const categoryLabels: { [key: string]: string } = {
     web: 'Web & UX',
+    mobile: 'Mobile',
     animation: 'Animations',
     graphic: 'Brand & Design',
   }
@@ -147,23 +148,39 @@ export default function WorkDetailPage() {
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Video Gallery</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {project.videos.map((videoUrl, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + index * 0.1 }}
-                  className="rounded-2xl overflow-hidden shadow-xl bg-gray-900"
-                >
-                  <iframe
-                    src={getYouTubeEmbedUrl(videoUrl)}
-                    title={`${project.title} - Video ${index + 1}`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full aspect-video"
-                  />
-                </motion.div>
-              ))}
+              {project.videos.map((videoUrl, index) => {
+                const isYouTube = videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be')
+                const isLocalVideo = videoUrl.startsWith('/') && (videoUrl.endsWith('.mp4') || videoUrl.endsWith('.mov'))
+                
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 + index * 0.1 }}
+                    className="rounded-2xl overflow-hidden shadow-xl bg-gray-900"
+                  >
+                    {isYouTube ? (
+                      <iframe
+                        src={getYouTubeEmbedUrl(videoUrl)}
+                        title={`${project.title} - Video ${index + 1}`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full aspect-video"
+                      />
+                    ) : isLocalVideo ? (
+                      <video
+                        src={encodeImagePath(videoUrl)}
+                        controls
+                        className="w-full aspect-video"
+                        title={`${project.title} - Video ${index + 1}`}
+                      >
+                        Your browser does not support the video tag.
+                      </video>
+                    ) : null}
+                  </motion.div>
+                )
+              })}
             </div>
           </motion.div>
         ) : project.images && project.images.length > 0 ? (
@@ -213,6 +230,7 @@ export default function WorkDetailPage() {
             <div className="aspect-video flex items-center justify-center">
               <span className="text-6xl opacity-50">
                 {project.category === 'web' && '🌐'}
+                {project.category === 'mobile' && '📱'}
                 {project.category === 'animation' && '🎬'}
                 {project.category === 'graphic' && '🎨'}
               </span>
@@ -223,22 +241,193 @@ export default function WorkDetailPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">About This Project</h2>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                {project.longDescription}
-              </p>
-            </motion.div>
+            {project.longDescription && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">Overview</h2>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  {project.longDescription}
+                </p>
+              </motion.div>
+            )}
+
+            {project.whatIOwned && project.whatIOwned.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.22 }}
+                className="bg-purple-50 border-l-4 border-purple-500 rounded-lg p-6"
+              >
+                <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <span className="text-purple-600">What I Owned</span>
+                </h2>
+                <ul className="space-y-3">
+                  {project.whatIOwned.map((item, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <span className="w-2 h-2 bg-purple-600 rounded-full mt-2 flex-shrink-0"></span>
+                      <span className="text-lg text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            )}
+
+            {project.problemsAndSolutions && project.problemsAndSolutions.length > 0 ? (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.25 }}
+                className="space-y-6"
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Key Problems & Solutions</h2>
+                {project.problemsAndSolutions.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.25 + index * 0.1 }}
+                    className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-primary-300 transition-colors"
+                  >
+                    <div className="mb-4">
+                      <h3 className="text-lg font-semibold text-red-600 mb-2">Problem {index + 1}</h3>
+                      <p className="text-gray-700">{item.problem}</p>
+                    </div>
+                    <div className="mb-4">
+                      <h3 className="text-lg font-semibold text-blue-600 mb-2">Solution</h3>
+                      <p className="text-gray-700">{item.solution}</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-green-600 mb-2">Outcome</h3>
+                      <p className="text-gray-700">{item.outcome}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            ) : project.problem && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.25 }}
+                className="bg-red-50 border-l-4 border-red-500 rounded-lg p-6"
+              >
+                <h2 className="text-2xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                  <span className="text-red-600">Problem</span>
+                </h2>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  {project.problem}
+                </p>
+              </motion.div>
+            )}
+
+            {project.whatIDid && project.whatIDid.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="bg-blue-50 border-l-4 border-blue-500 rounded-lg p-6"
+              >
+                <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <span className="text-blue-600">What I Did</span>
+                </h2>
+                <ul className="space-y-3">
+                  {project.whatIDid.map((item, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>
+                      <span className="text-lg text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            )}
+
+            {project.result && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="bg-green-50 border-l-4 border-green-500 rounded-lg p-6"
+              >
+                <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <span className="text-green-600">Results & Impact (Site-Wide)</span>
+                </h2>
+                <div className="text-lg text-gray-700 leading-relaxed space-y-4">
+                  {project.result.split('\n\n').map((paragraph, index) => {
+                    // Check if paragraph starts with bullet points
+                    if (paragraph.trim().startsWith('•') || paragraph.trim().startsWith('Results:')) {
+                      const lines = paragraph.split('\n')
+                      return (
+                        <div key={index} className="space-y-2">
+                          {lines.map((line, lineIndex) => {
+                            if (line.trim().startsWith('•')) {
+                              return (
+                                <div key={lineIndex} className="flex items-start gap-2">
+                                  <span className="text-green-600 mt-1">•</span>
+                                  <span>{line.replace('•', '').trim()}</span>
+                                </div>
+                              )
+                            } else if (line.trim().startsWith('Results:')) {
+                              return (
+                                <h3 key={lineIndex} className="font-semibold text-gray-900 mt-4 mb-2">
+                                  {line.trim()}
+                                </h3>
+                              )
+                            } else if (line.trim()) {
+                              return <p key={lineIndex}>{line.trim()}</p>
+                            }
+                            return null
+                          })}
+                        </div>
+                      )
+                    } else {
+                      return <p key={index}>{paragraph.trim()}</p>
+                    }
+                  })}
+                </div>
+              </motion.div>
+            )}
+
+            {project.takeaways && project.takeaways.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.45 }}
+                className="bg-amber-50 border-l-4 border-amber-500 rounded-lg p-6"
+              >
+                <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <span className="text-amber-600">Takeaways</span>
+                </h2>
+                <ul className="space-y-3">
+                  {project.takeaways.map((item, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <span className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></span>
+                      <span className="text-lg text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            )}
+
+            {!project.problem && project.longDescription && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">About This Project</h2>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  {project.longDescription}
+                </p>
+              </motion.div>
+            )}
 
             {project.highlights && project.highlights.length > 0 && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
+                transition={{ delay: 0.4 }}
               >
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">Key Highlights</h2>
                 <ul className="space-y-3">
@@ -269,31 +458,93 @@ export default function WorkDetailPage() {
               </motion.div>
             )}
 
-            {project.images && project.images.length > 0 && (
+            {project.lottieAnimations && project.lottieAnimations.length > 0 && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35 }}
               >
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Project Images</h2>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Lottie Animations</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {project.images.map((imageUrl, index) => (
+                  {project.lottieAnimations.map((animationId, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.35 + index * 0.1 }}
-                      className="rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:border-primary-200 transition-all group cursor-pointer"
-                      onClick={() => {
-                        setSelectedImage(encodeImagePath(imageUrl))
-                        setSelectedImageIndex(index)
-                      }}
+                      className="rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:border-primary-200 transition-all bg-white group"
                     >
-                      <div className="aspect-video bg-gray-100 overflow-hidden">
-                        <img
-                          src={encodeImagePath(imageUrl)}
-                          alt={`${project.title} - Image ${index + 1}`}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      <a
+                        href={`https://app.lottiefiles.com/animation/${animationId}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <div className="aspect-video bg-gray-50 flex items-center justify-center relative overflow-hidden">
+                          <iframe
+                            src={`https://lottie.host/embed/${animationId}`}
+                            title={`${project.title} - Animation ${index + 1}`}
+                            className="w-full h-full border-0"
+                            allowFullScreen
+                            onError={(e) => {
+                              // If embed fails, show a placeholder with link
+                              const target = e.target as HTMLIFrameElement
+                              const parent = target.parentElement
+                              if (parent) {
+                                parent.innerHTML = `
+                                  <div class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-primary-50 to-accent-50 p-4">
+                                    <p class="text-gray-600 text-sm mb-2">Click to view animation</p>
+                                    <p class="text-primary-600 text-xs">View on LottieFiles →</p>
+                                  </div>
+                                `
+                              }
+                            }}
+                          />
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <span className="text-white text-sm font-semibold bg-black/50 px-4 py-2 rounded">
+                              View on LottieFiles →
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+
+            {project.images && project.images.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Project Images</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {project.images.map((imageUrl, index) => {
+                    const isMockup = project.slug === 'troutwood-website' || imageUrl.includes('idea') || imageUrl.includes('V2') || imageUrl.includes('IRALogix') || imageUrl.includes('LandingIdea')
+                    return (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 + index * 0.1 }}
+                        className="rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:border-primary-200 transition-all group cursor-pointer relative"
+                        onClick={() => {
+                          setSelectedImage(encodeImagePath(imageUrl))
+                          setSelectedImageIndex(index)
+                        }}
+                      >
+                        {isMockup && (
+                          <div className="absolute top-2 right-2 z-10 px-2 py-1 bg-amber-500 text-white text-xs font-semibold rounded">
+                            Mockup
+                          </div>
+                        )}
+                        <div className="aspect-video bg-gray-100 overflow-hidden">
+                          <img
+                            src={encodeImagePath(imageUrl)}
+                            alt={`${project.title} - Image ${index + 1}`}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           onError={(e) => {
                             console.error('Image failed to load:', e.currentTarget.src, 'Original:', imageUrl)
                             // Try different encoding approaches as fallback
@@ -310,9 +561,10 @@ export default function WorkDetailPage() {
                             }
                           }}
                         />
-                      </div>
-                    </motion.div>
-                  ))}
+                        </div>
+                      </motion.div>
+                    )
+                  })}
                 </div>
               </motion.div>
             )}
@@ -393,6 +645,18 @@ export default function WorkDetailPage() {
               >
                 <h3 className="text-sm font-semibold text-gray-500 uppercase mb-2">Role</h3>
                 <p className="text-lg font-semibold text-gray-900">{project.role}</p>
+              </motion.div>
+            )}
+
+            {project.outcome && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.25 }}
+                className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-200"
+              >
+                <h3 className="text-sm font-semibold text-green-700 uppercase mb-2">Outcome</h3>
+                <p className="text-base text-gray-900 leading-relaxed">{project.outcome}</p>
               </motion.div>
             )}
 
@@ -549,6 +813,7 @@ export default function WorkDetailPage() {
                       <div className="absolute inset-0 flex items-center justify-center">
                         <span className="text-4xl opacity-60 group-hover:scale-110 transition-transform">
                           {relatedProject.category === 'web' && '🌐'}
+                          {relatedProject.category === 'mobile' && '📱'}
                           {relatedProject.category === 'animation' && '🎬'}
                           {relatedProject.category === 'graphic' && '🎨'}
                         </span>

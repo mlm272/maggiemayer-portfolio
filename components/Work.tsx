@@ -42,11 +42,13 @@ export default function Work({ setActiveSection }: WorkProps) {
   const categories = [
     { id: 'all', label: 'All' },
     { id: 'web', label: 'Web & UX' },
+    { id: 'mobile', label: 'Mobile' },
     { id: 'animation', label: 'Animations' },
-    { id: 'graphic', label: 'Brand & Design' },
+    { id: 'graphic', label: 'Design' },
   ]
 
-  const filteredProjects = getProjectsByCategory(filter)
+  const allProjects = getProjectsByCategory(filter)
+  const filteredProjects = allProjects.filter(project => project.featured !== false)
 
   return (
     <section
@@ -120,6 +122,7 @@ export default function Work({ setActiveSection }: WorkProps) {
                     <div className="absolute inset-0 flex items-center justify-center">
                       <span className="text-6xl opacity-60 group-hover:scale-110 transition-transform duration-300">
                         {project.category === 'web' && '🌐'}
+                        {project.category === 'mobile' && '📱'}
                         {project.category === 'animation' && '🎬'}
                         {project.category === 'graphic' && '🎨'}
                       </span>
