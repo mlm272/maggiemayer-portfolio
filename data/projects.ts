@@ -98,12 +98,6 @@ export const projects: Project[] = [
       '/images/website design photos/IRALogix-2.png',
       '/images/website design photos/LandingIdea4.png'
     ],
-    videos: [
-      {
-        url: '/images/website design photos/junehome.mov',
-        description: 'Website scroll-through showcasing GSAP animations'
-      }
-    ],
     links: [
       {
         label: 'View Live Website',

@@ -96,7 +96,7 @@ export default function Contact({ setActiveSection }: ContactProps) {
 
             <div className="space-y-5">
               <motion.a
-                href="mailto:maggiemayer@email.com"
+                href="mailto:maggielouisemayer@gmail.com"
                 whileHover={{ x: 5 }}
                 className="flex items-start space-x-4 p-4 rounded-xl hover:bg-white transition-colors group"
               >
@@ -106,7 +106,7 @@ export default function Contact({ setActiveSection }: ContactProps) {
                 <div>
                   <h4 className="font-bold text-gray-900 mb-1">Email</h4>
                   <p className="text-primary-600 hover:text-primary-700 font-medium">
-                    maggiemayer@email.com
+                    maggielouisemayer@gmail.com
                   </p>
                 </div>
               </motion.a>
