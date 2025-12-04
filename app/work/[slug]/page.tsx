@@ -1,11 +1,11 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { getProjectBySlug, projects } from '@/data/projects'
 import Link from 'next/link'
-import Lottie from 'lottie-react'
+import Lottie, { LottieRefCurrentProps } from 'lottie-react'
 
 // Helper function to encode image paths with special characters
 function encodeImagePath(path: string): string {
@@ -56,18 +56,38 @@ function LottieAnimationCard({ animationId, projectTitle, index }: { animationId
   const [animationData, setAnimationData] = useState<any>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
+  const lottieRef = useRef<LottieRefCurrentProps>(null)
+
+  // Get description and speed for this animation
+  const animationInfo: { [key: string]: { path: string; description: string; speed?: number } } = {
+    '6213873c-fb3b-4d24-b088-07820781f6c0': {
+      path: '/images/animations/json/ask finn 11.38.44 AM.json',
+      description: 'Ask Finn - Website chatbot animation (Created with After Effects & Lottie)',
+      speed: 0.5 // Slow down to 50% speed
+    },
+    '439cd762-9102-4912-8229-575fe6b7bf06': {
+      path: '/images/animations/json/Comp 1.json',
+      description: 'Website animation (Created with After Effects & Lottie)'
+    },
+    'fc1dd80b-ba08-46b2-acec-c3ff3b4b60f7': {
+      path: '/images/animations/json/finpulse blue.json',
+      description: 'FinPulse Blue - App animation (Created with After Effects & Lottie)'
+    },
+    '225c8e6e-50a2-478a-b3c1-be58e43f6764': {
+      path: '/images/animations/json/finpulse green.json',
+      description: 'FinPulse Green - App animation (Created with After Effects & Lottie)'
+    },
+    '4e702e65-a12e-4397-a49d-2a5ccdcd518a': {
+      path: '/images/animations/json/loading dots.json',
+      description: 'Loading Dots - App loading animation (Created with After Effects & Lottie)'
+    },
+  }
+  const info = animationInfo[animationId] || { path: `/images/animations/json/${animationId}.json`, description: 'Animation' }
+  const description = info.description
+  const animationSpeed = info.speed || 1
 
   useEffect(() => {
-    // Map animation IDs to local JSON file paths
-    const animationFileMap: { [key: string]: string } = {
-      '6213873c-fb3b-4d24-b088-07820781f6c0': '/images/animations/json/ask finn 11.38.44 AM.json',
-      '439cd762-9102-4912-8229-575fe6b7bf06': '/images/animations/json/Comp 1.json',
-      'fc1dd80b-ba08-46b2-acec-c3ff3b4b60f7': '/images/animations/json/finpulse blue.json',
-      '225c8e6e-50a2-478a-b3c1-be58e43f6764': '/images/animations/json/finpulse green.json',
-      '4e702e65-a12e-4397-a49d-2a5ccdcd518a': '/images/animations/json/loading dots.json',
-    }
-
-    const jsonPath = animationFileMap[animationId] || `/images/animations/json/${animationId}.json`
+    const jsonPath = info.path
     
     // Encode the path to handle spaces and special characters
     const encodedPath = encodeImagePath(jsonPath)
@@ -88,48 +108,50 @@ function LottieAnimationCard({ animationId, projectTitle, index }: { animationId
         setError(true)
         setLoading(false)
       })
-  }, [animationId])
+  }, [animationId, info.path])
+
+  // Set speed after animation data is loaded
+  useEffect(() => {
+    if (animationData && lottieRef.current && animationSpeed !== 1) {
+      setTimeout(() => {
+        if (lottieRef.current) {
+          lottieRef.current.setSpeed(animationSpeed)
+        }
+      }, 100)
+    }
+  }, [animationData, animationSpeed])
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.35 + index * 0.1 }}
-      className="rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:border-primary-200 transition-all bg-white group"
+      className="rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:border-primary-200 transition-all bg-white"
     >
-      <a
-        href={`https://lottiefiles.com/animations/${animationId}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block"
-      >
-        <div className="aspect-video bg-gray-50 flex items-center justify-center relative overflow-hidden">
-          {loading && (
-            <div className="w-full h-full flex items-center justify-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
-            </div>
-          )}
-          {error && (
-            <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-primary-50 to-accent-50 p-4">
-              <p className="text-gray-600 text-sm mb-2">Click to view animation</p>
-              <p className="text-primary-600 text-xs">View on LottieFiles →</p>
-            </div>
-          )}
-          {animationData && !loading && !error && (
-            <Lottie
-              animationData={animationData}
-              loop={true}
-              autoplay={true}
-              className="w-full h-full"
-            />
-          )}
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 pointer-events-none">
-            <span className="text-white text-sm font-semibold bg-black/50 px-4 py-2 rounded">
-              View on LottieFiles →
-            </span>
+      <div className="aspect-video bg-gray-50 flex items-center justify-center relative overflow-hidden">
+        {loading && (
+          <div className="w-full h-full flex items-center justify-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
           </div>
-        </div>
-      </a>
+        )}
+        {error && (
+          <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-primary-50 to-accent-50 p-4">
+            <p className="text-gray-600 text-sm">Animation failed to load</p>
+          </div>
+        )}
+        {animationData && !loading && !error && (
+          <Lottie
+            lottieRef={lottieRef}
+            animationData={animationData}
+            loop={true}
+            autoplay={true}
+            className="w-full h-full"
+          />
+        )}
+      </div>
+      <div className="p-4">
+        <p className="text-gray-600 text-sm">{description}</p>
+      </div>
     </motion.div>
   )
 }
@@ -232,7 +254,11 @@ export default function WorkDetailPage() {
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Video Gallery</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {project.videos.map((videoUrl, index) => {
+              {project.videos.map((videoItem, index) => {
+                // Handle both string URLs and objects with url/description
+                const videoUrl = typeof videoItem === 'string' ? videoItem : videoItem.url
+                const videoDescription = typeof videoItem === 'object' ? videoItem.description : undefined
+                
                 const isYouTube = videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be')
                 const isLocalVideo = videoUrl.startsWith('/') && (videoUrl.endsWith('.mp4') || videoUrl.endsWith('.mov'))
                 
@@ -242,26 +268,33 @@ export default function WorkDetailPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 + index * 0.1 }}
-                    className="rounded-2xl overflow-hidden shadow-xl bg-gray-900"
+                    className="rounded-2xl overflow-hidden shadow-xl bg-white"
                   >
-                    {isYouTube ? (
-                      <iframe
-                        src={getYouTubeEmbedUrl(videoUrl)}
-                        title={`${project.title} - Video ${index + 1}`}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="w-full aspect-video"
-                      />
-                    ) : isLocalVideo ? (
-                      <video
-                        src={encodeImagePath(videoUrl)}
-                        controls
-                        className="w-full aspect-video"
-                        title={`${project.title} - Video ${index + 1}`}
-                      >
-                        Your browser does not support the video tag.
-                      </video>
-                    ) : null}
+                    <div className="bg-gray-900">
+                      {isYouTube ? (
+                        <iframe
+                          src={getYouTubeEmbedUrl(videoUrl)}
+                          title={`${project.title} - Video ${index + 1}`}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full aspect-video"
+                        />
+                      ) : isLocalVideo ? (
+                        <video
+                          src={encodeImagePath(videoUrl)}
+                          controls
+                          className="w-full aspect-video"
+                          title={`${project.title} - Video ${index + 1}`}
+                        >
+                          Your browser does not support the video tag.
+                        </video>
+                      ) : null}
+                    </div>
+                    {videoDescription && (
+                      <div className="p-4">
+                        <p className="text-gray-600 text-sm">{videoDescription}</p>
+                      </div>
+                    )}
                   </motion.div>
                 )
               })}

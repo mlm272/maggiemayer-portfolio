@@ -11,7 +11,7 @@ export interface Project {
   role?: string
   tools?: string[]
   highlights?: string[]
-  videos?: string[]
+  videos?: (string | { url: string; description?: string })[]
   links?: { label: string; url: string }[]
   images?: string[]
   pdfs?: { label: string; url: string; thumbnail?: string }[]
@@ -96,6 +96,12 @@ export const projects: Project[] = [
       '/images/website design photos/IRALogix.png',
       '/images/website design photos/IRALogix-2.png',
       '/images/website design photos/LandingIdea4.png'
+    ],
+    videos: [
+      {
+        url: '/images/website design photos/junehome.mov',
+        description: 'Website scroll-through showcasing GSAP animations'
+      }
     ],
     links: [
       {
@@ -205,7 +211,13 @@ export const projects: Project[] = [
     ],
     result: 'Successfully shipped multiple app features that improved user engagement and provided better mobile experience. Features work seamlessly across platforms with polished UX.',
     outcome: 'Shipped multiple app features with consistent UX. Improved mobile user engagement.',
-    image: '/api/placeholder/600/400',
+    image: '/images/mobile/IMG_1726.PNG',
+    images: [
+      '/images/mobile/IMG_1726.PNG',
+      '/images/mobile/IMG_1727.PNG',
+      '/images/mobile/IMG_1728.PNG',
+      '/images/mobile/IMG_1729.PNG'
+    ],
     tags: ['React Native', 'Mobile Development', 'State Management', 'API Integration'],
     year: '2023 - Present',
     role: 'Mobile Developer • Feature Owner',
@@ -233,11 +245,14 @@ export const projects: Project[] = [
     ],
     result: 'Created multiple engaging animations that improve user engagement and make complex topics more accessible. Animations enhance the user experience across web and mobile platforms while maintaining fast load times.',
     outcome: 'Developed engaging animations that improve user engagement and make complex financial concepts more accessible and visually appealing.',
-    image: '/api/placeholder/600/400',
+    image: '/images/animation.png',
     tags: ['Adobe After Effects', 'Adobe Animate', 'Adobe Character Animator', 'Lottie', 'GSAP', 'Motion Graphics', 'Animation', 'Character Animation'],
     year: '2021 - Present',
     role: 'Motion Designer • Animator',
     tools: ['Adobe After Effects', 'Adobe Animate', 'Adobe Character Animator', 'Lottie', 'GSAP', 'JavaScript'],
+    images: [
+      '/images/animation.png'
+    ],
     lottieAnimations: [
       '6213873c-fb3b-4d24-b088-07820781f6c0',
       '439cd762-9102-4912-8229-575fe6b7bf06',
@@ -246,9 +261,18 @@ export const projects: Project[] = [
       '4e702e65-a12e-4397-a49d-2a5ccdcd518a'
     ],
     videos: [
-      '/images/animations/findtry2.mp4',
-      '/images/animations/finn-wink.mov',
-      '/images/animations/tw-app-page-graphic.mp4'
+      {
+        url: '/images/animations/findtry2.mp4',
+        description: 'Created using Rotato for the laptop animation and Adobe Character Animator for the Finn graphic. Edited in Premiere Pro.'
+      },
+      {
+        url: '/images/animations/tw-app-page-graphic.mp4',
+        description: 'Created with After Effects & Lottie for the website'
+      },
+      {
+        url: '/images/animations/Scene 1.mp4',
+        description: 'Finn animation created with Adobe Character Animator'
+      }
     ],
     featured: true
   },
