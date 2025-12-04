@@ -85,6 +85,79 @@ function getVideoType(url: string): 'youtube' | 'tiktok' | 'local' | 'other' {
   return 'other'
 }
 
+// TikTok Embed Component
+function TikTokEmbed({ url, index }: { url: string; index: number }) {
+  const embedRef = useRef<HTMLDivElement>(null)
+  const [scriptLoaded, setScriptLoaded] = useState(false)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    // Check if TikTok embed script is already loaded
+    if ((window as any).tiktokEmbed) {
+      setScriptLoaded(true)
+      return
+    }
+
+    // Check if script tag exists
+    const existingScript = document.querySelector('script[src="https://www.tiktok.com/embed.js"]')
+    
+    if (existingScript) {
+      // Script exists, wait for it to load
+      existingScript.addEventListener('load', () => {
+        setScriptLoaded(true)
+        setTimeout(() => {
+          if ((window as any).tiktokEmbed && (window as any).tiktokEmbed.lib) {
+            (window as any).tiktokEmbed.lib.render()
+          }
+        }, 100)
+      })
+      // If already loaded
+      if ((window as any).tiktokEmbed) {
+        setScriptLoaded(true)
+      }
+    } else {
+      // Load the script
+      const script = document.createElement('script')
+      script.src = 'https://www.tiktok.com/embed.js'
+      script.async = true
+      script.onload = () => {
+        setScriptLoaded(true)
+        setTimeout(() => {
+          if ((window as any).tiktokEmbed && (window as any).tiktokEmbed.lib) {
+            (window as any).tiktokEmbed.lib.render()
+          }
+        }, 100)
+      }
+      document.body.appendChild(script)
+    }
+  }, [])
+
+  const cleanUrl = url.split('?')[0]
+  const videoId = url.match(/\/video\/(\d+)/)?.[1] || ''
+
+  return (
+    <div className="w-full flex items-center justify-center bg-gray-100 p-4" style={{ minHeight: '600px' }} ref={embedRef}>
+      <blockquote
+        className="tiktok-embed"
+        cite={cleanUrl}
+        data-video-id={videoId}
+        style={{ maxWidth: '100%', minWidth: '325px' }}
+      >
+        <section>
+          <a
+            target="_blank"
+            href={cleanUrl}
+            rel="noopener noreferrer"
+          >
+            {cleanUrl}
+          </a>
+        </section>
+      </blockquote>
+    </div>
+  )
+}
+
 // Lottie Animation Card Component
 function LottieAnimationCard({ animationId, projectTitle, index }: { animationId: string; projectTitle: string; index: number }) {
   const [animationData, setAnimationData] = useState<any>(null)
@@ -326,18 +399,7 @@ export default function WorkDetailPage() {
                           className="w-full aspect-video"
                         />
                       ) : videoType === 'tiktok' ? (
-                        <div className="w-full flex items-center justify-center bg-black p-4">
-                          <iframe
-                            src={getTikTokEmbedUrl(videoUrl)}
-                            title={`${project.title} - TikTok ${index + 1}`}
-                            allow="encrypted-media"
-                            allowFullScreen
-                            className="w-full max-w-[325px] aspect-[9/16]"
-                            scrolling="no"
-                            style={{ border: 'none' }}
-                            loading="lazy"
-                          />
-                        </div>
+                        <TikTokEmbed url={videoUrl} index={index} />
                       ) : videoType === 'local' ? (
                         <video
                           src={encodeImagePath(videoUrl)}
