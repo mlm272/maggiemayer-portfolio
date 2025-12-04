@@ -3,9 +3,20 @@
 import { useState, useEffect, useRef } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { getProjectBySlug, projects } from '@/data/projects'
+import { getProjectBySlug, projects, Project } from '@/data/projects'
 import Link from 'next/link'
 import Lottie, { LottieRefCurrentProps } from 'lottie-react'
+
+// Declare TikTok embed type
+declare global {
+  interface Window {
+    tiktokEmbed?: {
+      lib: {
+        render: () => void
+      }
+    }
+  }
+}
 
 // Helper function to encode image paths with special characters
 function encodeImagePath(path: string): string {
@@ -49,6 +60,29 @@ const ArrowLeft = ({ className }: { className?: string }) => (
 function getYouTubeEmbedUrl(url: string): string {
   const videoId = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)?.[1]
   return videoId ? `https://www.youtube.com/embed/${videoId}` : url
+}
+
+// Helper function to convert TikTok URL to embed URL
+function getTikTokEmbedUrl(url: string): string {
+  // Extract video ID from TikTok URL
+  // Format: https://www.tiktok.com/@username/video/1234567890
+  const videoIdMatch = url.match(/\/video\/(\d+)/)
+  if (videoIdMatch) {
+    const videoId = videoIdMatch[1]
+    // Clean URL (remove query params)
+    const cleanUrl = url.split('?')[0]
+    // Use TikTok's embed iframe format
+    return `https://www.tiktok.com/embed/v2/${videoId}`
+  }
+  return url
+}
+
+// Helper function to detect video platform
+function getVideoType(url: string): 'youtube' | 'tiktok' | 'local' | 'other' {
+  if (url.includes('youtube.com') || url.includes('youtu.be')) return 'youtube'
+  if (url.includes('tiktok.com') || url.includes('vm.tiktok.com')) return 'tiktok'
+  if (url.startsWith('/') && (url.endsWith('.mp4') || url.endsWith('.mov'))) return 'local'
+  return 'other'
 }
 
 // Lottie Animation Card Component
@@ -164,22 +198,35 @@ export default function WorkDetailPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const [selectedImageIndex, setSelectedImageIndex] = useState<number>(0)
 
+
+  // Helper function to get all images (from categorized or regular array)
+  const getAllImages = (proj: Project | undefined): string[] => {
+    if (!proj) return []
+    if (proj.categorizedImages && proj.categorizedImages.length > 0) {
+      return proj.categorizedImages.flatMap((cat: { category: string; images: string[] }) => cat.images)
+    }
+    return proj.images || []
+  }
+
   // Handle keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && selectedImage) {
         setSelectedImage(null)
       }
-      if (selectedImage && project?.images) {
-        if (e.key === 'ArrowRight') {
-          const nextIndex = (selectedImageIndex + 1) % project.images.length
-          setSelectedImageIndex(nextIndex)
-          setSelectedImage(encodeImagePath(project.images[nextIndex]))
-        }
-        if (e.key === 'ArrowLeft') {
-          const prevIndex = (selectedImageIndex - 1 + project.images.length) % project.images.length
-          setSelectedImageIndex(prevIndex)
-          setSelectedImage(encodeImagePath(project.images[prevIndex]))
+      if (selectedImage && project) {
+        const allImages = getAllImages(project)
+        if (allImages.length > 0) {
+          if (e.key === 'ArrowRight') {
+            const nextIndex = (selectedImageIndex + 1) % allImages.length
+            setSelectedImageIndex(nextIndex)
+            setSelectedImage(encodeImagePath(allImages[nextIndex]))
+          }
+          if (e.key === 'ArrowLeft') {
+            const prevIndex = (selectedImageIndex - 1 + allImages.length) % allImages.length
+            setSelectedImageIndex(prevIndex)
+            setSelectedImage(encodeImagePath(allImages[prevIndex]))
+          }
         }
       }
     }
@@ -259,8 +306,7 @@ export default function WorkDetailPage() {
                 const videoUrl = typeof videoItem === 'string' ? videoItem : videoItem.url
                 const videoDescription = typeof videoItem === 'object' ? videoItem.description : undefined
                 
-                const isYouTube = videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be')
-                const isLocalVideo = videoUrl.startsWith('/') && (videoUrl.endsWith('.mp4') || videoUrl.endsWith('.mov'))
+                const videoType = getVideoType(videoUrl)
                 
                 return (
                   <motion.div
@@ -271,7 +317,7 @@ export default function WorkDetailPage() {
                     className="rounded-2xl overflow-hidden shadow-xl bg-white"
                   >
                     <div className="bg-gray-900">
-                      {isYouTube ? (
+                      {videoType === 'youtube' ? (
                         <iframe
                           src={getYouTubeEmbedUrl(videoUrl)}
                           title={`${project.title} - Video ${index + 1}`}
@@ -279,7 +325,20 @@ export default function WorkDetailPage() {
                           allowFullScreen
                           className="w-full aspect-video"
                         />
-                      ) : isLocalVideo ? (
+                      ) : videoType === 'tiktok' ? (
+                        <div className="w-full flex items-center justify-center bg-black p-4">
+                          <iframe
+                            src={getTikTokEmbedUrl(videoUrl)}
+                            title={`${project.title} - TikTok ${index + 1}`}
+                            allow="encrypted-media"
+                            allowFullScreen
+                            className="w-full max-w-[325px] aspect-[9/16]"
+                            scrolling="no"
+                            style={{ border: 'none' }}
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : videoType === 'local' ? (
                         <video
                           src={encodeImagePath(videoUrl)}
                           controls
@@ -595,7 +654,83 @@ export default function WorkDetailPage() {
               </motion.div>
             )}
 
-            {project.images && project.images.length > 0 && (
+            {project.categorizedImages && project.categorizedImages.length > 0 ? (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-8">Project Images</h2>
+                <div className="space-y-12">
+                  {project.categorizedImages.map((category, categoryIndex) => {
+                    // Calculate starting index for this category
+                    let imageIndexOffset = 0
+                    for (let i = 0; i < categoryIndex; i++) {
+                      imageIndexOffset += project.categorizedImages![i].images.length
+                    }
+                    
+                    return (
+                      <motion.div
+                        key={category.category}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 + categoryIndex * 0.1 }}
+                        className="space-y-4"
+                      >
+                        <h3 className="text-2xl font-semibold text-gray-800 border-b-2 border-primary-200 pb-2">
+                          {category.category}
+                        </h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          {category.images.map((imageUrl, index) => {
+                            const globalIndex = imageIndexOffset + index
+                            const isMockup = project.slug === 'troutwood-website' || imageUrl.includes('idea') || imageUrl.includes('V2') || imageUrl.includes('IRALogix') || imageUrl.includes('LandingIdea')
+                            return (
+                              <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.4 + globalIndex * 0.05 }}
+                                className="rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:border-primary-200 transition-all group cursor-pointer relative"
+                                onClick={() => {
+                                  // Get all images in order for lightbox navigation
+                                  const allImages = project.categorizedImages!.flatMap(cat => cat.images)
+                                  setSelectedImage(encodeImagePath(imageUrl))
+                                  setSelectedImageIndex(allImages.indexOf(imageUrl))
+                                }}
+                              >
+                                {isMockup && (
+                                  <div className="absolute top-2 right-2 z-10 px-2 py-1 bg-amber-500 text-white text-xs font-semibold rounded">
+                                    Mockup
+                                  </div>
+                                )}
+                                <div className="aspect-video bg-gray-100 overflow-hidden">
+                                  <img
+                                    src={encodeImagePath(imageUrl)}
+                                    alt={`${project.title} - ${category.category} - Image ${index + 1}`}
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    onError={(e) => {
+                                      console.error('Image failed to load:', e.currentTarget.src, 'Original:', imageUrl)
+                                      const target = e.target as HTMLImageElement
+                                      if (!target.src.includes(encodeURI(imageUrl))) {
+                                        target.src = encodeURI(imageUrl)
+                                      } else if (!target.src.includes(imageUrl.replace(/ /g, '%20'))) {
+                                        target.src = imageUrl.replace(/ /g, '%20')
+                                      } else {
+                                        target.src = imageUrl
+                                      }
+                                    }}
+                                  />
+                                </div>
+                              </motion.div>
+                            )
+                          })}
+                        </div>
+                      </motion.div>
+                    )
+                  })}
+                </div>
+              </motion.div>
+            ) : project.images && project.images.length > 0 && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -832,35 +967,38 @@ export default function WorkDetailPage() {
                   ✕
                 </button>
                 
-                {project.images && project.images.length > 1 && (
-                  <>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        const prevIndex = (selectedImageIndex - 1 + project.images!.length) % project.images!.length
-                        setSelectedImageIndex(prevIndex)
-                        setSelectedImage(encodeImagePath(project.images![prevIndex]))
-                      }}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 text-3xl font-bold z-10 bg-black/50 rounded-full w-12 h-12 flex items-center justify-center"
-                    >
-                      ‹
-                    </button>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        const nextIndex = (selectedImageIndex + 1) % project.images!.length
-                        setSelectedImageIndex(nextIndex)
-                        setSelectedImage(encodeImagePath(project.images![nextIndex]))
-                      }}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 text-3xl font-bold z-10 bg-black/50 rounded-full w-12 h-12 flex items-center justify-center"
-                    >
-                      ›
-                    </button>
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm z-10">
-                      {selectedImageIndex + 1} / {project.images.length}
-                    </div>
-                  </>
-                )}
+                {(() => {
+                  const allImages = getAllImages(project)
+                  return allImages.length > 1 && (
+                    <>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          const prevIndex = (selectedImageIndex - 1 + allImages.length) % allImages.length
+                          setSelectedImageIndex(prevIndex)
+                          setSelectedImage(encodeImagePath(allImages[prevIndex]))
+                        }}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 text-3xl font-bold z-10 bg-black/50 rounded-full w-12 h-12 flex items-center justify-center"
+                      >
+                        ‹
+                      </button>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          const nextIndex = (selectedImageIndex + 1) % allImages.length
+                          setSelectedImageIndex(nextIndex)
+                          setSelectedImage(encodeImagePath(allImages[nextIndex]))
+                        }}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 text-3xl font-bold z-10 bg-black/50 rounded-full w-12 h-12 flex items-center justify-center"
+                      >
+                        ›
+                      </button>
+                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm z-10">
+                        {selectedImageIndex + 1} / {allImages.length}
+                      </div>
+                    </>
+                  )
+                })()}
                 
                 <img
                   src={selectedImage}

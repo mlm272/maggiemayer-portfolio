@@ -14,6 +14,7 @@ export interface Project {
   videos?: (string | { url: string; description?: string })[]
   links?: { label: string; url: string }[]
   images?: string[]
+  categorizedImages?: { category: string; images: string[] }[] // For organizing images into sections
   pdfs?: { label: string; url: string; thumbnail?: string }[]
   lottieAnimations?: string[] // LottieFiles animation IDs
   brandContext?: string
@@ -292,10 +293,12 @@ export const projects: Project[] = [
       'Designed campaign visuals for marketing initiatives',
       'Created UI-support graphics and illustrations',
       'Maintained brand consistency across all materials',
-      'Produced video content and motion graphics for campaigns'
+      'Filmed and edited podcast videos (audio and video editing) with team collaboration',
+      'Produced video content and motion graphics for campaigns',
+      'Created and edited TikTok content leveraging current trends to increase engagement'
     ],
-    result: 'Created cohesive visual identity across all marketing channels. Social engagement improved, and brand recognition increased through consistent, high-quality design work.',
-    outcome: 'Improved social engagement and brand recognition through consistent, high-quality design across all marketing channels.',
+    result: 'Created cohesive visual identity across all marketing channels. Social engagement improved, and brand recognition increased through consistent, high-quality design work. Contributed to TikTok content creation that generated good engagement and interactions.',
+    outcome: 'Improved social engagement and brand recognition through consistent, high-quality design across all marketing channels. Contributed to TikTok content that generated good engagement and interactions.',
     image: '/images/social posts/Jump$tart Post.png',
     tags: ['Graphic Design', 'Social Media Design', 'Brand Design', 'Marketing Materials'],
     year: '2021 - Present',
@@ -310,12 +313,68 @@ export const projects: Project[] = [
       '/images/social posts/tw-panthersfw.png',
       '/images/social posts/tw-pro-image.png',
       '/images/social posts/1.png',
+      '/images/social posts/4.png',
       '/images/social posts/holidays 2024.png',
       '/images/social posts/map jr. post.png',
+      '/images/social posts/Copy of barbie vs oppenheimer.png',
+      '/images/social posts/Financial Literacy month.png',
       '/images/newsletters/Fall Update.png',
       '/images/newsletters/option-webbased2.png',
       '/images/newsletters/Plaid - Pro Users.png',
-      '/images/newsletters/Transactions Updates.png'
+      '/images/newsletters/Transactions Updates.png',
+      '/images/design/menu (5 × 7 in).png',
+      '/images/design/You are coordinally invited.png',
+      '/images/photography/img1.png',
+      '/images/photography/maia.jpg',
+      '/images/photography/maia4-1.jpg',
+      '/images/photography/promise1.png',
+      '/images/photography/Sequence 01.00_01_04_07.Still014.png'
+    ],
+    categorizedImages: [
+      {
+        category: 'Social Media Posts',
+        images: [
+          '/images/social posts/Jump$tart Post.png',
+          '/images/social posts/1100+ New Companies added.png',
+          '/images/social posts/feature-spotlight-college2.png',
+          '/images/social posts/finmoji-post.png',
+          '/images/social posts/other-try2.png',
+          '/images/social posts/tw-panthersfw.png',
+          '/images/social posts/tw-pro-image.png',
+          '/images/social posts/1.png',
+          '/images/social posts/4.png',
+          '/images/social posts/holidays 2024.png',
+          '/images/social posts/map jr. post.png',
+          '/images/social posts/Copy of barbie vs oppenheimer.png',
+          '/images/social posts/Financial Literacy month.png'
+        ]
+      },
+      {
+        category: 'Newsletters',
+        images: [
+          '/images/newsletters/Fall Update.png',
+          '/images/newsletters/option-webbased2.png',
+          '/images/newsletters/Plaid - Pro Users.png',
+          '/images/newsletters/Transactions Updates.png'
+        ]
+      },
+      {
+        category: 'Extracurricular Design',
+        images: [
+          '/images/design/menu (5 × 7 in).png',
+          '/images/design/You are coordinally invited.png'
+        ]
+      },
+      {
+        category: 'Photography',
+        images: [
+          '/images/photography/img1.png',
+          '/images/photography/maia.jpg',
+          '/images/photography/maia4-1.jpg',
+          '/images/photography/promise1.png',
+          '/images/photography/Sequence 01.00_01_04_07.Still014.png'
+        ]
+      }
     ],
     videos: [
       'https://www.youtube.com/watch?v=qgRGZvt5mU4',
@@ -325,10 +384,17 @@ export const projects: Project[] = [
       'https://www.youtube.com/watch?v=gCRt_6pCS6I',
       'https://www.youtube.com/watch?v=_jo79P-SnDk',
       'https://www.youtube.com/watch?v=ld4Ek_HJ9jY',
-      '/images/social-videos/forclips.mp4',
       '/images/social-videos/linkedin-whatistwapp.mp4',
+      '/images/social-videos/Our first notification.mp4',
       '/images/videos/atlas first draft.mp4',
-      '/videos/junehome.mov'
+      'https://www.tiktok.com/@troutwoodapp/video/7185591875414412587',
+      'https://www.tiktok.com/@troutwoodapp/video/7141106125730041130',
+      'https://www.tiktok.com/@troutwoodapp/video/7136299239969312046',
+      'https://www.tiktok.com/@troutwoodapp/video/7301755944399129898',
+      'https://www.tiktok.com/@troutwoodapp/video/7168930641340304686',
+      'https://www.tiktok.com/@troutwoodapp/video/7171932885254016299',
+      'https://www.tiktok.com/@troutwoodapp/video/7137669238805761326',
+      'https://www.tiktok.com/@troutwoodapp/video/6922859789236194565'
     ],
     pdfs: [
       {
