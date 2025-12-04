@@ -45,6 +45,7 @@ export default function Work({ setActiveSection }: WorkProps) {
     { id: 'mobile', label: 'Mobile' },
     { id: 'animation', label: 'Animations' },
     { id: 'graphic', label: 'Design' },
+    { id: 'brand', label: 'Brand' },
   ]
 
   const allProjects = getProjectsByCategory(filter)
@@ -125,6 +126,7 @@ export default function Work({ setActiveSection }: WorkProps) {
                         {project.category === 'mobile' && '📱'}
                         {project.category === 'animation' && '🎬'}
                         {project.category === 'graphic' && '🎨'}
+                        {project.category === 'brand' && '✨'}
                       </span>
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-primary-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

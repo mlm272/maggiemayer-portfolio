@@ -94,7 +94,6 @@ export const projects: Project[] = [
       '/images/website design photos/App page - V2.jpg',
       '/images/website design photos/idea2.0again.png',
       '/images/website design photos/IRALogix.png',
-      '/images/website design photos/IRALogix-1.png',
       '/images/website design photos/IRALogix-2.png',
       '/images/website design photos/LandingIdea4.png'
     ],
@@ -108,33 +107,86 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    slug: 'ai-chatbot-ui',
-    title: 'AI Chatbot UI (Web + App)',
+    slug: 'the-missing-semester',
+    title: 'The Missing Semester',
     category: 'web',
-    description: 'Built complete front-end for AI-powered chatbot across web and mobile platforms. Designed conversation UX, handled request/response flow, and collaborated with backend/AI teams.',
-    longDescription: 'I built the entire front-end for an AI-powered chatbot that works seamlessly across web and mobile platforms. This project showcases my ability to design intuitive conversation interfaces and handle complex state management for real-time AI interactions.',
-    context: 'Troutwood needed an AI chatbot to help users get instant answers to financial questions. The interface needed to feel natural, handle errors gracefully, and work consistently across platforms.',
-    problem: 'No existing chatbot interface. Needed to design conversation UX from scratch, handle typing states, loading/error states, and ensure consistent experience across web and mobile.',
+    description: 'Designed and developed themissingsemester.com from concept to launch. Created complete visual identity, user experience, and front-end implementation using modern web technologies.',
+    longDescription: 'I designed and developed themissingsemester.com as a complete end-to-end project. This involved creating the visual identity, designing the user experience and interface, and building the entire front-end from scratch. The website showcases my ability to handle both design and development, creating a cohesive, functional, and visually appealing web experience.',
+    context: 'The Missing Semester needed a website to showcase their educational content. The project required both strong visual design and robust front-end development to create an engaging, user-friendly experience.',
+    problem: 'Needed a complete website that effectively communicates the educational mission while providing an intuitive user experience. Required both compelling visual design and functional, responsive front-end development.',
     whatIDid: [
-      'Designed and built complete front-end UI for web and mobile platforms',
-      'Implemented conversation flow with typing indicators and message formatting',
-      'Built request/response handling with proper error states and loading indicators',
-      'Created multi-platform consistent UI components',
-      'Designed message formatting system for code blocks, lists, and rich text',
-      'Handled edge cases: network errors, timeout states, empty responses',
-      'Collaborated with backend/AI teams on API integration and response structure'
+      'Designed complete visual identity and brand system for the website',
+      'Created user experience flows and wireframes',
+      'Designed responsive UI/UX for all pages and components',
+      'Developed front-end using HTML, CSS, and JavaScript',
+      'Implemented responsive design for mobile and desktop',
+      'Ensured cross-browser compatibility and accessibility',
+      'Optimized for performance and user experience'
     ],
-    result: 'Successfully launched chatbot that provides instant, helpful responses. Users can get answers to financial questions quickly, improving engagement and reducing support burden.',
-    outcome: 'Launched AI chatbot with seamless UX across platforms. Improved user engagement and reduced support queries.',
-    image: '/api/placeholder/600/400',
-    tags: ['React', 'React Native', 'UI/UX Design', 'API Integration', 'State Management'],
+    whatIOwned: [
+      'End-to-end website design: visual identity, UI/UX design, wireframing, and prototyping',
+      'Complete front-end development: HTML, CSS, JavaScript implementation',
+      'Responsive design and cross-browser compatibility',
+      'Performance optimization and accessibility'
+    ],
+    result: 'Successfully launched a fully functional, beautifully designed website that effectively communicates The Missing Semester\'s educational mission. The site provides an intuitive user experience across all devices.',
+    outcome: 'Launched complete website with custom design and full front-end implementation. Created cohesive visual identity and seamless user experience.',
+    image: '/images/themissingsemester.png',
+    tags: ['Web Design', 'Front-End Development', 'UI/UX Design', 'HTML', 'CSS', 'JavaScript', 'Responsive Design'],
     year: '2024',
-    role: 'Front-End Developer • UI/UX Designer',
-    tools: ['React', 'React Native', 'JavaScript', 'Figma', 'API Integration'],
+    role: 'Designer & Developer • End-to-end design and development',
+    tools: ['HTML', 'CSS', 'JavaScript', 'Figma', 'Responsive Design'],
+    highlights: [
+      'Complete end-to-end project: design and development',
+      'Created visual identity and brand system',
+      'Designed intuitive user experience',
+      'Built fully responsive front-end',
+      'Optimized for performance and accessibility'
+    ],
+    images: [
+      '/images/themissingsemester.png',
+      '/images/Screenshot 2025-12-04 at 2.13.26 PM.png'
+    ],
+    links: [
+      {
+        label: 'View Live Website',
+        url: 'https://themissingsemester.com'
+      }
+    ],
     featured: true
   },
   {
     id: 3,
+    slug: 'ai-chatbot-ui',
+    title: 'AI Chatbot UI (Web + App)',
+    category: 'web',
+    description: 'Built complete front-end for AI-powered chatbot across web and mobile platforms. Handled request/response flow, state management, and collaborated with backend/AI teams.',
+    longDescription: 'I built the entire front-end for an AI-powered chatbot that works seamlessly across web and mobile platforms. This project showcases my ability to build intuitive conversation interfaces and handle complex state management for real-time AI interactions.',
+    context: 'Troutwood needed an AI chatbot to help users get instant answers to financial questions. The interface needed to feel natural, handle errors gracefully, and work consistently across platforms.',
+    problem: 'No existing chatbot interface. Needed to build conversation interface from scratch, handle typing states, loading/error states, and ensure consistent experience across web and mobile.',
+    whatIDid: [
+      'Built complete front-end UI for web and mobile platforms',
+      'Implemented conversation flow with typing indicators and message formatting',
+      'Built request/response handling with proper error states and loading indicators',
+      'Created multi-platform consistent UI components',
+      'Built message formatting system for code blocks, lists, and rich text',
+      'Handled edge cases: network errors, timeout states, empty responses',
+      'Collaborated with backend/AI teams on API integration and response structure'
+    ],
+    result: 'Successfully launched chatbot that provides instant, helpful responses. Users can get answers to financial questions quickly, improving engagement and reducing support burden.',
+    outcome: 'Launched AI chatbot with seamless experience across platforms. Improved user engagement and reduced support queries.',
+    image: '/images/ask-finn.png',
+    tags: ['React', 'React Native', 'API Integration', 'State Management'],
+    year: '2024',
+    role: 'Front-End Developer',
+    tools: ['React', 'React Native', 'JavaScript', 'Figma', 'API Integration'],
+    images: [
+      '/images/ask-finn.png'
+    ],
+    featured: true
+  },
+  {
+    id: 4,
     slug: 'react-native-app-features',
     title: 'React Native App Features',
     category: 'mobile',
@@ -161,7 +213,7 @@ export const projects: Project[] = [
     featured: true
   },
   {
-    id: 4,
+    id: 5,
     slug: 'animations-graphic-design',
     title: 'Animations & Graphic Design',
     category: 'animation',
@@ -201,7 +253,7 @@ export const projects: Project[] = [
     featured: true
   },
   {
-    id: 5,
+    id: 6,
     slug: 'creative-marketing-design',
     title: 'Creative / Marketing Design Work',
     category: 'graphic',
@@ -233,6 +285,9 @@ export const projects: Project[] = [
       '/images/social posts/other-try2.png',
       '/images/social posts/tw-panthersfw.png',
       '/images/social posts/tw-pro-image.png',
+      '/images/social posts/1.png',
+      '/images/social posts/holidays 2024.png',
+      '/images/social posts/map jr. post.png',
       '/images/newsletters/Fall Update.png',
       '/images/newsletters/option-webbased2.png',
       '/images/newsletters/Plaid - Pro Users.png',
@@ -259,6 +314,52 @@ export const projects: Project[] = [
       {
         label: 'Wellness Page 3',
         url: '/pdfs/Wellness Page 3.pdf'
+      }
+    ],
+    featured: true
+  },
+  {
+    id: 7,
+    slug: 'brand-assets',
+    title: 'Brand Assets & Guidelines',
+    category: 'brand',
+    description: 'Created comprehensive brand assets and guidelines including color palettes, typography, and brand guidelines documentation.',
+    longDescription: 'I developed comprehensive brand assets and guidelines that establish visual consistency across all touchpoints. This includes color systems, typography guidelines, and detailed brand documentation that ensures cohesive brand expression.',
+    context: 'Troutwood needed a comprehensive brand system to ensure visual consistency across all platforms, marketing materials, and digital experiences.',
+    problem: 'Lacked a unified brand system, leading to inconsistent visual identity across different materials and platforms. Needed comprehensive brand guidelines and assets to maintain consistency.',
+    whatIDid: [
+      'Developed comprehensive color palette with primary, secondary, and accent colors',
+      'Established typography system and hierarchy',
+      'Created brand guidelines documentation',
+      'Designed brand asset library with all variations',
+      'Developed usage guidelines for colors and typography',
+      'Created presentation materials for brand guidelines'
+    ],
+    whatIOwned: [
+      'Complete brand asset creation: color systems, typography',
+      'Brand guidelines documentation and presentation',
+      'Brand asset library and usage guidelines'
+    ],
+    result: 'Created comprehensive brand system that ensures visual consistency across all platforms. Brand guidelines provide clear direction for all future design work and maintain cohesive brand identity.',
+    outcome: 'Established comprehensive brand system with guidelines and assets. Ensured visual consistency across all platforms and materials.',
+    image: '/brand/tw-brand.png',
+    tags: ['Brand Design', 'Brand Guidelines', 'Visual Identity', 'Design Systems'],
+    year: '2021 - Present',
+    role: 'Brand Designer • Visual Identity Lead',
+    tools: ['Figma', 'Adobe Creative Suite', 'Brand Guidelines', 'Design Systems'],
+    highlights: [
+      'Created comprehensive brand guidelines',
+      'Established color and typography systems',
+      'Created brand asset library',
+      'Documented usage guidelines for all brand elements'
+    ],
+    images: [
+      '/brand/tw-brand.png'
+    ],
+    pdfs: [
+      {
+        label: 'Brand Guidelines Presentation',
+        url: '/brand/Brand Guidelines Presentation.pdf'
       }
     ],
     featured: true
