@@ -371,16 +371,46 @@ export const projects: Project[] = [
       }
     ],
     videos: [
-      'https://www.youtube.com/watch?v=qgRGZvt5mU4',
-      'https://www.youtube.com/watch?v=jnk-MFdH4R4',
-      'https://www.youtube.com/watch?v=GICyaLbbXK8',
-      'https://www.youtube.com/watch?v=F2FP6aDbjp8',
-      'https://www.youtube.com/watch?v=gCRt_6pCS6I',
-      'https://www.youtube.com/watch?v=_jo79P-SnDk',
-      'https://www.youtube.com/watch?v=ld4Ek_HJ9jY',
-      '/images/social-videos/linkedin-whatistwapp.mp4',
-      '/images/social-videos/Our first notification.mp4',
-      '/images/videos/atlas first draft.mp4',
+      {
+        url: 'https://www.youtube.com/watch?v=qgRGZvt5mU4',
+        description: 'Filmed, edited, and composed original music'
+      },
+      {
+        url: 'https://www.youtube.com/watch?v=jnk-MFdH4R4',
+        description: 'Filmed, edited, and color graded with audio mixing'
+      },
+      {
+        url: 'https://www.youtube.com/watch?v=GICyaLbbXK8',
+        description: 'Filmed, edited, and color graded with audio mixing'
+      },
+      {
+        url: 'https://www.youtube.com/watch?v=F2FP6aDbjp8',
+        description: 'Filmed and edited using a combination of original footage and stock clips'
+      },
+      {
+        url: 'https://www.youtube.com/watch?v=gCRt_6pCS6I',
+        description: 'Filmed, edited, and color graded'
+      },
+      {
+        url: 'https://www.youtube.com/watch?v=_jo79P-SnDk',
+        description: 'Filmed, edited, and color graded'
+      },
+      {
+        url: 'https://www.youtube.com/watch?v=ld4Ek_HJ9jY',
+        description: 'Edited'
+      },
+      {
+        url: '/images/social-videos/linkedin-whatistwapp.mp4',
+        description: 'Edited for LinkedIn social media'
+      },
+      {
+        url: '/images/social-videos/Our first notification.mp4',
+        description: 'Visual editing for social media'
+      },
+      {
+        url: '/images/videos/atlas first draft.mp4',
+        description: 'Filmed and edited completely. Pro bono project for a business partner'
+      },
       'https://www.tiktok.com/@troutwoodapp/video/7185591875414412587',
       'https://www.tiktok.com/@troutwoodapp/video/7141106125730041130',
       'https://www.tiktok.com/@troutwoodapp/video/7136299239969312046',
