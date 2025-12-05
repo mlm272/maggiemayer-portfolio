@@ -53,11 +53,6 @@ export const projects: Project[] = [
     ],
     problemsAndSolutions: [
       {
-        problem: 'Low discoverability of key tools: Analytics showed that some high-value tools were under-visited due to navigation friction.',
-        solution: 'I redesigned entry points and added clearer CTAs (example: adding a prominent Map button when users weren\'t reaching the Map tool).',
-        outcome: 'Improved click-through and engagement on strategic pages; continued monitoring ensured steady gains over time.'
-      },
-      {
         problem: 'Need for scalable organic growth: The site needed a stronger foundation for search visibility and sustainable traffic growth.',
         solution: 'I implemented technical SEO improvements, rebuilt page metadata systems, improved site structure, added schema/structured data, and aligned content to keyword/search intent.',
         outcome: 'Significant search growth and expanded reach internationally.'
@@ -68,21 +63,21 @@ export const projects: Project[] = [
         outcome: 'Better usability and a smoother experience across mobile and desktop.'
       }
     ],
-    result: 'Organic traffic growth was driven by holistic improvements to Troutwood.com — technical SEO foundations, clearer site architecture, stronger internal linking, accessibility upgrades, and continuous UX refinement. As the website became faster, more reliable, and more authoritative, search visibility increased across the entire domain, leading to compounding growth in organic sessions and new users.\n\nResults:\n• +265% YoY organic traffic growth (92K organic sessions)\n• +79K new users (+188% YoY)\n• 200–400% YoY international growth across multiple regions\n\nMetrics reflect performance on the site version I owned and optimized. After a company-wide redesign, site architecture and analytics baselines shifted, so post-redesign performance is measured from a new starting point.',
+    result: 'Organic traffic growth was driven by holistic improvements to Troutwood.com — technical SEO foundations, clearer site architecture, stronger internal linking, accessibility upgrades, and continuous UX refinement. As the website became faster, more reliable, and more authoritative, search visibility increased across the entire domain, leading to compounding growth in organic sessions and new users.\n\nResults (Sep 2024 - Sep 2025 vs Sep 2023 - Sep 2024):\n• 123K active users (+229.5% YoY)\n• 123K new users (+233.2% YoY)\n• 140K organic search sessions (+304.1% YoY)\n• Top page: S&P 500 Calculator with 119K views (+292.8% YoY)\n• 200–400% YoY international growth across multiple regions\n\nMetrics reflect performance on the site version I owned and optimized. After a company-wide redesign, site architecture and analytics baselines shifted, so post-redesign performance is measured from a new starting point.',
     takeaways: [
       'Owning the website solo required me to think like both a developer and a growth strategist',
       'Biggest contributions: building reliable front-end systems, using analytics to guide UX improvements, and executing SEO work that produced measurable, sustained traffic gains'
     ],
-    outcome: '+265% YoY organic traffic growth (92K organic sessions) • +79K new users (+188% YoY) • 200–400% YoY growth internationally across multiple regions',
+    outcome: '123K active users (+229.5% YoY) • 123K new users (+233.2% YoY) • 140K organic search sessions (+304.1% YoY) • Top page: S&P 500 Calculator with 119K views (+292.8% YoY) • 200–400% YoY international growth',
     image: '/images/website design photos/ss1.png',
     tags: ['HTML', 'CSS', 'JavaScript', 'GA4', 'Search Console', 'Structured Data', 'SEO', 'Analytics'],
     year: '2021–2025',
     role: 'Sole Front-End Developer & Website Owner • End-to-end website development, UX/UI updates, SEO strategy, analytics, ongoing maintenance & releases',
     tools: ['HTML', 'CSS', 'JavaScript', 'GA4', 'Google Search Console', 'Structured Data/Schema', 'Git'],
     highlights: [
-      'Owning the website solo required me to think like both a developer and a growth strategist',
-      'Biggest contributions: building reliable front-end systems, using analytics to guide UX improvements, and executing SEO work that produced measurable, sustained traffic gains',
-      'Metrics reflect performance on the site version I owned and optimized'
+      'Sole owner of entire marketing website from development to SEO strategy',
+      'Drove 304% YoY growth in organic search sessions through technical SEO improvements',
+      'Built scalable front-end systems that maintained performance as site complexity grew'
     ],
     images: [
       '/images/website design photos/ss1.png',
@@ -102,6 +97,12 @@ export const projects: Project[] = [
       {
         label: 'View Live Website',
         url: 'https://troutwood.com'
+      }
+    ],
+    pdfs: [
+      {
+        label: 'GA4 Reports Snapshot',
+        url: '/pdfs/Reports_snapshot.pdf'
       }
     ],
     featured: true
@@ -145,8 +146,7 @@ export const projects: Project[] = [
       'Optimized for performance and accessibility'
     ],
     images: [
-      '/images/themissingsemester.png',
-      '/images/Screenshot 2025-12-04 at 2.13.26 PM.png'
+      '/images/themissingsemester.png'
     ],
     links: [
       {
@@ -224,15 +224,15 @@ export const projects: Project[] = [
     slug: 'animations-graphic-design',
     title: 'Animations & Graphic Design',
     category: 'animation',
-    description: 'Created engaging animations and microinteractions using Adobe Animate, Adobe After Effects, Adobe Character Animator, Lottie, and GSAP. Developed motion graphics and animated company mascot that humanize complex topics and enhance user experiences.',
-    longDescription: 'I create engaging animations and microinteractions using a combination of Adobe Animate, Adobe After Effects, Adobe Character Animator, Lottie, and GSAP. I animated the company mascot using Character Animator, bringing personality and life to brand communications. These animations help humanize complex financial topics, making them more accessible and engaging for educational audiences. The animations are optimized for web performance and work seamlessly across different platforms.',
+    description: 'Created engaging animations and microinteractions using Adobe After Effects, Adobe Character Animator, Adobe Premiere Pro, Lottie, and GSAP. Developed motion graphics and animated company mascot that humanize complex topics and enhance user experiences.',
+    longDescription: 'I create engaging animations and microinteractions using a combination of Adobe After Effects, Adobe Character Animator, Adobe Premiere Pro, Lottie, and GSAP. I animated the company mascot using Character Animator, bringing personality and life to brand communications. I use Premiere Pro for video editing and post-production. These animations help humanize complex financial topics, making them more accessible and engaging for educational audiences. The animations are optimized for web performance and work seamlessly across different platforms.',
     context: 'Troutwood needed engaging animations and motion graphics to make complex financial concepts more accessible and visually appealing. Animations needed to work across web and mobile platforms while maintaining performance.',
     problem: 'Static content and interfaces needed more engaging, dynamic elements. Complex financial concepts required visual storytelling through animation to improve user understanding and engagement.',
     whatIDid: [
       'Animated company mascot using Adobe Character Animator, bringing personality and life to brand communications',
       'Created Lottie animations for web integration using Adobe After Effects',
+      'Edited videos using Adobe Premiere Pro for post-production and final output',
       'Developed motion graphics and microinteractions using GSAP and JavaScript',
-      'Built animations in Adobe Animate for interactive web experiences',
       'Optimized animations for web performance and file size',
       'Designed animation sequences that enhance UX without overwhelming users',
       'Integrated animations seamlessly into existing web and mobile interfaces',
@@ -241,10 +241,10 @@ export const projects: Project[] = [
     result: 'Created multiple engaging animations that improve user engagement and make complex topics more accessible. Animations enhance the user experience across web and mobile platforms while maintaining fast load times.',
     outcome: 'Developed engaging animations that improve user engagement and make complex financial concepts more accessible and visually appealing.',
     image: '/images/animation.png',
-    tags: ['Adobe After Effects', 'Adobe Animate', 'Adobe Character Animator', 'Lottie', 'GSAP', 'Motion Graphics', 'Animation', 'Character Animation'],
+    tags: ['Adobe After Effects', 'Adobe Character Animator', 'Adobe Premiere Pro', 'Lottie', 'GSAP', 'Motion Graphics', 'Animation', 'Character Animation', 'Video Editing'],
     year: '2021 - Present',
     role: 'Motion Designer • Animator',
-    tools: ['Adobe After Effects', 'Adobe Animate', 'Adobe Character Animator', 'Lottie', 'GSAP', 'JavaScript'],
+    tools: ['Adobe After Effects', 'Adobe Character Animator', 'Adobe Premiere Pro', 'Lottie', 'GSAP', 'JavaScript'],
     images: [
       '/images/animation.png'
     ],

@@ -38,7 +38,7 @@ export default function About({ setActiveSection }: AboutProps) {
     },
     { 
       category: 'Animation & Video', 
-      items: ['Adobe After Effects', 'Adobe Animate', 'Lottie', 'GSAP', 'Video Production', 'Motion Graphics'] 
+      items: ['Adobe Premiere Pro', 'Adobe After Effects', 'Adobe Character Animator', 'Lottie', 'GSAP', 'Video Production', 'Motion Graphics'] 
     },
     { 
       category: 'AI & Creative Tools', 
@@ -84,7 +84,7 @@ export default function About({ setActiveSection }: AboutProps) {
                 I'm a <span className="font-semibold text-primary-600">Creative and detail-oriented Front-End Developer & Digital Designer</span> with 6+ years of experience crafting intuitive, user-centered digital experiences. I specialize in bridging the gap between design, engineering, and storytelling.
               </p>
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                Currently at <span className="font-semibold text-primary-600">Troutwood</span>, I run the website and coded it fully by myself using CSS, HTML, and JavaScript. I handle all aspects of front-end development and collaborate with our contracted UX/UI designer on UX strategy, creating responsive layouts and visual storytelling that enhance user engagement. I also design for our social media and newsletters, and have experience creating videos and animations using Adobe Animate, Adobe After Effects, Lottie, and GSAP.
+                Currently at <span className="font-semibold text-primary-600">Troutwood</span>, I run the website and coded it fully by myself using CSS, HTML, and JavaScript. I handle all aspects of front-end development and collaborate with our contracted UX/UI designer on UX strategy, creating responsive layouts and visual storytelling that enhance user engagement. I also design for our social media and newsletters, and have experience creating videos and animations using Adobe Premiere Pro for video editing, Adobe After Effects and Adobe Character Animator for animations, along with Lottie and GSAP for web integration.
               </p>
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
                 My approach combines <span className="font-semibold text-primary-600">aesthetic sensibility with technical expertise</span>, ensuring every project not only looks great but performs flawlessly. I'm passionate about designing playful, purposeful interfaces that educate and delight users—bringing accessible learning to life through thoughtful interaction and design systems.
