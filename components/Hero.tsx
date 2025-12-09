@@ -47,7 +47,7 @@ export default function Hero({ setActiveSection }: HeroProps) {
             transition={{ duration: 0.6 }}
             className="mb-6"
           >
-            <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-base md:text-lg font-semibold mb-6">
+            <span className="inline-block px-6 py-3 bg-primary-100 text-primary-700 rounded-full text-base md:text-lg font-semibold mb-6">
               Front-End Developer | Creative Technologist | SEO + Growth
             </span>
           </motion.div>
