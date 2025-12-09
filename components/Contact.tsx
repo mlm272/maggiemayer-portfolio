@@ -122,24 +122,6 @@ export default function Contact({ setActiveSection }: ContactProps) {
                   </p>
                 </div>
               </motion.a>
-
-              <motion.a
-                href="https://maggiemayer.dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ x: 5 }}
-                className="flex items-start space-x-4 p-4 rounded-xl hover:bg-white transition-colors group"
-              >
-                <div className="w-14 h-14 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                  <span className="text-2xl">💻</span>
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-900 mb-1">Portfolio Website</h4>
-                  <p className="text-primary-600 hover:text-primary-700 font-medium">
-                    maggiemayer.dev
-                  </p>
-                </div>
-              </motion.a>
             </div>
           </motion.div>
 
