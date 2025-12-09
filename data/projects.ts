@@ -36,9 +36,9 @@ export const projects: Project[] = [
     slug: 'troutwood-website',
     title: 'Troutwood Website',
     category: 'web',
-    description: 'Sole front-end owner of Troutwood website (2021-2025). Built and maintained entire site using HTML/CSS/JS, handled SEO + analytics, and shipped ongoing improvements that drove +265% YoY organic traffic growth (92K organic sessions) and +79K new users (+188% YoY).',
-    longDescription: 'I fully owned Troutwood\'s marketing website from 2021-2025, managing everything from day-to-day updates to major feature builds and performance improvements. My work blended front-end development with technical SEO and analytics-driven UX iteration to increase discoverability of core tools and grow organic traffic. I designed and built landing pages and web marketing pages, emphasizing layout, responsiveness, and conversion clarity.',
-    context: 'I fully owned Troutwood\'s marketing website, managed everything from day-to-day updates to major feature builds and performance improvements. My work blended front-end development with technical SEO and analytics-driven UX iteration to increase discoverability of core tools and grow organic traffic.',
+    description: 'Sole front-end owner of Troutwood website (2021-2025). Built and maintained entire site using HTML/CSS/JS, handled SEO + analytics, and shipped ongoing improvements that drove +265% YoY organic traffic growth (92K organic sessions) and +79K new users (+188% YoY). Implemented the current frontend in collaboration with Cursor AI to expedite the redesign release.',
+    longDescription: 'I fully owned Troutwood\'s marketing website from 2021-2025, managing everything from day-to-day updates to major feature builds and performance improvements. My work blended front-end development with technical SEO and analytics-driven UX iteration to increase discoverability of core tools and grow organic traffic. I designed and built landing pages and web marketing pages, emphasizing layout, responsiveness, and conversion clarity. I implemented the current frontend in collaboration with Cursor AI to expedite the redesign release.',
+    context: 'I fully owned Troutwood\'s marketing website, managed everything from day-to-day updates to major feature builds and performance improvements. My work blended front-end development with technical SEO and analytics-driven UX iteration to increase discoverability of core tools and grow organic traffic. I implemented the current frontend in collaboration with Cursor AI to expedite the redesign release.',
     problem: 'The site faced three key challenges: 1) Low discoverability of key tools due to navigation friction, 2) Need for scalable organic growth through better search visibility, and 3) Performance and UX consistency across devices as the site grew in complexity.',
     whatIOwned: [
       'End-to-end website management: built new pages, maintained existing pages, fixed bugs, updated content, and ensured consistent styling and branding across the site',
@@ -49,7 +49,8 @@ export const projects: Project[] = [
     whatIDid: [
       'Redesigned entry points and added clearer CTAs (example: adding prominent Map button when users weren\'t reaching the Map tool)',
       'Implemented technical SEO improvements, rebuilt page metadata systems, improved site structure, added schema/structured data, and aligned content to keyword/search intent',
-      'Optimized front-end patterns, ensured responsive layouts, fixed accessibility gaps, and continuously improved UI consistency across pages'
+      'Optimized front-end patterns, ensured responsive layouts, fixed accessibility gaps, and continuously improved UI consistency across pages',
+      'Implemented the current frontend in collaboration with Cursor AI to expedite the redesign release'
     ],
     problemsAndSolutions: [
       {
@@ -86,12 +87,12 @@ export const projects: Project[] = [
       '/images/website design photos/Video Library.png',
       '/images/website design photos/Investors.png',
       '/images/website design photos/Group 1000004928.png',
-      '/images/website design photos/Organizations.png',
       '/images/website design photos/App page - V2.jpg',
       '/images/website design photos/idea2.0again.png',
       '/images/website design photos/IRALogix.png',
       '/images/website design photos/IRALogix-2.png',
-      '/images/website design photos/LandingIdea4.png'
+      '/images/website design photos/LandingIdea4.png',
+      '/images/website design photos/landingidea5.png'
     ],
     links: [
       {
@@ -191,12 +192,16 @@ export const projects: Project[] = [
     slug: 'react-native-app-features',
     title: 'React Native App Features',
     category: 'mobile',
-    description: 'Contributed React Native (iOS) app features by building UI components/screens and integrating API data into user flows in collaboration with product and backend teams.',
-    longDescription: 'I contributed React Native (iOS) app features by building UI components/screens and integrating API data into user flows. This work was done in collaboration with product and backend teams, demonstrating my ability to build native-feeling mobile experiences, handle complex state management, and create polished, responsive UI components.',
-    context: 'The Troutwood mobile app needed new features to improve user engagement and provide better financial education tools on mobile devices.',
-    problem: 'App needed new features built quickly with consistent UX. Required proper state management, API integration, and responsive design that works across iOS and Android.',
+    description: 'Implemented React Native (iOS) UI components/screens and integrated API data into user flows in collaboration with product and backend teams. Helped with toggle notification buttons, the Ask Finn button in the top right of the screen, built the full "Personal Finance Assistant" screen, and the initial Ask Finn chatbot screen with newer tweaks. Learned React Native on the job.',
+    longDescription: 'I implemented React Native (iOS) UI components/screens and integrated API data into user flows. I did not design anything - I implemented the UI with React Native, which I learned on the job. I helped with the toggle notification buttons and the Ask Finn button in the top right of the screen. I built the full "Personal Finance Assistant" screen and the initial Ask Finn chatbot screen that looks very similar with some newer tweaks having been added. This work was done in collaboration with product and backend teams, demonstrating my ability to learn new technologies quickly and implement polished, responsive UI components.',
+    context: 'The Troutwood mobile app needed new features to improve user engagement and provide better financial education tools on mobile devices. I implemented the UI components using React Native, which I learned on the job.',
+    problem: 'App needed new features built quickly with consistent UX. Required proper state management, API integration, and responsive design for iOS.',
     whatIDid: [
-      'Built UI components and screens using React Native (iOS)',
+      'Implemented UI components using React Native (learned on the job)',
+      'Helped implement toggle notification buttons',
+      'Implemented the Ask Finn button in the top right of the screen',
+      'Implemented the full "Personal Finance Assistant" screen',
+      'Implemented the initial Ask Finn chatbot screen that looks very similar with some newer tweaks having been added',
       'Integrated API data into user flows',
       'Collaborated with product and backend teams on feature development',
       'Implemented state management for complex user interactions',

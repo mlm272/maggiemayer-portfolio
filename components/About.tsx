@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 
 interface AboutProps {
   setActiveSection: (section: string) => void
@@ -132,7 +133,14 @@ export default function About({ setActiveSection }: AboutProps) {
             <div className="bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
               <div className="aspect-square bg-gradient-to-br from-primary-100 via-accent-100 to-tertiary-100 rounded-2xl flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-600/10 to-transparent"></div>
-                <span className="text-8xl relative z-10">👋</span>
+                <Image
+                  src="/images/maggie-2.jpg"
+                  alt="Maggie Mayer"
+                  width={400}
+                  height={400}
+                  className="w-full h-full object-cover rounded-2xl relative z-10"
+                  priority
+                />
               </div>
             </div>
             <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-accent-200 rounded-full blur-2xl opacity-50 -z-10"></div>
