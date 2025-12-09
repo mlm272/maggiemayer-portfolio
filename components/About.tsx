@@ -29,20 +29,32 @@ export default function About({ setActiveSection }: AboutProps) {
 
   const skills = [
     { 
-      category: 'Design & UX', 
-      items: ['Figma', 'User Research', 'Prototyping', 'Wireframing', 'Accessibility', 'Interaction Design', 'Social Media Design', 'Newsletter Design'] 
+      category: 'Front-End / Web', 
+      items: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'Responsive Design', 'Accessibility (WCAG)', 'Cross-Browser QA', 'UI Components', 'Performance Optimization', 'Deployment & Maintenance'] 
     },
     { 
-      category: 'Development', 
-      items: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'React', 'Responsive Design', 'Git'] 
+      category: 'Mobile / App', 
+      items: ['React Native (iOS)', 'Component Development', 'API Integration', 'App UI Flows'] 
     },
     { 
-      category: 'Animation & Video', 
-      items: ['Adobe Premiere Pro', 'Adobe After Effects', 'Adobe Character Animator', 'Lottie', 'GSAP', 'Video Production', 'Motion Graphics'] 
+      category: 'AI Product UI', 
+      items: ['Chatbot Interface Development', 'Real-Time Response Rendering', 'Typing/Loading/Error States', 'Front-End ↔ AI Model Communication'] 
     },
     { 
-      category: 'AI & Creative Tools', 
-      items: ['ChatGPT', 'Cursor', 'Canva', 'Adobe Creative Suite', 'Video Editing'] 
+      category: 'SEO / Analytics', 
+      items: ['Technical SEO', 'On-Page SEO', 'Schema/Structured Data', 'Keyword Strategy', 'GA4', 'Search Console', 'Internal Linking', 'Site Architecture', 'Conversion/Event Tracking'] 
+    },
+    { 
+      category: 'Email / Content', 
+      items: ['MailerLite', 'Newsletter Template Design', 'Campaign Production', 'Engagement Iteration'] 
+    },
+    { 
+      category: 'Design / Motion', 
+      items: ['Figma', 'Adobe Creative Suite', 'Canva', 'After Effects (basic)', 'Lottie (basic)', 'Adobe Character Animator (basic)', 'Social/Digital Graphics', 'Flyers', 'Multimedia Assets'] 
+    },
+    { 
+      category: 'Tools / Workflow', 
+      items: ['Git/GitHub', 'Jira', 'Agile Workflows', 'Cross-Functional Collaboration'] 
     },
   ]
 
@@ -80,19 +92,32 @@ export default function About({ setActiveSection }: AboutProps) {
             className="space-y-6"
           >
             <div className="space-y-5">
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Summary</h3>
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                I'm a <span className="font-semibold text-primary-600">Creative and detail-oriented Front-End Developer & Digital Designer</span> with 6+ years of experience crafting intuitive, user-centered digital experiences. I specialize in bridging the gap between design, engineering, and storytelling.
-              </p>
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                Currently at <span className="font-semibold text-primary-600">Troutwood</span>, I run the website and coded it fully by myself using CSS, HTML, and JavaScript. I handle all aspects of front-end development and collaborate with our contracted UX/UI designer on UX strategy, creating responsive layouts and visual storytelling that enhance user engagement. I also design for our social media and newsletters, and have experience creating videos and animations using Adobe Premiere Pro for video editing, Adobe After Effects and Adobe Character Animator for animations, along with Lottie and GSAP for web integration.
-              </p>
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                My approach combines <span className="font-semibold text-primary-600">aesthetic sensibility with technical expertise</span>, ensuring every project not only looks great but performs flawlessly. I'm passionate about designing playful, purposeful interfaces that educate and delight users—bringing accessible learning to life through thoughtful interaction and design systems.
-              </p>
-              <div className="pt-4">
-                <p className="text-base text-gray-600 italic">
-                  📍 Based in Pittsburgh, PA • B.S. Computer Science, University of Pittsburgh (Magna Cum Laude)
+                  Front-End Developer and Digital Creative with 6+ years of experience owning and scaling web experiences at a fintech startup. Expert in HTML, CSS, JavaScript, responsive UI, accessibility, and end-to-end website management, with additional experience building React Native app features and AI chatbot interfaces across web and mobile. Proven record of driving site-wide SEO and authority growth (+265% YoY organic traffic, +79K users) through holistic improvements to technical SEO, architecture, performance, and UX. Highly data-driven, using GA4/Search Console to identify drop-offs and ship iterative UX fixes. Strong creative partner across brand, multimedia, email (MailerLite newsletters), and light motion/animation.
                 </p>
+              </div>
+              
+              <div className="pt-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Education</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  <span className="font-semibold text-primary-600">University of Pittsburgh</span> — B.S. Computer Science, Economics Minor | 2021
+                </p>
+                <p className="text-base text-gray-600 mt-2">
+                  Magna Cum Laude • Dean's List (2018–2021) • Mathematics Undergraduate Teaching Assistant (Applied College Algebra)
+                </p>
+              </div>
+
+              <div className="pt-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Certifications</h3>
+                <ul className="space-y-2 text-base text-gray-700">
+                  <li>• Google SEO Capstone Project — UC Davis (2025)</li>
+                  <li>• Optimizing a Website for Google Search — UC Davis (2024)</li>
+                  <li>• Google SEO Fundamentals — UC Davis (2024)</li>
+                  <li>• Introduction to Google SEO — UC Davis (2023)</li>
+                  <li>• Advanced Content & Social Tactics to Optimize SEO — UC Davis (2023)</li>
+                </ul>
               </div>
             </div>
           </motion.div>
@@ -122,9 +147,9 @@ export default function About({ setActiveSection }: AboutProps) {
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
-            Skills & Expertise
+            Core Skills
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skills.map((skill, index) => (
               <motion.div
                 key={skill.category}

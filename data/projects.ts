@@ -36,7 +36,7 @@ export const projects: Project[] = [
     slug: 'troutwood-website',
     title: 'Troutwood Website',
     category: 'web',
-    description: 'Sole front-end owner of Troutwood website (2021-2025). Built and maintain entire site using HTML/CSS/JS, handle SEO + analytics, and ship ongoing improvements that drove +304% YoY organic search sessions and +233% YoY new users.',
+    description: 'Sole front-end owner of Troutwood website (2021-2025). Built and maintain entire site using HTML/CSS/JS, handle SEO + analytics, and ship ongoing improvements that drove +265% YoY organic traffic growth (92K organic sessions) and +79K new users (+188% YoY).',
     longDescription: 'I fully owned Troutwood\'s marketing website from 2021-2025, managing everything from day-to-day updates to major feature builds and performance improvements. My work blended front-end development with technical SEO and analytics-driven UX iteration to increase discoverability of core tools and grow organic traffic. I designed and built landing pages and web marketing pages, emphasizing layout, responsiveness, and conversion clarity.',
     context: 'I fully owned Troutwood\'s marketing website, managing everything from day-to-day updates to major feature builds and performance improvements. My work blended front-end development with technical SEO and analytics-driven UX iteration to increase discoverability of core tools and grow organic traffic.',
     problem: 'The site faced three key challenges: 1) Low discoverability of key tools due to navigation friction, 2) Need for scalable organic growth through better search visibility, and 3) Performance and UX consistency across devices as the site grew in complexity.',
@@ -63,21 +63,21 @@ export const projects: Project[] = [
         outcome: 'Better usability and a smoother experience across mobile and desktop.'
       }
     ],
-    result: 'Organic traffic growth was driven by holistic improvements to Troutwood.com — technical SEO foundations, clearer site architecture, stronger internal linking, accessibility upgrades, and continuous UX refinement. As the website became faster, more reliable, and more authoritative, search visibility increased across the entire domain, leading to compounding growth in organic sessions and new users.\n\nResults (Sep 2024 - Sep 2025 vs Sep 2023 - Sep 2024):\n• 123K active users (+229.5% YoY)\n• 123K new users (+233.2% YoY)\n• 140K organic search sessions (+304.1% YoY)\n• Top page: S&P 500 Calculator with 119K views (+292.8% YoY)\n• 200–400% YoY international growth across multiple regions\n\nMetrics reflect performance on the site version I owned and optimized. After a company-wide redesign, site architecture and analytics baselines shifted, so post-redesign performance is measured from a new starting point.',
+    result: 'Organic traffic growth was driven by holistic improvements to Troutwood.com — technical SEO foundations, clearer site architecture, stronger internal linking, accessibility upgrades, and continuous UX refinement. As the website became faster, more reliable, and more authoritative, search visibility increased across the entire domain, leading to compounding growth in organic sessions and new users.\n\nResults:\n• +265% YoY organic traffic growth (92K organic sessions)\n• +79K new users (+188% YoY)\n• 200–400% YoY international growth across multiple regions\n\nMetrics reflect performance on the site version I owned and optimized. After a company-wide redesign, site architecture and analytics baselines shifted, so post-redesign performance is measured from a new starting point.',
     takeaways: [
       'Owning the website solo required me to think like both a developer and a growth strategist',
       'Biggest contributions: building reliable front-end systems, using analytics to guide UX improvements, and executing SEO work that produced measurable, sustained traffic gains'
     ],
-    outcome: '123K active users (+229.5% YoY) • 123K new users (+233.2% YoY) • 140K organic search sessions (+304.1% YoY) • Top page: S&P 500 Calculator with 119K views (+292.8% YoY) • 200–400% YoY international growth',
+    outcome: '+265% YoY organic traffic growth (92K organic sessions) • +79K new users (+188% YoY) • 200–400% YoY growth internationally across multiple regions',
     image: '/images/website design photos/ss1.png',
     tags: ['HTML', 'CSS', 'JavaScript', 'GA4', 'Search Console', 'Structured Data', 'SEO', 'Analytics'],
     year: '2021–2025',
-    role: 'Sole Front-End Developer & Website Owner • End-to-end website development, UX/UI updates, SEO strategy, analytics, ongoing maintenance & releases',
+    role: 'Sole Front-End Developer & Website Owner • End-to-end front-end development, UI/UX updates, new page builds, bug fixes, deployments, and ongoing maintenance',
     tools: ['HTML', 'CSS', 'JavaScript', 'GA4', 'Google Search Console', 'Structured Data/Schema', 'Git'],
     highlights: [
-      'Sole owner of entire marketing website from development to SEO strategy',
-      'Drove 304% YoY growth in organic search sessions through technical SEO improvements',
-      'Built scalable front-end systems that maintained performance as site complexity grew'
+      'Sole owner of Troutwood.com, managing end-to-end front-end development, UI/UX updates, new page builds, bug fixes, deployments, and ongoing maintenance',
+      'Built responsive, accessible features using HTML/CSS/JavaScript across marketing and product pages, ensuring clean cross-browser performance',
+      'Drove organic growth through holistic website improvements resulting in +265% YoY organic traffic growth and +79K new users'
     ],
     images: [
       '/images/website design photos/ss1.png',
@@ -161,18 +161,18 @@ export const projects: Project[] = [
     slug: 'ai-chatbot-ui',
     title: 'AI Chatbot UI (Web + App)',
     category: 'web',
-    description: 'Built complete front-end for AI-powered chatbot across web and mobile platforms. Handled request/response flow, state management, and collaborated with backend/AI teams.',
-    longDescription: 'I built the entire front-end for an AI-powered chatbot that works seamlessly across web and mobile platforms. This project showcases my ability to build intuitive conversation interfaces and handle complex state management for real-time AI interactions.',
+    description: 'Built complete front-end interface for Troutwood\'s AI chatbot on both web and mobile, including conversation layout, message rendering, loading/typing indicators, input UX, and reliable API request/response handling with backend AI models.',
+    longDescription: 'I built the complete front-end interface for Troutwood\'s AI chatbot on both web and mobile platforms. This included conversation layout, message rendering, loading/typing indicators, input UX, and reliable API request/response handling with backend AI models. The chatbot provides instant, helpful responses to financial questions.',
     context: 'Troutwood needed an AI chatbot to help users get instant answers to financial questions. The interface needed to feel natural, handle errors gracefully, and work consistently across platforms.',
     problem: 'No existing chatbot interface. Needed to build conversation interface from scratch, handle typing states, loading/error states, and ensure consistent experience across web and mobile.',
     whatIDid: [
-      'Built complete front-end UI for web and mobile platforms',
-      'Implemented conversation flow with typing indicators and message formatting',
-      'Built request/response handling with proper error states and loading indicators',
-      'Created multi-platform consistent UI components',
-      'Built message formatting system for code blocks, lists, and rich text',
+      'Built complete front-end interface for web and mobile platforms',
+      'Designed and implemented conversation layout and message rendering',
+      'Created loading/typing indicators for real-time user feedback',
+      'Developed input UX for seamless user interaction',
+      'Built reliable API request/response handling with backend AI models',
       'Handled edge cases: network errors, timeout states, empty responses',
-      'Collaborated with backend/AI teams on API integration and response structure'
+      'Ensured consistent experience across web and mobile platforms'
     ],
     result: 'Successfully launched chatbot that provides instant, helpful responses. Users can get answers to financial questions quickly, improving engagement and reducing support burden.',
     outcome: 'Launched AI chatbot with seamless experience across platforms. Improved user engagement and reduced support queries.',
@@ -191,18 +191,18 @@ export const projects: Project[] = [
     slug: 'react-native-app-features',
     title: 'React Native App Features',
     category: 'mobile',
-    description: 'Built key features and components for Troutwood mobile app using React Native. Owned state management, API integration, and polished UX for multiple user-facing features.',
-    longDescription: 'I developed several key features for the Troutwood mobile app using React Native. This work demonstrates my ability to build native-feeling mobile experiences, handle complex state management, and create polished, responsive UI components.',
+    description: 'Contributed React Native (iOS) app features by building UI components/screens and integrating API data into user flows in collaboration with product and backend teams.',
+    longDescription: 'I contributed React Native (iOS) app features by building UI components/screens and integrating API data into user flows. This work was done in collaboration with product and backend teams, demonstrating my ability to build native-feeling mobile experiences, handle complex state management, and create polished, responsive UI components.',
     context: 'The Troutwood mobile app needed new features to improve user engagement and provide better financial education tools on mobile devices.',
     problem: 'App needed new features built quickly with consistent UX. Required proper state management, API integration, and responsive design that works across iOS and Android.',
     whatIDid: [
-      'Built multiple screens and components using React Native',
-      'Implemented state management for complex user flows',
-      'Integrated REST APIs with proper error handling and loading states',
-      'Created responsive layouts that work across iOS and Android',
+      'Built UI components and screens using React Native (iOS)',
+      'Integrated API data into user flows',
+      'Collaborated with product and backend teams on feature development',
+      'Implemented state management for complex user interactions',
+      'Created responsive layouts optimized for iOS',
       'Polished UX with smooth animations and transitions',
-      'Handled edge cases: offline states, slow networks, data validation',
-      'Collaborated with design and backend teams on feature specifications'
+      'Handled edge cases: offline states, slow networks, data validation'
     ],
     result: 'Successfully shipped multiple app features that improved user engagement and provided better mobile experience. Features work seamlessly across platforms with polished UX.',
     outcome: 'Shipped multiple app features with consistent UX. Improved mobile user engagement.',

@@ -5,7 +5,7 @@ import { useParams, useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { getProjectBySlug, projects, Project } from '@/data/projects'
 import Link from 'next/link'
-import Lottie, { LottieRefCurrentProps } from 'lottie-react'
+import Lottie from 'lottie-react'
 
 // Declare TikTok embed type
 declare global {
@@ -60,6 +60,112 @@ const ArrowLeft = ({ className }: { className?: string }) => (
 function getYouTubeEmbedUrl(url: string): string {
   const videoId = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)?.[1]
   return videoId ? `https://www.youtube.com/embed/${videoId}` : url
+}
+
+// Lottie Animation Card Component
+function LottieAnimationCard({ animationId, projectTitle, index }: { animationId: string; projectTitle: string; index: number }) {
+  const [animationData, setAnimationData] = useState<any>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
+  const lottieRef = useRef<any>(null)
+
+  // Map animation IDs to JSON file paths
+  const animationInfo: { [key: string]: { path: string; description: string; speed?: number } } = {
+    '6213873c-fb3b-4d24-b088-07820781f6c0': {
+      path: '/images/animations/json/ask finn 11.38.44 AM.json',
+      description: 'Ask Finn - Website chatbot animation (Created with After Effects & Lottie)',
+      speed: 0.3
+    },
+    '439cd762-9102-4912-8229-575fe6b7bf06': {
+      path: '/images/animations/json/Comp 1.json',
+      description: 'Website animation (Created with After Effects & Lottie)'
+    },
+    'fc1dd80b-ba08-46b2-acec-c3ff3b4b60f7': {
+      path: '/images/animations/json/finpulse blue.json',
+      description: 'FinPulse Blue - App animation (Created with After Effects & Lottie)'
+    },
+    '225c8e6e-50a2-478a-b3c1-be58e43f6764': {
+      path: '/images/animations/json/finpulse green.json',
+      description: 'FinPulse Green - App animation (Created with After Effects & Lottie)'
+    },
+    '4e702e65-a12e-4397-a49d-2a5ccdcd518a': {
+      path: '/images/animations/json/loading dots.json',
+      description: 'Loading Dots - App loading animation (Created with After Effects & Lottie)'
+    },
+  }
+
+  const info = animationInfo[animationId] || { path: `/images/animations/json/${animationId}.json`, description: 'Animation' }
+  const animationSpeed = info.speed || 1
+
+  useEffect(() => {
+    const jsonPath = encodeImagePath(info.path)
+    
+    fetch(jsonPath)
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(`Failed to load: ${res.status}`)
+        }
+        return res.json()
+      })
+      .then(data => {
+        setAnimationData(data)
+        setLoading(false)
+      })
+      .catch(err => {
+        console.error('Error loading animation:', err)
+        setError(true)
+        setLoading(false)
+      })
+  }, [animationId, info.path])
+
+  // Set speed when animation is ready
+  useEffect(() => {
+    if (lottieRef.current && animationSpeed !== 1) {
+      lottieRef.current.setSpeed(animationSpeed)
+    }
+  }, [animationData, animationSpeed])
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.35 + index * 0.1 }}
+      className="rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:border-primary-200 transition-all bg-white"
+    >
+      <div className="aspect-video bg-gray-50 flex items-center justify-center relative overflow-hidden">
+        {loading && (
+          <div className="w-full h-full flex items-center justify-center absolute inset-0 z-10 bg-gray-50">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
+          </div>
+        )}
+        {error && (
+          <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-primary-50 to-accent-50 p-4">
+            <p className="text-gray-600 text-sm mb-2">Animation failed to load</p>
+            <a
+              href={`https://app.lottiefiles.com/animation/${animationId}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-600 hover:text-primary-700 text-xs"
+            >
+              View on LottieFiles →
+            </a>
+          </div>
+        )}
+        {animationData && !loading && !error && (
+          <Lottie
+            lottieRef={lottieRef}
+            animationData={animationData}
+            loop={true}
+            autoplay={true}
+            style={{ width: '100%', height: '100%' }}
+          />
+        )}
+      </div>
+      <div className="p-4">
+        <p className="text-gray-600 text-sm">{info.description}</p>
+      </div>
+    </motion.div>
+  )
 }
 
 // Helper function to convert TikTok URL to embed URL
@@ -158,110 +264,6 @@ function TikTokEmbed({ url, index }: { url: string; index: number }) {
   )
 }
 
-// Lottie Animation Card Component
-function LottieAnimationCard({ animationId, projectTitle, index }: { animationId: string; projectTitle: string; index: number }) {
-  const [animationData, setAnimationData] = useState<any>(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(false)
-  const lottieRef = useRef<LottieRefCurrentProps>(null)
-
-  // Get description and speed for this animation
-  const animationInfo: { [key: string]: { path: string; description: string; speed?: number } } = {
-    '6213873c-fb3b-4d24-b088-07820781f6c0': {
-      path: '/images/animations/json/ask finn 11.38.44 AM.json',
-      description: 'Ask Finn - Website chatbot animation (Created with After Effects & Lottie)',
-      speed: 0.5 // Slow down to 50% speed
-    },
-    '439cd762-9102-4912-8229-575fe6b7bf06': {
-      path: '/images/animations/json/Comp 1.json',
-      description: 'Website animation (Created with After Effects & Lottie)'
-    },
-    'fc1dd80b-ba08-46b2-acec-c3ff3b4b60f7': {
-      path: '/images/animations/json/finpulse blue.json',
-      description: 'FinPulse Blue - App animation (Created with After Effects & Lottie)'
-    },
-    '225c8e6e-50a2-478a-b3c1-be58e43f6764': {
-      path: '/images/animations/json/finpulse green.json',
-      description: 'FinPulse Green - App animation (Created with After Effects & Lottie)'
-    },
-    '4e702e65-a12e-4397-a49d-2a5ccdcd518a': {
-      path: '/images/animations/json/loading dots.json',
-      description: 'Loading Dots - App loading animation (Created with After Effects & Lottie)'
-    },
-  }
-  const info = animationInfo[animationId] || { path: `/images/animations/json/${animationId}.json`, description: 'Animation' }
-  const description = info.description
-  const animationSpeed = info.speed || 1
-
-  useEffect(() => {
-    const jsonPath = info.path
-    
-    // Encode the path to handle spaces and special characters
-    const encodedPath = encodeImagePath(jsonPath)
-    
-    // Load from local JSON file
-    fetch(encodedPath)
-      .then(res => {
-        if (!res.ok) {
-          throw new Error('Failed to load animation')
-        }
-        return res.json()
-      })
-      .then(data => {
-        setAnimationData(data)
-        setLoading(false)
-      })
-      .catch(() => {
-        setError(true)
-        setLoading(false)
-      })
-  }, [animationId, info.path])
-
-  // Set speed after animation data is loaded
-  useEffect(() => {
-    if (animationData && lottieRef.current && animationSpeed !== 1) {
-      setTimeout(() => {
-        if (lottieRef.current) {
-          lottieRef.current.setSpeed(animationSpeed)
-        }
-      }, 100)
-    }
-  }, [animationData, animationSpeed])
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.35 + index * 0.1 }}
-      className="rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:border-primary-200 transition-all bg-white"
-    >
-      <div className="aspect-video bg-gray-50 flex items-center justify-center relative overflow-hidden">
-        {loading && (
-          <div className="w-full h-full flex items-center justify-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
-          </div>
-        )}
-        {error && (
-          <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-primary-50 to-accent-50 p-4">
-            <p className="text-gray-600 text-sm">Animation failed to load</p>
-          </div>
-        )}
-        {animationData && !loading && !error && (
-          <Lottie
-            lottieRef={lottieRef}
-            animationData={animationData}
-            loop={true}
-            autoplay={true}
-            className="w-full h-full"
-          />
-        )}
-      </div>
-      <div className="p-4">
-        <p className="text-gray-600 text-sm">{description}</p>
-      </div>
-    </motion.div>
-  )
-}
 
 export default function WorkDetailPage() {
   const params = useParams()

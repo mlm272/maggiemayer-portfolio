@@ -48,7 +48,7 @@ export default function Hero({ setActiveSection }: HeroProps) {
             className="mb-6"
           >
             <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-6">
-              Front-End Developer & Digital Designer
+              Front-End Developer | Creative Technologist | SEO + Growth
             </span>
           </motion.div>
           <motion.h1
@@ -68,7 +68,7 @@ export default function Hero({ setActiveSection }: HeroProps) {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl md:text-2xl lg:text-3xl text-gray-700 mb-4 max-w-3xl mx-auto font-medium"
           >
-            Front-End Developer & Digital Designer
+            Front-End Developer | Creative Technologist | SEO + Growth
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
