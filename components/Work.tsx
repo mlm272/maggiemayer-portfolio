@@ -5,13 +5,27 @@ import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { projects, getProjectsByCategory } from '@/data/projects'
 
-// Helper function to encode image paths with special characters
+// Helper function to get basePath (for GitHub Pages)
+function getBasePath(): string {
+  if (typeof window === 'undefined') return '/maggiemayer-portfolio'
+  // Check if we're on GitHub Pages by looking at the pathname
+  if (window.location.pathname.startsWith('/maggiemayer-portfolio')) {
+    return '/maggiemayer-portfolio'
+  }
+  return ''
+}
+
+// Helper function to encode image paths with special characters and add basePath
 function encodeImagePath(path: string): string {
+  const basePath = getBasePath()
+  
   // Split the path and encode only the filename part
   const parts = path.split('/')
   const filename = parts[parts.length - 1]
   const directory = parts.slice(0, -1).join('/')
-  return directory + '/' + encodeURIComponent(filename)
+  const encodedPath = directory + '/' + encodeURIComponent(filename)
+  // Prepend basePath
+  return basePath + encodedPath
 }
 
 interface WorkProps {

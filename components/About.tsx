@@ -4,6 +4,16 @@ import { motion } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 
+// Helper function to get basePath (for GitHub Pages)
+function getBasePath(): string {
+  if (typeof window === 'undefined') return '/maggiemayer-portfolio'
+  // Check if we're on GitHub Pages by looking at the pathname
+  if (window.location.pathname.startsWith('/maggiemayer-portfolio')) {
+    return '/maggiemayer-portfolio'
+  }
+  return ''
+}
+
 interface AboutProps {
   setActiveSection: (section: string) => void
 }
@@ -134,7 +144,7 @@ export default function About({ setActiveSection }: AboutProps) {
               <div className="aspect-square bg-gradient-to-br from-primary-100 via-accent-100 to-tertiary-100 rounded-2xl flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-600/10 to-transparent"></div>
                 <Image
-                  src="/images/maggie-2.jpg"
+                  src={`${getBasePath()}/images/maggie-2.jpg`}
                   alt="Maggie Mayer"
                   width={400}
                   height={400}

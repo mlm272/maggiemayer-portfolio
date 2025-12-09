@@ -18,8 +18,20 @@ declare global {
   }
 }
 
-// Helper function to encode image paths with special characters
+// Helper function to get basePath (for GitHub Pages)
+function getBasePath(): string {
+  if (typeof window === 'undefined') return '/maggiemayer-portfolio'
+  // Check if we're on GitHub Pages by looking at the pathname
+  if (window.location.pathname.startsWith('/maggiemayer-portfolio')) {
+    return '/maggiemayer-portfolio'
+  }
+  return ''
+}
+
+// Helper function to encode image paths with special characters and add basePath
 function encodeImagePath(path: string): string {
+  const basePath = getBasePath()
+  
   // For Next.js static files, encode the entire path
   // This handles spaces and special characters in filenames
   try {
@@ -31,10 +43,13 @@ function encodeImagePath(path: string): string {
       // Encode each part
       return encodeURIComponent(part)
     })
-    return encodedParts.join('/')
+    const encodedPath = encodedParts.join('/')
+    // Prepend basePath
+    return basePath + encodedPath
   } catch (e) {
     // Fallback to simple encoding
-    return encodeURI(path)
+    const encoded = encodeURI(path)
+    return basePath + encoded
   }
 }
 
@@ -313,7 +328,7 @@ export default function WorkDetailClient({ slug }: { slug: string }) {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
-          <Link href="/#work" className="text-primary-600 hover:underline">
+          <Link href="/" className="text-primary-600 hover:underline">
             Back to Work
           </Link>
         </div>
