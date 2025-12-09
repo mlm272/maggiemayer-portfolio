@@ -441,7 +441,9 @@ export default function WorkDetailClient({ slug }: { slug: string }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="mb-12 rounded-2xl overflow-hidden shadow-xl border border-gray-200 cursor-pointer"
+            className={`mb-12 rounded-2xl overflow-hidden shadow-xl border border-gray-200 cursor-pointer ${
+              project.slug === 'react-native-app-features' ? 'max-w-2xl mx-auto' : ''
+            }`}
             onClick={() => {
               if (project.images && project.images.length > 0) {
                 setSelectedImage(encodeImagePath(project.images[0]))
@@ -452,7 +454,7 @@ export default function WorkDetailClient({ slug }: { slug: string }) {
             <img
               src={encodeImagePath(project.images[0])}
               alt={project.title}
-              className="w-full h-auto hover:opacity-90 transition-opacity"
+              className={`${project.slug === 'react-native-app-features' ? 'max-w-full' : 'w-full'} h-auto hover:opacity-90 transition-opacity`}
               onError={(e) => {
                 console.error('Image failed to load:', e.currentTarget.src)
                 // Try different encoding approaches as fallback
