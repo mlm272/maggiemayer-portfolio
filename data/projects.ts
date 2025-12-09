@@ -36,13 +36,13 @@ export const projects: Project[] = [
     slug: 'troutwood-website',
     title: 'Troutwood Website',
     category: 'web',
-    description: 'Sole front-end owner of Troutwood website (2021-2025). Built and maintain entire site using HTML/CSS/JS, handle SEO + analytics, and ship ongoing improvements that drove +265% YoY organic traffic growth (92K organic sessions) and +79K new users (+188% YoY).',
+    description: 'Sole front-end owner of Troutwood website (2021-2025). Built and maintained entire site using HTML/CSS/JS, handled SEO + analytics, and shipped ongoing improvements that drove +265% YoY organic traffic growth (92K organic sessions) and +79K new users (+188% YoY).',
     longDescription: 'I fully owned Troutwood\'s marketing website from 2021-2025, managing everything from day-to-day updates to major feature builds and performance improvements. My work blended front-end development with technical SEO and analytics-driven UX iteration to increase discoverability of core tools and grow organic traffic. I designed and built landing pages and web marketing pages, emphasizing layout, responsiveness, and conversion clarity.',
-    context: 'I fully owned Troutwood\'s marketing website, managing everything from day-to-day updates to major feature builds and performance improvements. My work blended front-end development with technical SEO and analytics-driven UX iteration to increase discoverability of core tools and grow organic traffic.',
+    context: 'I fully owned Troutwood\'s marketing website, managed everything from day-to-day updates to major feature builds and performance improvements. My work blended front-end development with technical SEO and analytics-driven UX iteration to increase discoverability of core tools and grow organic traffic.',
     problem: 'The site faced three key challenges: 1) Low discoverability of key tools due to navigation friction, 2) Need for scalable organic growth through better search visibility, and 3) Performance and UX consistency across devices as the site grew in complexity.',
     whatIOwned: [
       'End-to-end website management: built new pages, maintained existing pages, fixed bugs, updated content, and ensured consistent styling and branding across the site',
-      'Front-end feature development using HTML/CSS/JavaScript, focusing on responsive design, accessibility, and cross-browser reliability',
+      'Front-end feature development using HTML/CSS/JavaScript, focused on responsive design, accessibility, and cross-browser reliability',
       'Technical + on-page SEO strategy: metadata, internal linking, structured data, site architecture improvements, keyword optimization, and content support',
       'Analytics + iteration loop: monitored GA4/Search Console trends, identified drop-offs or underperforming pages, shipped UX fixes, and tracked lift'
     ],
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     result: 'Organic traffic growth was driven by holistic improvements to Troutwood.com — technical SEO foundations, clearer site architecture, stronger internal linking, accessibility upgrades, and continuous UX refinement. As the website became faster, more reliable, and more authoritative, search visibility increased across the entire domain, leading to compounding growth in organic sessions and new users.\n\nResults:\n• +265% YoY organic traffic growth (92K organic sessions)\n• +79K new users (+188% YoY)\n• 200–400% YoY international growth across multiple regions\n\nMetrics reflect performance on the site version I owned and optimized. After a company-wide redesign, site architecture and analytics baselines shifted, so post-redesign performance is measured from a new starting point.',
     takeaways: [
       'Owning the website solo required me to think like both a developer and a growth strategist',
-      'Biggest contributions: building reliable front-end systems, using analytics to guide UX improvements, and executing SEO work that produced measurable, sustained traffic gains'
+      'Biggest contributions: built reliable front-end systems, used analytics to guide UX improvements, and executed SEO work that produced measurable, sustained traffic gains'
     ],
     outcome: '+265% YoY organic traffic growth (92K organic sessions) • +79K new users (+188% YoY) • 200–400% YoY growth internationally across multiple regions',
     image: '/images/website design photos/ss1.png',
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     role: 'Sole Front-End Developer & Website Owner • End-to-end front-end development, UI/UX updates, new page builds, bug fixes, deployments, and ongoing maintenance',
     tools: ['HTML', 'CSS', 'JavaScript', 'GA4', 'Google Search Console', 'Structured Data/Schema', 'Git'],
     highlights: [
-      'Sole owner of Troutwood.com, managing end-to-end front-end development, UI/UX updates, new page builds, bug fixes, deployments, and ongoing maintenance',
+      'Sole owner of Troutwood.com, managed end-to-end front-end development, UI/UX updates, new page builds, bug fixes, deployments, and ongoing maintenance',
       'Built responsive, accessible features using HTML/CSS/JavaScript across marketing and product pages, ensuring clean cross-browser performance',
       'Drove organic growth through holistic website improvements resulting in +265% YoY organic traffic growth and +79K new users'
     ],
@@ -131,7 +131,7 @@ export const projects: Project[] = [
       'Responsive design and cross-browser compatibility',
       'Performance optimization and accessibility'
     ],
-    result: 'Successfully launched a fully functional, beautifully designed website that effectively communicates The Missing Semester\'s educational mission. The site provides an intuitive user experience across all devices.',
+    result: 'Successfully launched a fully functional, beautifully designed website that effectively communicated The Missing Semester\'s educational mission. The site provided an intuitive user experience across all devices.',
     outcome: 'Launched complete website with custom design and full front-end implementation. Created cohesive visual identity and seamless user experience.',
     image: '/images/themissingsemester.png',
     tags: ['Web Design', 'Front-End Development', 'UI/UX Design', 'HTML', 'CSS', 'JavaScript', 'Responsive Design'],
@@ -174,7 +174,7 @@ export const projects: Project[] = [
       'Handled edge cases: network errors, timeout states, empty responses',
       'Ensured consistent experience across web and mobile platforms'
     ],
-    result: 'Successfully launched chatbot that provides instant, helpful responses. Users can get answers to financial questions quickly, improving engagement and reducing support burden.',
+    result: 'Successfully launched chatbot that provided instant, helpful responses. Users could get answers to financial questions quickly, improving engagement and reducing support burden.',
     outcome: 'Launched AI chatbot with seamless experience across platforms. Improved user engagement and reduced support queries.',
     image: '/images/ask-finn.png',
     tags: ['React', 'React Native', 'API Integration', 'State Management'],
@@ -204,7 +204,7 @@ export const projects: Project[] = [
       'Polished UX with smooth animations and transitions',
       'Handled edge cases: offline states, slow networks, data validation'
     ],
-    result: 'Successfully shipped multiple app features that improved user engagement and provided better mobile experience. Features work seamlessly across platforms with polished UX.',
+    result: 'Successfully shipped multiple app features that improved user engagement and provided better mobile experience. Features worked seamlessly across platforms with polished UX.',
     outcome: 'Shipped multiple app features with consistent UX. Improved mobile user engagement.',
     image: '/images/mobile/IMG_1726.PNG',
     images: [
@@ -238,7 +238,7 @@ export const projects: Project[] = [
       'Integrated animations seamlessly into existing web and mobile interfaces',
       'Maintained brand consistency across all animated content'
     ],
-    result: 'Created multiple engaging animations that improve user engagement and make complex topics more accessible. Animations enhance the user experience across web and mobile platforms while maintaining fast load times.',
+    result: 'Created multiple engaging animations that improved user engagement and made complex topics more accessible. Animations enhanced the user experience across web and mobile platforms while maintaining fast load times.',
     outcome: 'Developed engaging animations that improve user engagement and make complex financial concepts more accessible and visually appealing.',
     image: '/images/animation.png',
     tags: ['Adobe After Effects', 'Adobe Character Animator', 'Adobe Premiere Pro', 'Lottie', 'GSAP', 'Motion Graphics', 'Animation', 'Character Animation', 'Video Editing'],
@@ -277,14 +277,14 @@ export const projects: Project[] = [
     title: 'Creative / Marketing Design Work',
     category: 'graphic',
     description: 'Designed visual content for product launches and social growth. Created social graphics, flyers, campaign visuals, and UI-support graphics aligned with brand system.',
-    longDescription: 'I design and create visual content for Troutwood\'s marketing campaigns, social media, and brand materials. This includes social graphics (created out of necessity to support marketing needs, not the main aspect of my role), digital ads, email newsletters (designed from scratch in Figma, then transferred to MailerLite), event flyers, campaign visuals, and launch packages. All work is aligned with our brand system and designed to communicate complex financial concepts in an accessible, visually appealing way. I show complete campaign systems, not just individual pieces, demonstrating cohesive brand execution across channels.',
+    longDescription: 'I designed and created visual content for Troutwood\'s marketing campaigns, social media, and brand materials. This included social graphics (created out of necessity to support marketing needs, not the main aspect of my role), digital ads, email newsletters (designed from scratch in Figma, then transferred to MailerLite), event flyers, campaign visuals, and launch packages. All work was aligned with our brand system and designed to communicate complex financial concepts in an accessible, visually appealing way. I showed complete campaign systems, not just individual pieces, demonstrating cohesive brand execution across channels.',
     context: 'Troutwood needed consistent, engaging visual content for marketing campaigns, social media growth, and product launches. Content needed to align with brand identity and effectively communicate financial education concepts. Note: Social media posts were created out of necessity to support marketing needs, but were not the main aspect of my role.',
     problem: 'Needed cohesive visual content across multiple channels. Social media, email newsletters, and marketing materials required consistent branding and engaging design that could communicate complex topics simply.',
     whatIDid: [
       'Designed complete campaign systems including social graphics, digital ads, flyers, and launch packages for product releases',
       'Designed newsletter templates from scratch in Figma, then transferred to MailerLite for production, emphasizing hierarchy, clarity, and mobile-responsive layouts',
       'Developed event flyers, promotional materials, and collateral aligned to brand standards',
-      'Designed campaign visuals and launch packages that work cohesively across multiple touchpoints',
+      'Designed campaign visuals and launch packages that worked cohesively across multiple touchpoints',
       'Created UI-support graphics and illustrations for web and app interfaces',
       'Maintained brand consistency across all marketing materials and channels',
       'Filmed and edited podcast videos (audio and video editing) with team collaboration',
@@ -376,39 +376,39 @@ export const projects: Project[] = [
       },
       {
         url: 'https://www.youtube.com/watch?v=F2FP6aDbjp8',
-        description: 'Filmed and edited using a combination of original footage and stock clips'
+        description: 'Filmed and edited using a combination of original footage and stock clips with audio mixing'
       },
       {
         url: 'https://www.youtube.com/watch?v=gCRt_6pCS6I',
-        description: 'Filmed, edited, and color graded'
+        description: 'Filmed, edited, color graded, and audio mixed'
       },
       {
         url: 'https://www.youtube.com/watch?v=_jo79P-SnDk',
-        description: 'Filmed, edited, and color graded'
+        description: 'Filmed, edited, color graded, and audio mixed'
       },
       {
         url: 'https://www.youtube.com/watch?v=ld4Ek_HJ9jY',
-        description: 'Edited'
+        description: 'Edited and audio mixed'
       },
       {
         url: 'https://youtu.be/L81J2bTNwrQ',
-        description: 'Meant for social media'
+        description: 'Meant for social media with audio mixing'
       },
       {
         url: 'https://youtu.be/f35il1bUURY',
-        description: 'Just meant for summary'
+        description: 'Compilation of clips for internal with audio mixing'
       },
       {
         url: '/images/social-videos/linkedin-whatistwapp.mp4',
-        description: 'Edited for LinkedIn social media'
+        description: 'Edited for LinkedIn social media with audio mixing'
       },
       {
         url: '/images/social-videos/Our first notification.mp4',
-        description: 'Visual editing for social media'
+        description: 'Visual editing for social media with audio mixing'
       },
       {
         url: '/images/videos/atlas first draft.mp4',
-        description: 'Filmed and edited completely. Pro bono project for a business partner'
+        description: 'Filmed and edited completely with audio mixing. Pro bono project for a business partner'
       },
       {
         url: 'https://www.tiktok.com/@troutwoodapp/video/7185591875414412587',
@@ -461,7 +461,7 @@ export const projects: Project[] = [
     title: 'Brand Assets & Guidelines',
     category: 'brand',
     description: 'Created comprehensive brand assets and guidelines including color palettes, typography, and brand guidelines documentation in the early stages of Troutwood.',
-    longDescription: 'I developed comprehensive brand assets and guidelines that establish visual consistency across all touchpoints. This includes color systems, typography guidelines, and detailed brand documentation that ensures cohesive brand expression. This work was done in the early stages of Troutwood with assistance from our contracted UX/UI designer.',
+    longDescription: 'I developed comprehensive brand assets and guidelines that established visual consistency across all touchpoints. This included color systems, typography guidelines, and detailed brand documentation that ensured cohesive brand expression. This work was done in the early stages of Troutwood with assistance from our contracted UX/UI designer.',
     context: 'In the early stages of Troutwood, we needed a comprehensive brand system to ensure visual consistency across all platforms, marketing materials, and digital experiences. This work was done with assistance from our contracted UX/UI designer.',
     problem: 'Lacked a unified brand system, leading to inconsistent visual identity across different materials and platforms. Needed comprehensive brand guidelines and assets to maintain consistency.',
     whatIDid: [
@@ -477,7 +477,7 @@ export const projects: Project[] = [
       'Brand guidelines documentation and presentation',
       'Brand asset library and usage guidelines'
     ],
-    result: 'Created comprehensive brand system that ensures visual consistency across all platforms. Brand guidelines provide clear direction for all future design work and maintain cohesive brand identity.',
+    result: 'Created comprehensive brand system that ensured visual consistency across all platforms. Brand guidelines provided clear direction for all future design work and maintained cohesive brand identity.',
     outcome: 'Established comprehensive brand system with guidelines and assets. Ensured visual consistency across all platforms and materials.',
     image: '/brand/tw-brand.png',
     tags: ['Brand Design', 'Brand Guidelines', 'Visual Identity', 'Design Systems'],
