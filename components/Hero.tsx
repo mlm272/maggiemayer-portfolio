@@ -88,23 +88,23 @@ export default function Hero({ setActiveSection }: HeroProps) {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => {
-                document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })
-                setActiveSection('work')
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+                setActiveSection('contact')
               }}
               className="px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all text-lg"
             >
-              View My Work
+              Get In Touch
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => {
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-                setActiveSection('contact')
+                document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })
+                setActiveSection('work')
               }}
               className="px-8 py-4 bg-white text-primary-600 border-2 border-primary-600 rounded-xl font-semibold hover:bg-primary-50 transition-all shadow-lg hover:shadow-xl text-lg"
             >
-              Get In Touch
+              View My Work
             </motion.button>
           </motion.div>
         </div>

@@ -68,12 +68,6 @@ export default function Contact({ setActiveSection }: ContactProps) {
           <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
             Contact
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Let's Work Together
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Have a project in mind? I'd love to hear from you. Let's create something amazing together.
-          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -85,7 +79,7 @@ export default function Contact({ setActiveSection }: ContactProps) {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                 Let's Connect
               </h3>
               <p className="text-lg text-gray-700 mb-8 leading-relaxed">
