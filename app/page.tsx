@@ -6,6 +6,7 @@ import Navigation from '@/components/Navigation'
 import Work from '@/components/Work'
 import About from '@/components/About'
 import Contact from '@/components/Contact'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home')
@@ -17,6 +18,7 @@ export default function Home() {
       <Work setActiveSection={setActiveSection} />
       <About setActiveSection={setActiveSection} />
       <Contact setActiveSection={setActiveSection} />
+      <Footer />
     </main>
   )
 }

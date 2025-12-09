@@ -88,7 +88,7 @@ function LottieAnimationCard({ animationId, projectTitle, index }: { animationId
       path: '/images/animations/json/finpulse green.json',
       description: 'FinPulse Green - App animation (Created with After Effects & Lottie)'
     },
-    '4e702e65-a12e-4397-a49d-2a5ccdcd518a': {
+    '1f3e3787-9c9f-42b0-9a0a-8485731f95ac': {
       path: '/images/animations/json/loading dots.json',
       description: 'Loading Dots - App loading animation (Created with After Effects & Lottie)'
     },

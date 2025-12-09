@@ -253,7 +253,7 @@ export const projects: Project[] = [
       '439cd762-9102-4912-8229-575fe6b7bf06',
       'fc1dd80b-ba08-46b2-acec-c3ff3b4b60f7',
       '225c8e6e-50a2-478a-b3c1-be58e43f6764',
-      '4e702e65-a12e-4397-a49d-2a5ccdcd518a'
+      '1f3e3787-9c9f-42b0-9a0a-8485731f95ac'
     ],
     videos: [
       {
@@ -316,8 +316,6 @@ export const projects: Project[] = [
       '/images/newsletters/option-webbased2.png',
       '/images/newsletters/Plaid - Pro Users.png',
       '/images/newsletters/Transactions Updates.png',
-      '/images/design/menu (5 × 7 in).png',
-      '/images/design/You are coordinally invited.png',
       '/images/photography/img1.png',
       '/images/photography/maia.jpg',
       '/images/photography/maia4-1.jpg',
@@ -350,13 +348,6 @@ export const projects: Project[] = [
           '/images/newsletters/option-webbased2.png',
           '/images/newsletters/Plaid - Pro Users.png',
           '/images/newsletters/Transactions Updates.png'
-        ]
-      },
-      {
-        category: 'Extracurricular Design',
-        images: [
-          '/images/design/menu (5 × 7 in).png',
-          '/images/design/You are coordinally invited.png'
         ]
       },
       {
@@ -400,6 +391,14 @@ export const projects: Project[] = [
         description: 'Edited'
       },
       {
+        url: 'https://youtu.be/L81J2bTNwrQ',
+        description: 'Meant for social media'
+      },
+      {
+        url: 'https://youtu.be/f35il1bUURY',
+        description: 'Just meant for summary'
+      },
+      {
         url: '/images/social-videos/linkedin-whatistwapp.mp4',
         description: 'Edited for LinkedIn social media'
       },
@@ -411,14 +410,38 @@ export const projects: Project[] = [
         url: '/images/videos/atlas first draft.mp4',
         description: 'Filmed and edited completely. Pro bono project for a business partner'
       },
-      'https://www.tiktok.com/@troutwoodapp/video/7185591875414412587',
-      'https://www.tiktok.com/@troutwoodapp/video/7141106125730041130',
-      'https://www.tiktok.com/@troutwoodapp/video/7136299239969312046',
-      'https://www.tiktok.com/@troutwoodapp/video/7301755944399129898',
-      'https://www.tiktok.com/@troutwoodapp/video/7168930641340304686',
-      'https://www.tiktok.com/@troutwoodapp/video/7171932885254016299',
-      'https://www.tiktok.com/@troutwoodapp/video/7137669238805761326',
-      'https://www.tiktok.com/@troutwoodapp/video/6922859789236194565'
+      {
+        url: 'https://www.tiktok.com/@troutwoodapp/video/7185591875414412587',
+        description: 'Directed, filmed, and made by myself'
+      },
+      {
+        url: 'https://www.tiktok.com/@troutwoodapp/video/7141106125730041130',
+        description: 'Directed, filmed, and made by myself'
+      },
+      {
+        url: 'https://www.tiktok.com/@troutwoodapp/video/7136299239969312046',
+        description: 'Directed, filmed, and made by myself'
+      },
+      {
+        url: 'https://www.tiktok.com/@troutwoodapp/video/7301755944399129898',
+        description: 'Directed, filmed, and made by myself'
+      },
+      {
+        url: 'https://www.tiktok.com/@troutwoodapp/video/7168930641340304686',
+        description: 'Directed, filmed, and made by myself'
+      },
+      {
+        url: 'https://www.tiktok.com/@troutwoodapp/video/7171932885254016299',
+        description: 'Directed, filmed, and made by myself'
+      },
+      {
+        url: 'https://www.tiktok.com/@troutwoodapp/video/7137669238805761326',
+        description: 'Directed, filmed, and made by myself'
+      },
+      {
+        url: 'https://www.tiktok.com/@troutwoodapp/video/6922859789236194565',
+        description: 'Directed, filmed, and made by myself'
+      }
     ],
     pdfs: [
       {
@@ -437,20 +460,20 @@ export const projects: Project[] = [
     slug: 'brand-assets',
     title: 'Brand Assets & Guidelines',
     category: 'brand',
-    description: 'Created comprehensive brand assets and guidelines including color palettes, typography, and brand guidelines documentation.',
-    longDescription: 'I developed comprehensive brand assets and guidelines that establish visual consistency across all touchpoints. This includes color systems, typography guidelines, and detailed brand documentation that ensures cohesive brand expression.',
-    context: 'Troutwood needed a comprehensive brand system to ensure visual consistency across all platforms, marketing materials, and digital experiences.',
+    description: 'Created comprehensive brand assets and guidelines including color palettes, typography, and brand guidelines documentation in the early stages of Troutwood.',
+    longDescription: 'I developed comprehensive brand assets and guidelines that establish visual consistency across all touchpoints. This includes color systems, typography guidelines, and detailed brand documentation that ensures cohesive brand expression. This work was done in the early stages of Troutwood with assistance from our contracted UX/UI designer.',
+    context: 'In the early stages of Troutwood, we needed a comprehensive brand system to ensure visual consistency across all platforms, marketing materials, and digital experiences. This work was done with assistance from our contracted UX/UI designer.',
     problem: 'Lacked a unified brand system, leading to inconsistent visual identity across different materials and platforms. Needed comprehensive brand guidelines and assets to maintain consistency.',
     whatIDid: [
-      'Developed comprehensive color palette with primary, secondary, and accent colors',
-      'Established typography system and hierarchy',
+      'Developed comprehensive color palette with primary, secondary, and accent colors (with assistance from contracted UX/UI designer)',
+      'Established typography system and hierarchy (with assistance from contracted UX/UI designer)',
       'Created brand guidelines documentation',
       'Designed brand asset library with all variations',
       'Developed usage guidelines for colors and typography',
       'Created presentation materials for brand guidelines'
     ],
     whatIOwned: [
-      'Complete brand asset creation: color systems, typography',
+      'Complete brand asset creation: color systems, typography (collaborated with contracted UX/UI designer)',
       'Brand guidelines documentation and presentation',
       'Brand asset library and usage guidelines'
     ],
@@ -459,7 +482,7 @@ export const projects: Project[] = [
     image: '/brand/tw-brand.png',
     tags: ['Brand Design', 'Brand Guidelines', 'Visual Identity', 'Design Systems'],
     year: '2021 - Present',
-    role: 'Brand Designer • Visual Identity Lead',
+    role: 'Brand Designer • Visual Identity Lead (Early Stage Work with UX/UI Designer Collaboration)',
     tools: ['Figma', 'Adobe Creative Suite', 'Brand Guidelines', 'Design Systems'],
     highlights: [
       'Created comprehensive brand guidelines',
