@@ -317,7 +317,7 @@ export const projects: Project[] = [
       '/images/social posts/map jr. post.png',
       '/images/social posts/Copy of barbie vs oppenheimer.png',
       '/images/social posts/Financial Literacy month.png',
-      '/images/newsletters/Fall Update.png',
+      '/images/newsletters/Montly Report Update.png',
       '/images/newsletters/Wrapped-full.png',
       '/images/newsletters/Plaid - Pro Users.png',
       '/images/newsletters/Transactions Updates.png',
@@ -349,7 +349,7 @@ export const projects: Project[] = [
       {
         category: 'Newsletters',
         images: [
-          '/images/newsletters/Fall Update.png',
+          '/images/newsletters/Montly Report Update.png',
           '/images/newsletters/Wrapped-full.png',
           '/images/newsletters/Plaid - Pro Users.png',
           '/images/newsletters/Transactions Updates.png'
