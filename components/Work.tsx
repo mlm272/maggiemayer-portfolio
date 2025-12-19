@@ -123,10 +123,10 @@ export default function Work({ setActiveSection }: WorkProps) {
                 className="bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer group border border-gray-100 hover:border-primary-200 transition-all"
               >
               <div className="relative h-64 bg-gradient-to-br from-primary-100 via-accent-100 to-tertiary-100 overflow-hidden">
-                {project.images && project.images.length > 0 ? (
+                {project.image || (project.images && project.images.length > 0) ? (
                   <>
                     <img
-                      src={encodeImagePath(project.images[0])}
+                      src={encodeImagePath(project.image || project.images![0])}
                       alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />

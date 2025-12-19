@@ -379,64 +379,8 @@ export default function WorkDetailClient({ slug }: { slug: string }) {
           </p>
         </motion.div>
 
-        {/* Project Image or Video Gallery */}
-        {project.videos && project.videos.length > 0 ? (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="mb-12"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Video Gallery</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {project.videos.map((videoItem, index) => {
-                // Handle both string URLs and objects with url/description
-                const videoUrl = typeof videoItem === 'string' ? videoItem : videoItem.url
-                const videoDescription = typeof videoItem === 'object' ? videoItem.description : undefined
-                
-                const videoType = getVideoType(videoUrl)
-                
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 + index * 0.1 }}
-                    className="rounded-2xl overflow-hidden shadow-xl bg-white"
-                  >
-                    <div className="bg-gray-900">
-                      {videoType === 'youtube' ? (
-                        <iframe
-                          src={getYouTubeEmbedUrl(videoUrl)}
-                          title={`${project.title} - Video ${index + 1}`}
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                          className="w-full aspect-video"
-                        />
-                      ) : videoType === 'tiktok' ? (
-                        <TikTokEmbed url={videoUrl} index={index} />
-                      ) : videoType === 'local' ? (
-                        <video
-                          src={encodeImagePath(videoUrl)}
-                          controls
-                          className="w-full aspect-video"
-                          title={`${project.title} - Video ${index + 1}`}
-                        >
-                          Your browser does not support the video tag.
-                        </video>
-                      ) : null}
-                    </div>
-                    {videoDescription && (
-                      <div className="p-4">
-                        <p className="text-gray-600 text-sm">{videoDescription}</p>
-                      </div>
-                    )}
-                  </motion.div>
-                )
-              })}
-            </div>
-          </motion.div>
-        ) : project.images && project.images.length > 0 ? (
+        {/* Project Image */}
+        {project.image || (project.images && project.images.length > 0 && !project.categorizedImages) ? (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -445,22 +389,27 @@ export default function WorkDetailClient({ slug }: { slug: string }) {
               project.slug === 'react-native-app-features' ? 'max-w-2xl mx-auto' : ''
             }`}
             onClick={() => {
-              if (project.images && project.images.length > 0) {
-                setSelectedImage(encodeImagePath(project.images[0]))
-                setSelectedImageIndex(0)
+              const imagePath = project.image || (project.images && project.images[0])
+              if (imagePath) {
+                setSelectedImage(encodeImagePath(imagePath))
+                if (project.images) {
+                  setSelectedImageIndex(project.images.indexOf(imagePath))
+                } else {
+                  setSelectedImageIndex(0)
+                }
               }
             }}
           >
             <img
-              src={encodeImagePath(project.images[0])}
+              src={encodeImagePath(project.image || project.images![0])}
               alt={project.title}
               className={`${project.slug === 'react-native-app-features' ? 'max-w-full' : 'w-full'} h-auto hover:opacity-90 transition-opacity`}
               onError={(e) => {
                 console.error('Image failed to load:', e.currentTarget.src)
                 // Try different encoding approaches as fallback
                 const target = e.target as HTMLImageElement
-                if (project.images && project.images.length > 0) {
-                  const originalPath = project.images[0]
+                const originalPath = project.image || (project.images && project.images[0])
+                if (originalPath) {
                   // Try with full path encoding
                   if (!target.src.includes(encodeURI(originalPath))) {
                     target.src = encodeURI(originalPath)
@@ -858,6 +807,63 @@ export default function WorkDetailClient({ slug }: { slug: string }) {
                           }}
                         />
                         </div>
+                      </motion.div>
+                    )
+                  })}
+                </div>
+              </motion.div>
+            )}
+
+            {project.videos && project.videos.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Video Gallery</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {project.videos.map((videoItem, index) => {
+                    // Handle both string URLs and objects with url/description
+                    const videoUrl = typeof videoItem === 'string' ? videoItem : videoItem.url
+                    const videoDescription = typeof videoItem === 'object' ? videoItem.description : undefined
+                    
+                    const videoType = getVideoType(videoUrl)
+                    
+                    return (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.5 + index * 0.1 }}
+                        className="rounded-2xl overflow-hidden shadow-xl bg-white"
+                      >
+                        <div className="bg-gray-900">
+                          {videoType === 'youtube' ? (
+                            <iframe
+                              src={getYouTubeEmbedUrl(videoUrl)}
+                              title={`${project.title} - Video ${index + 1}`}
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                              className="w-full aspect-video"
+                            />
+                          ) : videoType === 'tiktok' ? (
+                            <TikTokEmbed url={videoUrl} index={index} />
+                          ) : videoType === 'local' ? (
+                            <video
+                              src={encodeImagePath(videoUrl)}
+                              controls
+                              className="w-full aspect-video"
+                              title={`${project.title} - Video ${index + 1}`}
+                            >
+                              Your browser does not support the video tag.
+                            </video>
+                          ) : null}
+                        </div>
+                        {videoDescription && (
+                          <div className="p-4">
+                            <p className="text-gray-600 text-sm">{videoDescription}</p>
+                          </div>
+                        )}
                       </motion.div>
                     )
                   })}

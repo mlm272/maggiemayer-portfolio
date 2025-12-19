@@ -298,7 +298,7 @@ export const projects: Project[] = [
     ],
     result: 'Created cohesive visual identity across all marketing channels. Social engagement improved, and brand recognition increased through consistent, high-quality design work. Contributed to TikTok content creation that generated good engagement and interactions.',
     outcome: 'Improved social engagement and brand recognition through consistent, high-quality design across all marketing channels. Contributed to TikTok content that generated good engagement and interactions.',
-    image: '/images/social posts/Jump$tart Post.png',
+    image: '/images/social posts/1100+ New Companies added.png',
     tags: ['Graphic Design', 'Social Media Design', 'Brand Design', 'Marketing Materials', 'MailerLite', 'Newsletter Design', 'Campaign Design'],
     year: '2021 - Present',
     role: 'Graphic Designer • Content Creator • Newsletter Designer',
