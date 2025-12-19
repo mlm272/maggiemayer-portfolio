@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "framer-motion": "^10.16.4",
     "lottie-react": "^2.4.1",
     "lottie-web": "^5.13.0",

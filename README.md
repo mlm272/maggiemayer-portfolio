@@ -67,6 +67,40 @@ maggiemayer-portfolio/
 3. **Work Section** (`components/Work.tsx`): Replace the sample projects with your actual work
 4. **Contact Section** (`components/Contact.tsx`): Update email and social links
 
+### Set Up Contact Form (EmailJS)
+
+The contact form uses EmailJS to send emails. To set it up:
+
+1. **Create an EmailJS account** at [https://www.emailjs.com/](https://www.emailjs.com/) (free tier available)
+
+2. **Create an Email Service**:
+   - Go to Email Services → Add New Service
+   - Connect your email provider (Gmail, Outlook, etc.)
+   - Note your Service ID
+
+3. **Create an Email Template**:
+   - Go to Email Templates → Create New Template
+   - Use these template variables:
+     - `{{from_name}}` - Sender's name
+     - `{{from_email}}` - Sender's email
+     - `{{message}}` - Message content
+   - Note your Template ID
+
+4. **Get your Public Key**:
+   - Go to Account → API Keys
+   - Copy your Public Key
+
+5. **Set up environment variables**:
+   - For local development: Create a `.env.local` file in the root directory:
+     ```
+     NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+     NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+     NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+     ```
+   - For GitHub Pages deployment: Add these as secrets in your GitHub repository:
+     - Go to Settings → Secrets and variables → Actions
+     - Add `EMAILJS_SERVICE_ID`, `EMAILJS_TEMPLATE_ID`, and `EMAILJS_PUBLIC_KEY` as secrets
+
 ### Add Your Projects
 
 Edit the `projects` array in `components/Work.tsx`:

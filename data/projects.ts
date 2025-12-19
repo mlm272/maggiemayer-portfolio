@@ -36,7 +36,7 @@ export const projects: Project[] = [
     slug: 'troutwood-website',
     title: 'Troutwood Website',
     category: 'web',
-    description: 'Sole front-end owner of Troutwood website (2021-2025). Built and maintained entire site using HTML/CSS/JS, handled SEO + analytics, and shipped ongoing improvements that drove +265% YoY organic traffic growth (92K organic sessions) and +79K new users (+188% YoY). (Traffic growth reflects holistic site/SEO improvements pre-rebrand; redesign later reset baselines.) Implemented the current frontend in collaboration with Cursor AI to expedite the redesign release.',
+    description: 'Sole front-end owner of Troutwood website (2021-2025). Built and maintained entire site using HTML/CSS/JS, handled SEO + analytics, and drove +265% YoY organic traffic growth (92K organic sessions) and +79K new users (+188% YoY). Implemented the current frontend in collaboration with Cursor AI.',
     longDescription: 'I fully owned Troutwood\'s marketing website from 2021-2025, managing everything from day-to-day updates to major feature builds and performance improvements. My work blended front-end development with technical SEO and analytics-driven UX iteration to increase discoverability of core tools and grow organic traffic. I designed and built landing pages and web marketing pages, emphasizing layout, responsiveness, and conversion clarity. I implemented the current frontend in collaboration with Cursor AI to expedite the redesign release.',
     context: 'I fully owned Troutwood\'s marketing website, managed everything from day-to-day updates to major feature builds and performance improvements. My work blended front-end development with technical SEO and analytics-driven UX iteration to increase discoverability of core tools and grow organic traffic. I implemented the current frontend in collaboration with Cursor AI to expedite the redesign release.',
     problem: 'The site faced three key challenges: 1) Low discoverability of key tools due to navigation friction, 2) Need for scalable organic growth through better search visibility, and 3) Performance and UX consistency across devices as the site grew in complexity.',
@@ -318,7 +318,7 @@ export const projects: Project[] = [
       '/images/social posts/Copy of barbie vs oppenheimer.png',
       '/images/social posts/Financial Literacy month.png',
       '/images/newsletters/Fall Update.png',
-      '/images/newsletters/option-webbased2.png',
+      '/images/newsletters/Wrapped-full.png',
       '/images/newsletters/Plaid - Pro Users.png',
       '/images/newsletters/Transactions Updates.png',
       '/images/photography/img1.png',
@@ -350,7 +350,7 @@ export const projects: Project[] = [
         category: 'Newsletters',
         images: [
           '/images/newsletters/Fall Update.png',
-          '/images/newsletters/option-webbased2.png',
+          '/images/newsletters/Wrapped-full.png',
           '/images/newsletters/Plaid - Pro Users.png',
           '/images/newsletters/Transactions Updates.png'
         ]

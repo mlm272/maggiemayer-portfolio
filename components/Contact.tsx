@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
+import emailjs from '@emailjs/browser'
 
 interface ContactProps {
   setActiveSection: (section: string) => void
@@ -33,15 +34,36 @@ export default function Contact({ setActiveSection }: ContactProps) {
     return () => observer.disconnect()
   }, [setActiveSection])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormData({ name: '', email: '', message: '' })
-    }, 3000)
+    
+    // EmailJS configuration - replace these with your actual values
+    // Get these from https://www.emailjs.com/
+    const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID'
+    const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID'
+    const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY'
+    
+    try {
+      // Initialize EmailJS with your public key
+      emailjs.init(PUBLIC_KEY)
+      
+      // Send email
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_email: 'maggielouisemayer@gmail.com',
+      })
+      
+      setSubmitted(true)
+      setTimeout(() => {
+        setSubmitted(false)
+        setFormData({ name: '', email: '', message: '' })
+      }, 3000)
+    } catch (error) {
+      console.error('Failed to send email:', error)
+      alert('Failed to send message. Please try again or email me directly at maggielouisemayer@gmail.com')
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

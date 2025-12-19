@@ -67,7 +67,7 @@ export default function Hero({ setActiveSection }: HeroProps) {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-lg md:text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed"
           >
-            I’m a creative front-end developer who bridges design and technology to build clear, trustworthy, and fun digital experiences.
+            I'm a creative front-end developer who bridges design and technology to build clear, trustworthy, and fun digital experiences.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
