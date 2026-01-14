@@ -110,6 +110,36 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    slug: 'current-fitness-homepage',
+    title: 'CURRENT Fitness Homepage Design',
+    category: 'web',
+    description: 'Designed branding, logo, graphics, and full homepage for CURRENT, a fictional fitness company, using dummy data from AI. Created a complete brand identity and modern, engaging design that showcases the brand and services. (Note: CURRENT is not a real company—this is a design exercise.)',
+    longDescription: 'I designed a complete brand identity and homepage for CURRENT, a fictional fitness company, using dummy data generated from AI. This project demonstrates my ability to create cohesive branding from the ground up, including logo design, brand graphics, and modern web design. I developed the brand identity, created the logo, designed graphics and visual elements, and built a complete homepage with hero sections, service showcases, and engaging visual elements that communicate the brand effectively. Note: CURRENT is not a real company—this is a personal design exercise to showcase branding and web design capabilities.',
+    context: 'This was a personal design project to showcase branding and web design capabilities. I used AI-generated dummy data to create a complete brand identity and homepage design for a fictional company called CURRENT.',
+    problem: 'Create a complete brand identity and engaging, modern homepage design for a fictional fitness company that effectively communicates the brand and services.',
+    whatIDid: [
+      'Designed complete brand identity including logo design for fictional fitness company CURRENT',
+      'Created brand graphics and visual elements',
+      'Designed complete homepage layout and visual structure',
+      'Created modern, engaging design elements and components',
+      'Developed cohesive brand presentation using AI-generated dummy data',
+      'Designed responsive layout considerations',
+      'Created visual hierarchy and user flow'
+    ],
+    result: 'Created a complete brand identity including logo, graphics, and a polished, modern homepage design that effectively showcases a fictional fitness brand with engaging visuals and clear information architecture.',
+    outcome: 'Designed complete branding (logo, graphics) and homepage for a fictional fitness company (CURRENT) that demonstrates brand design and modern web design principles.',
+    image: '/images/website design photos/Current.png',
+    tags: ['Branding', 'Logo Design', 'Web Design', 'UI/UX Design', 'Graphic Design', 'Figma', 'Visual Design'],
+    year: '2025',
+    role: 'Brand Designer • Logo Designer • Web Designer • UI/UX Designer',
+    tools: ['Figma', 'Design Systems'],
+    images: [
+      '/images/website design photos/Current.png'
+    ],
+    featured: true
+  },
+  {
+    id: 3,
     slug: 'the-missing-semester',
     title: 'The Missing Semester',
     category: 'web',
@@ -154,36 +184,6 @@ export const projects: Project[] = [
         label: 'View Live Website',
         url: 'https://themissingsemester.com'
       }
-    ],
-    featured: true
-  },
-  {
-    id: 3,
-    slug: 'current-fitness-homepage',
-    title: 'CURRENT Fitness Homepage Design',
-    category: 'web',
-    description: 'Designed branding, logo, graphics, and full homepage for CURRENT, a fictional fitness company, using dummy data from AI. Created a complete brand identity and modern, engaging design that showcases the brand and services. (Note: CURRENT is not a real company—this is a design exercise.)',
-    longDescription: 'I designed a complete brand identity and homepage for CURRENT, a fictional fitness company, using dummy data generated from AI. This project demonstrates my ability to create cohesive branding from the ground up, including logo design, brand graphics, and modern web design. I developed the brand identity, created the logo, designed graphics and visual elements, and built a complete homepage with hero sections, service showcases, and engaging visual elements that communicate the brand effectively. Note: CURRENT is not a real company—this is a personal design exercise to showcase branding and web design capabilities.',
-    context: 'This was a personal design project to showcase branding and web design capabilities. I used AI-generated dummy data to create a complete brand identity and homepage design for a fictional company called CURRENT.',
-    problem: 'Create a complete brand identity and engaging, modern homepage design for a fictional fitness company that effectively communicates the brand and services.',
-    whatIDid: [
-      'Designed complete brand identity including logo design for fictional fitness company CURRENT',
-      'Created brand graphics and visual elements',
-      'Designed complete homepage layout and visual structure',
-      'Created modern, engaging design elements and components',
-      'Developed cohesive brand presentation using AI-generated dummy data',
-      'Designed responsive layout considerations',
-      'Created visual hierarchy and user flow'
-    ],
-    result: 'Created a complete brand identity including logo, graphics, and a polished, modern homepage design that effectively showcases a fictional fitness brand with engaging visuals and clear information architecture.',
-    outcome: 'Designed complete branding (logo, graphics) and homepage for a fictional fitness company (CURRENT) that demonstrates brand design and modern web design principles.',
-    image: '/images/website design photos/Current.png',
-    tags: ['Branding', 'Logo Design', 'Web Design', 'UI/UX Design', 'Graphic Design', 'Figma', 'Visual Design'],
-    year: '2025',
-    role: 'Brand Designer • Logo Designer • Web Designer • UI/UX Designer',
-    tools: ['Figma', 'Design Systems'],
-    images: [
-      '/images/website design photos/Current.png'
     ],
     featured: true
   },
