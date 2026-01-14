@@ -159,125 +159,34 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    slug: 'ai-chatbot-ui',
-    title: 'AI Chatbot UI (Web + App)',
+    slug: 'current-fitness-homepage',
+    title: 'CURRENT Fitness Homepage Design',
     category: 'web',
-    description: 'Built complete front-end interface for Troutwood\'s AI chatbot on both web and mobile, including conversation layout, message rendering, loading/typing indicators, input UX, and reliable API request/response handling with backend AI models.',
-    longDescription: 'I built the complete front-end interface for Troutwood\'s AI chatbot on both web and mobile platforms. This included conversation layout, message rendering, loading/typing indicators, input UX, and reliable API request/response handling with backend AI models. The chatbot provides instant, helpful responses to financial questions.',
-    context: 'Troutwood needed an AI chatbot to help users get instant answers to financial questions. The interface needed to feel natural, handle errors gracefully, and work consistently across platforms.',
-    problem: 'No existing chatbot interface. Needed to build conversation interface from scratch, handle typing states, loading/error states, and ensure consistent experience across web and mobile.',
+    description: 'Designed a full homepage for CURRENT, a fictional fitness company, using dummy data from AI. Created a modern, engaging design that showcases the brand and services. (Note: CURRENT is not a real company—this is a design exercise.)',
+    longDescription: 'I designed a complete homepage for CURRENT, a fictional fitness company, using dummy data generated from AI. This project demonstrates my ability to create cohesive, modern web designs from concept to visual execution. The design includes hero sections, service showcases, and engaging visual elements that communicate the brand effectively. Note: CURRENT is not a real company—this is a personal design exercise to showcase web design capabilities.',
+    context: 'This was a personal design project to showcase web design capabilities. I used AI-generated dummy data to create a realistic fitness company homepage design for a fictional company called CURRENT.',
+    problem: 'Create an engaging, modern homepage design for a fictional fitness company that effectively communicates the brand and services.',
     whatIDid: [
-      'Built complete front-end interface for web and mobile platforms',
-      'Designed and implemented conversation layout and message rendering',
-      'Created loading/typing indicators for real-time user feedback',
-      'Developed input UX for seamless user interaction',
-      'Built reliable API request/response handling with backend AI models',
-      'Handled edge cases: network errors, timeout states, empty responses',
-      'Ensured consistent experience across web and mobile platforms'
+      'Designed complete homepage layout and visual structure for fictional fitness company CURRENT',
+      'Created modern, engaging design elements and components',
+      'Developed cohesive brand presentation using AI-generated dummy data',
+      'Designed responsive layout considerations',
+      'Created visual hierarchy and user flow'
     ],
-    result: 'Successfully launched chatbot that provided instant, helpful responses. Users could get answers to financial questions quickly, improving engagement and reducing support burden.',
-    outcome: 'Launched AI chatbot with seamless experience across platforms. Improved user engagement and reduced support queries.',
-    image: '/images/ask-finn.png',
-    tags: ['React', 'React Native', 'API Integration', 'State Management'],
-    year: '2024',
-    role: 'Front-End Developer',
-    tools: ['React', 'React Native', 'JavaScript', 'Figma', 'API Integration'],
+    result: 'Created a polished, modern homepage design that effectively showcases a fictional fitness brand with engaging visuals and clear information architecture.',
+    outcome: 'Designed a complete homepage for a fictional fitness company (CURRENT) that demonstrates modern web design principles and visual communication.',
+    image: '/images/website design photos/Current.png',
+    tags: ['Web Design', 'UI/UX Design', 'Figma', 'Visual Design'],
+    year: '2025',
+    role: 'Web Designer • UI/UX Designer',
+    tools: ['Figma', 'Design Systems'],
     images: [
-      '/images/ask-finn.png'
+      '/images/website design photos/Current.png'
     ],
     featured: true
   },
   {
     id: 4,
-    slug: 'react-native-app-features',
-    title: 'React Native App Features',
-    category: 'mobile',
-    description: 'Implemented React Native (iOS) UI components/screens and integrated API data into user flows in collaboration with product and backend teams. Helped with toggle notification buttons, the Ask Finn button in the top right of the screen, built the full "Personal Finance Assistant" screen, and the initial Ask Finn chatbot screen with newer tweaks. Learned React Native on the job.',
-    longDescription: 'I implemented React Native (iOS) UI components/screens and integrated API data into user flows. I did not design anything - I implemented the UI with React Native, which I learned on the job. I helped with the toggle notification buttons and the Ask Finn button in the top right of the screen. I built the full "Personal Finance Assistant" screen and the initial Ask Finn chatbot screen that looks very similar with some newer tweaks having been added. This work was done in collaboration with product and backend teams, demonstrating my ability to learn new technologies quickly and implement polished, responsive UI components.',
-    context: 'The Troutwood mobile app needed new features to improve user engagement and provide better financial education tools on mobile devices. I implemented the UI components using React Native, which I learned on the job.',
-    problem: 'App needed new features built quickly with consistent UX. Required proper state management, API integration, and responsive design for iOS.',
-    whatIDid: [
-      'Implemented UI components using React Native (learned on the job)',
-      'Helped implement toggle notification buttons',
-      'Implemented the Ask Finn button in the top right of the screen',
-      'Implemented the full "Personal Finance Assistant" screen',
-      'Implemented the initial Ask Finn chatbot screen that looks very similar with some newer tweaks having been added',
-      'Integrated API data into user flows',
-      'Collaborated with product and backend teams on feature development',
-      'Implemented state management for complex user interactions',
-      'Created responsive layouts optimized for iOS',
-      'Polished UX with smooth animations and transitions',
-      'Handled edge cases: offline states, slow networks, data validation'
-    ],
-    result: 'Successfully shipped multiple app features that improved user engagement and provided better mobile experience. Features worked seamlessly across platforms with polished UX.',
-    outcome: 'Shipped multiple app features with consistent UX. Improved mobile user engagement.',
-    image: '/images/mobile/IMG_1726.PNG',
-    images: [
-      '/images/mobile/IMG_1726.PNG',
-      '/images/mobile/IMG_1727.PNG',
-      '/images/mobile/IMG_1728.PNG',
-      '/images/mobile/IMG_1729.PNG'
-    ],
-    tags: ['React Native', 'Mobile Development', 'State Management', 'API Integration'],
-    year: '2023 - Present',
-    role: 'Mobile Developer • Feature Owner',
-    tools: ['React Native', 'JavaScript', 'State Management', 'REST APIs'],
-    featured: true
-  },
-  {
-    id: 5,
-    slug: 'animations-graphic-design',
-    title: 'Animations & Graphic Design',
-    category: 'animation',
-    description: 'Created engaging animations and microinteractions using Adobe After Effects, Adobe Character Animator, Adobe Premiere Pro, Lottie, and GSAP. Developed mascot animation reels and UI/visual-effect animations that humanize complex topics and enhance user experiences.',
-    longDescription: 'I create engaging animations and microinteractions using a combination of Adobe After Effects, Adobe Character Animator, Adobe Premiere Pro, Lottie, and GSAP. I animated the company mascot using Character Animator, creating short reels/gifs that bring personality and life to brand communications. I also developed UI/visual-effect animations for web and app interfaces. I use Premiere Pro for video editing and post-production. These animations help humanize complex financial topics, making them more accessible and engaging for educational audiences. The animations are optimized for web performance and work seamlessly across different platforms.',
-    context: 'Troutwood needed engaging animations and motion graphics to make complex financial concepts more accessible and visually appealing. Animations needed to work across web and mobile platforms while maintaining performance.',
-    problem: 'Static content and interfaces needed more engaging, dynamic elements. Complex financial concepts required visual storytelling through animation to improve user understanding and engagement.',
-    whatIDid: [
-      'Animated company mascot using Adobe Character Animator, bringing personality and life to brand communications',
-      'Created Lottie animations for web integration using Adobe After Effects',
-      'Edited videos using Adobe Premiere Pro for post-production and final output',
-      'Developed motion graphics and microinteractions using GSAP and JavaScript',
-      'Optimized animations for web performance and file size',
-      'Designed animation sequences that enhance UX without overwhelming users',
-      'Integrated animations seamlessly into existing web and mobile interfaces',
-      'Maintained brand consistency across all animated content'
-    ],
-    result: 'Created multiple engaging animations that improved user engagement and made complex topics more accessible. Animations enhanced the user experience across web and mobile platforms while maintaining fast load times.',
-    outcome: 'Developed engaging animations that improve user engagement and make complex financial concepts more accessible and visually appealing.',
-    image: '/images/animation.png',
-    tags: ['Adobe After Effects', 'Adobe Character Animator', 'Adobe Premiere Pro', 'Lottie', 'GSAP', 'Motion Graphics', 'Animation', 'Character Animation', 'Video Editing'],
-    year: '2021 - Present',
-    role: 'Motion Designer • Animator',
-    tools: ['Adobe After Effects', 'Adobe Character Animator', 'Adobe Premiere Pro', 'Lottie', 'GSAP', 'JavaScript'],
-    images: [
-      '/images/animation.png'
-    ],
-    lottieAnimations: [
-      '6213873c-fb3b-4d24-b088-07820781f6c0',
-      '439cd762-9102-4912-8229-575fe6b7bf06',
-      'fc1dd80b-ba08-46b2-acec-c3ff3b4b60f7',
-      '225c8e6e-50a2-478a-b3c1-be58e43f6764',
-      '1f3e3787-9c9f-42b0-9a0a-8485731f95ac'
-    ],
-    videos: [
-      {
-        url: '/images/animations/findtry2.mp4',
-        description: 'Created using Rotato for the laptop animation and Adobe Character Animator for the Finn graphic. Edited in Premiere Pro.'
-      },
-      {
-        url: '/images/animations/tw-app-page-graphic.mp4',
-        description: 'Created with After Effects & Lottie for the website'
-      },
-      {
-        url: '/images/animations/Scene 1.mp4',
-        description: 'Finn animation created with Adobe Character Animator'
-      }
-    ],
-    featured: true
-  },
-  {
-    id: 6,
     slug: 'creative-marketing-design',
     title: 'Creative / Marketing Design Work',
     category: 'graphic',
@@ -461,7 +370,126 @@ export const projects: Project[] = [
     featured: true
   },
   {
+    id: 5,
+    slug: 'ai-chatbot-ui',
+    title: 'AI Chatbot UI (Web + App)',
+    category: 'web',
+    description: 'Built complete front-end interface for Troutwood\'s AI chatbot on both web and mobile, including conversation layout, message rendering, loading/typing indicators, input UX, and reliable API request/response handling with backend AI models.',
+    longDescription: 'I built the complete front-end interface for Troutwood\'s AI chatbot on both web and mobile platforms. This included conversation layout, message rendering, loading/typing indicators, input UX, and reliable API request/response handling with backend AI models. The chatbot provides instant, helpful responses to financial questions.',
+    context: 'Troutwood needed an AI chatbot to help users get instant answers to financial questions. The interface needed to feel natural, handle errors gracefully, and work consistently across platforms.',
+    problem: 'No existing chatbot interface. Needed to build conversation interface from scratch, handle typing states, loading/error states, and ensure consistent experience across web and mobile.',
+    whatIDid: [
+      'Built complete front-end interface for web and mobile platforms',
+      'Designed and implemented conversation layout and message rendering',
+      'Created loading/typing indicators for real-time user feedback',
+      'Developed input UX for seamless user interaction',
+      'Built reliable API request/response handling with backend AI models',
+      'Handled edge cases: network errors, timeout states, empty responses',
+      'Ensured consistent experience across web and mobile platforms'
+    ],
+    result: 'Successfully launched chatbot that provided instant, helpful responses. Users could get answers to financial questions quickly, improving engagement and reducing support burden.',
+    outcome: 'Launched AI chatbot with seamless experience across platforms. Improved user engagement and reduced support queries.',
+    image: '/images/ask-finn.png',
+    tags: ['React', 'React Native', 'API Integration', 'State Management'],
+    year: '2024',
+    role: 'Front-End Developer',
+    tools: ['React', 'React Native', 'JavaScript', 'Figma', 'API Integration'],
+    images: [
+      '/images/ask-finn.png'
+    ],
+    featured: true
+  },
+  {
+    id: 6,
+    slug: 'react-native-app-features',
+    title: 'React Native App Features',
+    category: 'mobile',
+    description: 'Implemented React Native (iOS) UI components/screens and integrated API data into user flows in collaboration with product and backend teams. Helped with toggle notification buttons, the Ask Finn button in the top right of the screen, built the full "Personal Finance Assistant" screen, and the initial Ask Finn chatbot screen with newer tweaks. Learned React Native on the job.',
+    longDescription: 'I implemented React Native (iOS) UI components/screens and integrated API data into user flows. I did not design anything - I implemented the UI with React Native, which I learned on the job. I helped with the toggle notification buttons and the Ask Finn button in the top right of the screen. I built the full "Personal Finance Assistant" screen and the initial Ask Finn chatbot screen that looks very similar with some newer tweaks having been added. This work was done in collaboration with product and backend teams, demonstrating my ability to learn new technologies quickly and implement polished, responsive UI components.',
+    context: 'The Troutwood mobile app needed new features to improve user engagement and provide better financial education tools on mobile devices. I implemented the UI components using React Native, which I learned on the job.',
+    problem: 'App needed new features built quickly with consistent UX. Required proper state management, API integration, and responsive design for iOS.',
+    whatIDid: [
+      'Implemented UI components using React Native (learned on the job)',
+      'Helped implement toggle notification buttons',
+      'Implemented the Ask Finn button in the top right of the screen',
+      'Implemented the full "Personal Finance Assistant" screen',
+      'Implemented the initial Ask Finn chatbot screen that looks very similar with some newer tweaks having been added',
+      'Integrated API data into user flows',
+      'Collaborated with product and backend teams on feature development',
+      'Implemented state management for complex user interactions',
+      'Created responsive layouts optimized for iOS',
+      'Polished UX with smooth animations and transitions',
+      'Handled edge cases: offline states, slow networks, data validation'
+    ],
+    result: 'Successfully shipped multiple app features that improved user engagement and provided better mobile experience. Features worked seamlessly across platforms with polished UX.',
+    outcome: 'Shipped multiple app features with consistent UX. Improved mobile user engagement.',
+    image: '/images/mobile/IMG_1726.PNG',
+    images: [
+      '/images/mobile/IMG_1726.PNG',
+      '/images/mobile/IMG_1727.PNG',
+      '/images/mobile/IMG_1728.PNG',
+      '/images/mobile/IMG_1729.PNG'
+    ],
+    tags: ['React Native', 'Mobile Development', 'State Management', 'API Integration'],
+    year: '2023 - Present',
+    role: 'Mobile Developer • Feature Owner',
+    tools: ['React Native', 'JavaScript', 'State Management', 'REST APIs'],
+    featured: true
+  },
+  {
     id: 7,
+    slug: 'animations-graphic-design',
+    title: 'Animations & Graphic Design',
+    category: 'animation',
+    description: 'Created engaging animations and microinteractions using Adobe After Effects, Adobe Character Animator, Adobe Premiere Pro, Lottie, and GSAP. Developed mascot animation reels and UI/visual-effect animations that humanize complex topics and enhance user experiences.',
+    longDescription: 'I create engaging animations and microinteractions using a combination of Adobe After Effects, Adobe Character Animator, Adobe Premiere Pro, Lottie, and GSAP. I animated the company mascot using Character Animator, creating short reels/gifs that bring personality and life to brand communications. I also developed UI/visual-effect animations for web and app interfaces. I use Premiere Pro for video editing and post-production. These animations help humanize complex financial topics, making them more accessible and engaging for educational audiences. The animations are optimized for web performance and work seamlessly across different platforms.',
+    context: 'Troutwood needed engaging animations and motion graphics to make complex financial concepts more accessible and visually appealing. Animations needed to work across web and mobile platforms while maintaining performance.',
+    problem: 'Static content and interfaces needed more engaging, dynamic elements. Complex financial concepts required visual storytelling through animation to improve user understanding and engagement.',
+    whatIDid: [
+      'Animated company mascot using Adobe Character Animator, bringing personality and life to brand communications',
+      'Created Lottie animations for web integration using Adobe After Effects',
+      'Edited videos using Adobe Premiere Pro for post-production and final output',
+      'Developed motion graphics and microinteractions using GSAP and JavaScript',
+      'Optimized animations for web performance and file size',
+      'Designed animation sequences that enhance UX without overwhelming users',
+      'Integrated animations seamlessly into existing web and mobile interfaces',
+      'Maintained brand consistency across all animated content'
+    ],
+    result: 'Created multiple engaging animations that improved user engagement and made complex topics more accessible. Animations enhanced the user experience across web and mobile platforms while maintaining fast load times.',
+    outcome: 'Developed engaging animations that improve user engagement and make complex financial concepts more accessible and visually appealing.',
+    image: '/images/animation.png',
+    tags: ['Adobe After Effects', 'Adobe Character Animator', 'Adobe Premiere Pro', 'Lottie', 'GSAP', 'Motion Graphics', 'Animation', 'Character Animation', 'Video Editing'],
+    year: '2021 - Present',
+    role: 'Motion Designer • Animator',
+    tools: ['Adobe After Effects', 'Adobe Character Animator', 'Adobe Premiere Pro', 'Lottie', 'GSAP', 'JavaScript'],
+    images: [
+      '/images/animation.png'
+    ],
+    lottieAnimations: [
+      '6213873c-fb3b-4d24-b088-07820781f6c0',
+      '439cd762-9102-4912-8229-575fe6b7bf06',
+      'fc1dd80b-ba08-46b2-acec-c3ff3b4b60f7',
+      '225c8e6e-50a2-478a-b3c1-be58e43f6764',
+      '1f3e3787-9c9f-42b0-9a0a-8485731f95ac'
+    ],
+    videos: [
+      {
+        url: '/images/animations/findtry2.mp4',
+        description: 'Created using Rotato for the laptop animation and Adobe Character Animator for the Finn graphic. Edited in Premiere Pro.'
+      },
+      {
+        url: '/images/animations/tw-app-page-graphic.mp4',
+        description: 'Created with After Effects & Lottie for the website'
+      },
+      {
+        url: '/images/animations/Scene 1.mp4',
+        description: 'Finn animation created with Adobe Character Animator'
+      }
+    ],
+    featured: true
+  },
+  {
+    id: 8,
     slug: 'brand-assets',
     title: 'Brand Assets & Guidelines',
     category: 'brand',
