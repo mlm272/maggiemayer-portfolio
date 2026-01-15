@@ -140,55 +140,6 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    slug: 'the-missing-semester',
-    title: 'The Missing Semester',
-    category: 'web',
-    description: 'Designed and developed themissingsemester.com from concept to launch. Created complete visual identity, user experience, and front-end implementation using modern web technologies.',
-    longDescription: 'I designed and developed themissingsemester.com as a complete end-to-end project. This involved creating the visual identity, designing the user experience and interface, and building the entire front-end from scratch. The website showcases my ability to handle both design and development, creating a cohesive, functional, and visually appealing web experience.',
-    context: 'The Missing Semester needed a website to showcase their educational content. The project required both strong visual design and robust front-end development to create an engaging, user-friendly experience.',
-    problem: 'Needed a complete website that effectively communicates the educational mission while providing an intuitive user experience. Required both compelling visual design and functional, responsive front-end development.',
-    whatIDid: [
-      'Designed complete visual identity and brand system for the website',
-      'Created user experience flows and wireframes',
-      'Designed responsive UI/UX for all pages and components',
-      'Developed front-end using HTML, CSS, and JavaScript',
-      'Implemented responsive design for mobile and desktop',
-      'Ensured cross-browser compatibility and accessibility',
-      'Optimized for performance and user experience'
-    ],
-    whatIOwned: [
-      'End-to-end website design: visual identity, UI/UX design, wireframing, and prototyping',
-      'Complete front-end development: HTML, CSS, JavaScript implementation',
-      'Responsive design and cross-browser compatibility',
-      'Performance optimization and accessibility'
-    ],
-    result: 'Successfully launched a fully functional, beautifully designed website that effectively communicated The Missing Semester\'s educational mission. The site provided an intuitive user experience across all devices.',
-    outcome: 'Launched complete website with custom design and full front-end implementation. Created cohesive visual identity and seamless user experience.',
-    image: '/images/themissingsemester.png',
-    tags: ['Web Design', 'Front-End Development', 'UI/UX Design', 'HTML', 'CSS', 'JavaScript', 'Responsive Design'],
-    year: '2024',
-    role: 'Designer & Developer • End-to-end design and development',
-    tools: ['HTML', 'CSS', 'JavaScript', 'Figma', 'Responsive Design'],
-    highlights: [
-      'Complete end-to-end project: design and development',
-      'Created visual identity and brand system',
-      'Designed intuitive user experience',
-      'Built fully responsive front-end',
-      'Optimized for performance and accessibility'
-    ],
-    images: [
-      '/images/themissingsemester.png'
-    ],
-    links: [
-      {
-        label: 'View Live Website',
-        url: 'https://themissingsemester.com'
-      }
-    ],
-    featured: true
-  },
-  {
-    id: 4,
     slug: 'creative-marketing-design',
     title: 'Creative / Marketing Design Work',
     category: 'graphic',
@@ -367,6 +318,55 @@ export const projects: Project[] = [
       {
         label: 'Wellness Page 3',
         url: '/pdfs/Wellness Page 3.pdf'
+      }
+    ],
+    featured: true
+  },
+  {
+    id: 4,
+    slug: 'the-missing-semester',
+    title: 'The Missing Semester',
+    category: 'web',
+    description: 'Designed and developed themissingsemester.com from concept to launch. Created complete visual identity, user experience, and front-end implementation using modern web technologies.',
+    longDescription: 'I designed and developed themissingsemester.com as a complete end-to-end project. This involved creating the visual identity, designing the user experience and interface, and building the entire front-end from scratch. The website showcases my ability to handle both design and development, creating a cohesive, functional, and visually appealing web experience.',
+    context: 'The Missing Semester needed a website to showcase their educational content. The project required both strong visual design and robust front-end development to create an engaging, user-friendly experience.',
+    problem: 'Needed a complete website that effectively communicates the educational mission while providing an intuitive user experience. Required both compelling visual design and functional, responsive front-end development.',
+    whatIDid: [
+      'Designed complete visual identity and brand system for the website',
+      'Created user experience flows and wireframes',
+      'Designed responsive UI/UX for all pages and components',
+      'Developed front-end using HTML, CSS, and JavaScript',
+      'Implemented responsive design for mobile and desktop',
+      'Ensured cross-browser compatibility and accessibility',
+      'Optimized for performance and user experience'
+    ],
+    whatIOwned: [
+      'End-to-end website design: visual identity, UI/UX design, wireframing, and prototyping',
+      'Complete front-end development: HTML, CSS, JavaScript implementation',
+      'Responsive design and cross-browser compatibility',
+      'Performance optimization and accessibility'
+    ],
+    result: 'Successfully launched a fully functional, beautifully designed website that effectively communicated The Missing Semester\'s educational mission. The site provided an intuitive user experience across all devices.',
+    outcome: 'Launched complete website with custom design and full front-end implementation. Created cohesive visual identity and seamless user experience.',
+    image: '/images/themissingsemester.png',
+    tags: ['Web Design', 'Front-End Development', 'UI/UX Design', 'HTML', 'CSS', 'JavaScript', 'Responsive Design'],
+    year: '2024',
+    role: 'Designer & Developer • End-to-end design and development',
+    tools: ['HTML', 'CSS', 'JavaScript', 'Figma', 'Responsive Design'],
+    highlights: [
+      'Complete end-to-end project: design and development',
+      'Created visual identity and brand system',
+      'Designed intuitive user experience',
+      'Built fully responsive front-end',
+      'Optimized for performance and accessibility'
+    ],
+    images: [
+      '/images/themissingsemester.png'
+    ],
+    links: [
+      {
+        label: 'View Live Website',
+        url: 'https://themissingsemester.com'
       }
     ],
     featured: true
