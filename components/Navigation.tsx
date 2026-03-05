@@ -39,7 +39,9 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-lg shadow-md border-b border-gray-100' : 'bg-transparent'
+        scrolled
+          ? 'bg-slate-900/90 backdrop-blur-xl shadow-md border-b border-slate-800'
+          : 'bg-gradient-to-b from-slate-950/80 via-slate-950/40 to-transparent backdrop-blur-md'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,7 +50,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             whileHover={{ scale: 1.05 }}
-            className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary-600 via-accent-600 to-tertiary-600 bg-clip-text text-transparent cursor-pointer"
+            className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary-400 via-accent-400 to-tertiary-400 bg-clip-text text-transparent cursor-pointer"
             onClick={() => scrollToSection('home')}
           >
             Maggie Mayer
@@ -61,15 +63,15 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
                 whileHover={{ y: -2 }}
                 className={`relative px-4 py-2 text-sm font-semibold rounded-lg transition-all ${
                   activeSection === item.id
-                    ? 'text-primary-600 bg-primary-50'
-                    : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                    ? 'text-primary-200 bg-slate-800/80 shadow-sm shadow-primary-500/30'
+                    : 'text-slate-200 hover:text-primary-200 hover:bg-slate-800/70'
                 }`}
               >
                 {item.label}
                 {activeSection === item.id && (
                   <motion.div
                     layoutId="activeSection"
-                    className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-primary-600 rounded-full"
+                    className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-primary-400 rounded-full"
                     initial={false}
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
@@ -81,7 +83,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
             <motion.button
               onClick={() => scrollToSection('contact')}
               whileHover={{ scale: 1.05 }}
-              className="px-4 py-2 text-sm font-semibold text-primary-600 bg-primary-50 rounded-lg"
+              className="px-4 py-2 text-sm font-semibold text-slate-50 bg-primary-600 rounded-lg shadow-primary-500/40 shadow-md"
             >
               Contact
             </motion.button>

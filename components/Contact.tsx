@@ -77,7 +77,7 @@ export default function Contact({ setActiveSection }: ContactProps) {
     <section
       id="contact"
       ref={sectionRef}
-      className="min-h-screen py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50"
+      className="min-h-screen py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900"
     >
       <div className="max-w-5xl mx-auto">
         <motion.div
@@ -87,7 +87,7 @@ export default function Contact({ setActiveSection }: ContactProps) {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-2 bg-slate-900/80 text-primary-100 border border-primary-500/50 rounded-full text-sm font-semibold mb-4 shadow-[0_0_24px_rgba(59,130,246,0.35)]">
             Contact
           </span>
         </motion.div>
@@ -101,10 +101,10 @@ export default function Contact({ setActiveSection }: ContactProps) {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              <h3 className="text-4xl md:text-5xl font-bold text-slate-50 mb-4">
                 Let's Connect
               </h3>
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+              <p className="text-lg text-slate-300 mb-8 leading-relaxed">
                 Whether you're looking to start a new project, collaborate, or just say hello, 
                 I'm always open to discussing creative opportunities.
               </p>
@@ -114,14 +114,14 @@ export default function Contact({ setActiveSection }: ContactProps) {
               <motion.a
                 href="mailto:maggielouisemayer@gmail.com"
                 whileHover={{ x: 5 }}
-                className="flex items-start space-x-4 p-4 rounded-xl hover:bg-white transition-colors group"
+                className="flex items-start space-x-4 p-4 rounded-xl hover:bg-slate-900/70 transition-colors group"
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 bg-gradient-to-br from-primary-500/30 to-primary-400/60 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <span className="text-2xl">📧</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900 mb-1">Email</h4>
-                  <p className="text-primary-600 hover:text-primary-700 font-medium">
+                  <h4 className="font-bold text-slate-50 mb-1">Email</h4>
+                  <p className="text-primary-200 hover:text-primary-100 font-medium">
                     maggielouisemayer@gmail.com
                   </p>
                 </div>
@@ -132,14 +132,14 @@ export default function Contact({ setActiveSection }: ContactProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ x: 5 }}
-                className="flex items-start space-x-4 p-4 rounded-xl hover:bg-white transition-colors group"
+                className="flex items-start space-x-4 p-4 rounded-xl hover:bg-slate-900/70 transition-colors group"
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 bg-gradient-to-br from-primary-500/30 to-primary-400/60 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <span className="text-2xl">💼</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900 mb-1">LinkedIn</h4>
-                  <p className="text-primary-600 hover:text-primary-700 font-medium">
+                  <h4 className="font-bold text-slate-50 mb-1">LinkedIn</h4>
+                  <p className="text-primary-200 hover:text-primary-100 font-medium">
                     linkedin.com/in/maggie-mayer-08752a163
                   </p>
                 </div>
@@ -152,11 +152,11 @@ export default function Contact({ setActiveSection }: ContactProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
+            className="bg-slate-900 rounded-2xl shadow-[0_20px_55px_rgba(0,0,0,0.85)] p-8 border border-slate-800"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-semibold text-slate-200 mb-2">
                   Name
                 </label>
                 <input
@@ -166,13 +166,13 @@ export default function Contact({ setActiveSection }: ContactProps) {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition bg-gray-50 focus:bg-white"
+                  className="w-full px-4 py-3.5 border-2 border-slate-700 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition bg-slate-950 focus:bg-slate-900 text-slate-100 placeholder:text-slate-500"
                   placeholder="Your name"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-semibold text-slate-200 mb-2">
                   Email
                 </label>
                 <input
@@ -182,13 +182,13 @@ export default function Contact({ setActiveSection }: ContactProps) {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition bg-gray-50 focus:bg-white"
+                  className="w-full px-4 py-3.5 border-2 border-slate-700 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition bg-slate-950 focus:bg-slate-900 text-slate-100 placeholder:text-slate-500"
                   placeholder="your.email@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-semibold text-slate-200 mb-2">
                   Message
                 </label>
                 <textarea
@@ -198,7 +198,7 @@ export default function Contact({ setActiveSection }: ContactProps) {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition resize-none bg-gray-50 focus:bg-white"
+                  className="w-full px-4 py-3.5 border-2 border-slate-700 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition resize-none bg-slate-950 focus:bg-slate-900 text-slate-100 placeholder:text-slate-500"
                   placeholder="Tell me about your project..."
                 />
               </div>

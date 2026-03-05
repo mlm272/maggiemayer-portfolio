@@ -178,7 +178,6 @@ export const projects: Project[] = [
       '/images/social posts/holidays 2024.png',
       '/images/social posts/map jr. post.png',
       '/images/social posts/Copy of barbie vs oppenheimer.png',
-      '/images/social posts/Financial Literacy month.png',
       '/images/newsletters/Montly Report Update.png',
       '/images/newsletters/Wrapped-full.png',
       '/images/newsletters/Plaid - Pro Users.png',
@@ -204,8 +203,7 @@ export const projects: Project[] = [
           '/images/social posts/4.png',
           '/images/social posts/holidays 2024.png',
           '/images/social posts/map jr. post.png',
-          '/images/social posts/Copy of barbie vs oppenheimer.png',
-          '/images/social posts/Financial Literacy month.png'
+          '/images/social posts/Copy of barbie vs oppenheimer.png'
         ]
       },
       {

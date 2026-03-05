@@ -69,7 +69,7 @@ export default function Work({ setActiveSection }: WorkProps) {
     <section
       id="work"
       ref={sectionRef}
-      className="min-h-screen py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50"
+      className="min-h-screen py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -79,13 +79,13 @@ export default function Work({ setActiveSection }: WorkProps) {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-2 bg-slate-900/80 text-primary-100 border border-primary-500/50 rounded-full text-sm font-semibold mb-4 shadow-[0_0_30px_rgba(59,130,246,0.35)]">
             Portfolio
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-50 mb-6 tracking-tight">
             Featured Work
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
             A collection of my work at Troutwood and beyond, showcasing UX/UI design, front-end development, animations, social media design, and video production
           </p>
         </motion.div>
@@ -99,8 +99,8 @@ export default function Work({ setActiveSection }: WorkProps) {
               onClick={() => setFilter(category.id)}
               className={`px-6 py-3 rounded-full font-semibold transition-all ${
                 filter === category.id
-                  ? 'bg-gradient-to-r from-primary-600 to-primary-700 text-white shadow-lg'
-                  : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 shadow-sm hover:shadow-md'
+                  ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-[0_0_30px_rgba(59,130,246,0.55)]'
+                  : 'bg-slate-900 text-slate-200 hover:bg-slate-800 border border-slate-700 hover:border-primary-400/70 shadow-sm hover:shadow-md'
               }`}
             >
               {category.label}
@@ -120,9 +120,9 @@ export default function Work({ setActiveSection }: WorkProps) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -12, scale: 1.02 }}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer group border border-gray-100 hover:border-primary-200 transition-all"
+                className="bg-slate-900 rounded-2xl shadow-[0_18px_45px_rgba(0,0,0,0.65)] overflow-hidden cursor-pointer group border border-slate-800 hover:border-primary-400/70 hover:shadow-[0_22px_60px_rgba(15,23,42,0.9)] transition-all"
               >
-              <div className="relative h-64 bg-gradient-to-br from-primary-100 via-accent-100 to-tertiary-100 overflow-hidden">
+              <div className="relative h-64 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 overflow-hidden">
                 {project.image || (project.images && project.images.length > 0) ? (
                   <>
                     <img
@@ -130,12 +130,12 @@ export default function Work({ setActiveSection }: WorkProps) {
                       alt={project.title}
                       className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </>
                 ) : (
                   <>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-6xl opacity-60 group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-6xl opacity-60 text-slate-200 group-hover:scale-110 transition-transform duration-300">
                         {project.category === 'web' && '🌐'}
                         {project.category === 'mobile' && '📱'}
                         {project.category === 'animation' && '🎬'}
@@ -147,21 +147,21 @@ export default function Work({ setActiveSection }: WorkProps) {
                   </>
                 )}
                 <div className="absolute top-4 right-4">
-                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-primary-700 text-xs font-bold rounded-full uppercase">
+                  <span className="px-3 py-1 bg-slate-900/90 backdrop-blur-sm text-primary-100 text-xs font-bold rounded-full uppercase border border-primary-400/70">
                     {project.category}
                   </span>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
+                <h3 className="text-2xl font-bold text-slate-50 mb-3 group-hover:text-primary-300 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-sm text-gray-600 mb-5 leading-relaxed">{project.description}</p>
+                <p className="text-sm text-slate-300/90 mb-5 leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1.5 text-xs font-medium bg-gray-100 text-gray-700 rounded-lg hover:bg-primary-100 hover:text-primary-700 transition-colors"
+                      className="px-3 py-1.5 text-xs font-medium bg-slate-800 text-slate-200 rounded-lg hover:bg-primary-500/20 hover:text-primary-200 transition-colors"
                     >
                       {tag}
                     </span>
