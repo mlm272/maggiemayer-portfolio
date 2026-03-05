@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 
 interface NavigationProps {
@@ -10,6 +11,8 @@ interface NavigationProps {
 
 export default function Navigation({ activeSection, setActiveSection }: NavigationProps) {
   const [scrolled, setScrolled] = useState(false)
+  const router = useRouter()
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,9 +31,19 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
-    if (element) {
+
+    // If we're on the homepage and the section exists, smooth-scroll
+    if (pathname === '/' && element) {
       element.scrollIntoView({ behavior: 'smooth' })
       setActiveSection(sectionId)
+      return
+    }
+
+    // On other pages (or if the section isn't in view), navigate home
+    if (sectionId === 'home') {
+      router.push('/')
+    } else {
+      router.push(`/#${sectionId}`)
     }
   }
 

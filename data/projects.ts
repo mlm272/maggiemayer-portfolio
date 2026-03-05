@@ -89,8 +89,6 @@ export const projects: Project[] = [
       '/images/website design photos/Group 1000004928.png',
       '/images/website design photos/App page - V2.jpg',
       '/images/website design photos/idea2.0again.png',
-      '/images/website design photos/IRALogix.png',
-      '/images/website design photos/IRALogix-2.png',
       '/images/website design photos/LandingIdea4.png',
       '/images/website design photos/landingidea5.png'
     ],
