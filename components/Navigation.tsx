@@ -51,10 +51,8 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-slate-900/90 backdrop-blur-xl shadow-md border-b border-slate-800'
-          : 'bg-gradient-to-b from-slate-950/80 via-slate-950/40 to-transparent backdrop-blur-md'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-slate-950/95 border-b border-slate-800 ${
+        scrolled ? 'shadow-md' : ''
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
